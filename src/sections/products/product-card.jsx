@@ -12,12 +12,14 @@ import Label from 'src/components/label';
 import { ColorPreview } from 'src/components/color-utils';
 
 // ----------------------------------------------------------------------
-
+// ["default","primary","secondary","info","success","warning","error"]
 export default function ShopProductCard({ product }) {
   const renderStatus = (
+    if(product.promotionalPrice !== 0){
+      return(
     <Label
       variant="filled"
-      color={(product.status === 'sale' && 'error') || 'info'}
+      color={(product.promotionalPrice !== 0) ? "success" : "default"}
       sx={{
         zIndex: 9,
         top: 16,
@@ -26,15 +28,18 @@ export default function ShopProductCard({ product }) {
         textTransform: 'uppercase',
       }}
     >
-      {product.status}
+    {(product.promotionalPrice !== 0) ? "Oferta" : ""}
+    {(product.featured === true) ? "Destacado" : ""}
     </Label>
+    )
+  }
   );
 
   const renderImg = (
     <Box
       component="img"
       alt={product.name}
-      src={product.cover}
+      src={product.img1}
       sx={{
         top: 0,
         width: 1,
@@ -55,18 +60,17 @@ export default function ShopProductCard({ product }) {
           textDecoration: 'line-through',
         }}
       >
-        {product.priceSale && fCurrency(product.priceSale)}
+        {product.promotionalPrice !== 0 && fCurrency(product.price)}
       </Typography>
       &nbsp;
-      {fCurrency(product.price)}
+      {fCurrency(product.promotionalPrice ? product.promotionalPrice : product.price)}
     </Typography>
   );
 
   return (
     <Card>
       <Box sx={{ pt: '100%', position: 'relative' }}>
-        {product.status && renderStatus}
-
+        {renderStatus}
         {renderImg}
       </Box>
 
@@ -76,7 +80,6 @@ export default function ShopProductCard({ product }) {
         </Link>
 
         <Stack direction="row" alignItems="center" justifyContent="space-between">
-          <ColorPreview colors={product.colors} />
           {renderPrice}
         </Stack>
       </Stack>
