@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import Badge from '@mui/material/Badge';
 import { styled } from '@mui/material/styles';
 
@@ -5,7 +7,7 @@ import Iconify from 'src/components/iconify';
 
 // ----------------------------------------------------------------------
 
-const StyledRoot = styled('div')(({ theme }) => ({
+const StyledRoot = styled(Link)(({ theme }) => ({
   zIndex: 999,
   right: 0,
   display: 'flex',
@@ -30,7 +32,7 @@ const StyledRoot = styled('div')(({ theme }) => ({
 
 export default function CartWidget() {
   return (
-    <StyledRoot>
+    <StyledRoot to="/basket">
       <Badge showZero badgeContent={0} color="error" max={99}>
         <Iconify icon="eva:shopping-cart-fill" width={24} height={24} />
       </Badge>

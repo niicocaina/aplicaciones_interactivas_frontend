@@ -1,0 +1,233 @@
+{
+    "products": [
+        {
+          "productId": 3,
+          "name": "Zapatilla Running LightRun",
+          "description": "Zapatilla ligera para largas distancias",
+          "price": 77900,
+          "promotionalPrice": 72900,
+          "stock": 25,
+          "featured": true,
+          "category": {
+            "id": 1,
+            "name": "Running"
+          },
+          "img1": "https://th.bing.com/th/id/OIP.FnRbtnl8Ms8PKFg2MSJU4wHaFB?rs=1&pid=ImgDetMain",
+          "img2": null,
+          "img3": null,
+          "img4": null,
+          "img5": null
+        },
+        {
+          "productId": 5,
+          "name": "Zapatilla Running BreathPro",
+          "description": "Zapatilla transpirable para running",
+          "price": 79900,
+          "promotionalPrice": 74900,
+          "stock": 30,
+          "featured": true,
+          "category": {
+            "id": 1,
+            "name": "Running"
+          },
+          "img1": "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1566504869-adidas-swift-run-1566504850.jpg?crop=1xw:1xh;center,top&resize=480:*",
+          "img2": null,
+          "img3": null,
+          "img4": null,
+          "img5": null
+        },
+        {
+          "productId": 9,
+          "name": "Zapatilla Running GripTech",
+          "description": "Zapatilla con suela antideslizante",
+          "price": 89900,
+          "promotionalPrice": 79900,
+          "stock": 22,
+          "featured": true,
+          "category": {
+            "id": 1,
+            "name": "Running"
+          },
+          "img1": "https://th.bing.com/th/id/OIP.-xHS2d9FjYaSzK79SLGt3gAAAA?rs=1&pid=ImgDetMain",
+          "img2": null,
+          "img3": null,
+          "img4": null,
+          "img5": null
+        },
+        {
+          "productId": 12,
+          "name": "Zapatilla Casual UrbanFlex",
+          "description": "Zapatilla casual con diseño minimalista",
+          "price": 84900,
+          "promotionalPrice": 0,
+          "stock": 18,
+          "featured": true,
+          "category": {
+            "id": 2,
+            "name": "Casual"
+          },
+          "img1": "https://assets.adidas.com/images/w_766,h_766,f_auto,q_auto,fl_lossy,c_fill,g_auto/a47c86928e934613aa221f5ecbc7e1dd_9366/zapatillas-sl72-bob-marley.jpg",
+          "img2": null,
+          "img3": null,
+          "img4": null,
+          "img5": null
+        },
+        {
+          "productId": 14,
+          "name": "Zapatilla Casual ThickSole",
+          "description": "Zapatilla con suela gruesa y diseño casual",
+          "price": 89900,
+          "promotionalPrice": 84900,
+          "stock": 25,
+          "featured": true,
+          "category": {
+            "id": 2,
+            "name": "Casual"
+          },
+          "img1": "https://assets.adidas.com/images/w_766,h_766,f_auto,q_auto,fl_lossy,c_fill,g_auto/ce59187b619040d8ab47d841ac2dacf5_9366/zapatillas-campus-00s.jpg",
+          "img2": null,
+          "img3": null,
+          "img4": null,
+          "img5": null
+        },
+        {
+          "productId": 18,
+          "name": "Zapatilla Casual AquaProof",
+          "description": "Zapatilla casual resistente al agua",
+          "price": 84900,
+          "promotionalPrice": 0,
+          "stock": 12,
+          "featured": true,
+          "category": {
+            "id": 2,
+            "name": "Casual"
+          },
+          "img1": "https://assets.adidas.com/images/w_766,h_766,f_auto,q_auto,fl_lossy,c_fill,g_auto/13de2f4593d141218de651e9bff9c8d9_9366/rivalry-crepe.jpg",
+          "img2": null,
+          "img3": null,
+          "img4": null,
+          "img5": null
+        },
+        {
+          "productId": 20,
+          "name": "Zapatilla Casual DailyFit",
+          "description": "Zapatilla casual para uso diario",
+          "price": 74900,
+          "promotionalPrice": 0,
+          "stock": 20,
+          "featured": true,
+          "category": {
+            "id": 2,
+            "name": "Casual"
+          },
+          "img1": "https://assets.adidas.com/images/w_766,h_766,f_auto,q_auto,fl_lossy,c_fill,g_auto/b7a678e9a5f94315836735d2b29f10b6_9366/zapatillas-forum-low-cl.jpg",
+          "img2": null,
+          "img3": null,
+          "img4": null,
+          "img5": null
+        },
+        {
+          "productId": 22,
+          "name": "Zapatilla Deportiva GripPro",
+          "description": "Zapatilla deportiva con alta tracción",
+          "price": 84900,
+          "promotionalPrice": 0,
+          "stock": 22,
+          "featured": true,
+          "category": {
+            "id": 3,
+            "name": "Deportiva"
+          },
+          "img1": "https://assets.adidas.com/images/w_766,h_766,f_auto,q_auto,fl_lossy,c_fill,g_auto/dbb3706f414d4ab4a55615e3c0c6cf6a_9366/zapatillas-samba-adv.jpg",
+          "img2": null,
+          "img3": null,
+          "img4": null,
+          "img5": null
+        },
+        {
+          "productId": 24,
+          "name": "Zapatilla Deportiva ErgoPro",
+          "description": "Zapatilla deportiva con diseño ergonómico",
+          "price": 94900,
+          "promotionalPrice": 0,
+          "stock": 25,
+          "featured": true,
+          "category": {
+            "id": 3,
+            "name": "Deportiva"
+          },
+          "img1": "https://assets.adidas.com/images/w_766,h_766,f_auto,q_auto,fl_lossy,c_fill,g_auto/1928e9f306654558851f1ae022af8f02_9366/zapatillas-samba-og.jpg",
+          "img2": null,
+          "img3": null,
+          "img4": null,
+          "img5": null
+        },
+        {
+          "productId": 26,
+          "name": "Zapatilla Deportiva CushionFlex",
+          "description": "Zapatilla deportiva con amortiguación superior",
+          "price": 87900,
+          "promotionalPrice": 82900,
+          "stock": 30,
+          "featured": true,
+          "category": {
+            "id": 3,
+            "name": "Deportiva"
+          },
+          "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/e2cf24d7a0c64a33b7ebae9000f43591_9366/Zapatillas_adi2000_Negro_GX4634_011_hover_standard.jpg",
+          "img2": null,
+          "img3": null,
+          "img4": null,
+          "img5": null
+        },
+        {
+          "productId": 29,
+          "name": "Zapatilla Deportiva HighImpact",
+          "description": "Zapatilla deportiva para entrenamientos intensos",
+          "price": 99900,
+          "promotionalPrice": 0,
+          "stock": 12,
+          "featured": true,
+          "category": {
+            "id": 3,
+            "name": "Deportiva"
+          },
+          "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/a3b7a40d910f4bb4b02bae92014c14fe_9366/Zapatillas_Adi2000_Blanco_GY2081_01_standard.jpg",
+          "img2": null,
+          "img3": null,
+          "img4": null,
+          "img5": null
+        }
+      ],
+    "comments": [
+      { "id": "1", "text": "a comment about post 1", "postId": "1" },
+      { "id": "2", "text": "another comment about post 1", "postId": "1" }
+    ],
+    "profile": {
+      "name": "typicode"
+    },
+    "productBasket": [
+        {
+            "productBasketId": "1",
+            "quantity": 1,
+            "product": {
+                "productId": 29,
+                "name": "Zapatilla Deportiva HighImpact",
+                "description": "Zapatilla deportiva para entrenamientos intensos",
+                "price": 99900,
+                "promotionalPrice": 0,
+                "stock": 12,
+                "featured": true,
+                "category": {
+                  "id": 3,
+                  "name": "Deportiva"
+                },
+                "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/a3b7a40d910f4bb4b02bae92014c14fe_9366/Zapatillas_Adi2000_Blanco_GY2081_01_standard.jpg",
+                "img2": null,
+                "img3": null,
+                "img4": null,
+                "img5": null
+              }
+        }
+    ]
+}
