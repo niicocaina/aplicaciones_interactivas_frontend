@@ -228,6 +228,28 @@
                 "img4": null,
                 "img5": null
               }
+        },
+        {
+          "productBasketId": "2",
+            "quantity": 4,
+            "product": {
+                "productId": 14,
+                "name": "Zapatilla Casual ThickSole",
+                "description": "Zapatilla con suela gruesa y diseño casual",
+                "price": 89900,
+                "promotionalPrice": 84900,
+                "stock": 25,
+                "featured": true,
+                "category": {
+                  "id": 2,
+                  "name": "Casual"
+                },
+                "img1": "https://assets.adidas.com/images/w_766,h_766,f_auto,q_auto,fl_lossy,c_fill,g_auto/ce59187b619040d8ab47d841ac2dacf5_9366/zapatillas-campus-00s.jpg",
+                "img2": null,
+                "img3": null,
+                "img4": null,
+                "img5": null
+              }
         }
     ]
 }

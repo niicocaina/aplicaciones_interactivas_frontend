@@ -1,9 +1,10 @@
 import React from 'react';
-import { Box, Typography, IconButton, Avatar } from '@mui/material';
-import { Add as AddIcon, Remove as RemoveIcon, Delete as DeleteIcon } from '@mui/icons-material';
-
 import axios from 'axios';
 import PropTypes from 'prop-types';
+
+import {Box, Avatar, Typography, IconButton} from '@mui/material';
+import { Add as AddIcon, Remove as RemoveIcon, Delete as DeleteIcon } from '@mui/icons-material';
+
 
 
 const baseUrl = "http://localhost:3000/productBasket";
