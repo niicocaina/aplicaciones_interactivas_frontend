@@ -197,6 +197,61 @@
           "img3": null,
           "img4": null,
           "img5": null
+        },
+        {
+          "productId": 29,
+          "name": "Zapatilla Deportiva HighImpact",
+          "description": "Zapatilla deportiva para entrenamientos intensos",
+          "price": 99900,
+          "promotionalPrice": 0,
+          "stock": 12,
+          "featured": true,
+          "category": {
+            "id": 3,
+            "name": "Deportiva"
+          },
+          "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/a3b7a40d910f4bb4b02bae92014c14fe_9366/Zapatillas_Adi2000_Blanco_GY2081_01_standard.jpg",
+          "img2": null,
+          "img3": null,
+          "img4": null,
+          "img5": null
+        },
+        {
+          "productId": 29,
+          "name": "Zapatilla Deportiva HighImpact",
+          "description": "Zapatilla deportiva para entrenamientos intensos",
+          "price": 99900,
+          "promotionalPrice": 0,
+          "stock": 12,
+          "featured": true,
+          "category": {
+            "id": 3,
+            "name": "Deportiva"
+          },
+          "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/a3b7a40d910f4bb4b02bae92014c14fe_9366/Zapatillas_Adi2000_Blanco_GY2081_01_standard.jpg",
+          "img2": null,
+          "img3": null,
+          "img4": null,
+          "img5": null
+        }
+        ,
+        {
+          "productId": 29,
+          "name": "Zapatilla Deportiva HighImpact",
+          "description": "Zapatilla deportiva para entrenamientos intensos",
+          "price": 99900,
+          "promotionalPrice": 0,
+          "stock": 12,
+          "featured": true,
+          "category": {
+            "id": 3,
+            "name": "Deportiva"
+          },
+          "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/a3b7a40d910f4bb4b02bae92014c14fe_9366/Zapatillas_Adi2000_Blanco_GY2081_01_standard.jpg",
+          "img2": null,
+          "img3": null,
+          "img4": null,
+          "img5": null
         }
       ],
     "comments": [

@@ -15,8 +15,6 @@ import { ColorPreview } from 'src/components/color-utils';
 // ["default","primary","secondary","info","success","warning","error"]
 export default function ShopProductCard({ product }) {
   const renderStatus = (
-    if(product.promotionalPrice !== 0){
-      return(
     <Label
       variant="filled"
       color={(product.promotionalPrice !== 0) ? "success" : "default"}
@@ -31,8 +29,6 @@ export default function ShopProductCard({ product }) {
     {(product.promotionalPrice !== 0) ? "Oferta" : ""}
     {(product.featured === true) ? "Destacado" : ""}
     </Label>
-    )
-  }
   );
 
   const renderImg = (
