@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { sample } from 'lodash';
 import { faker } from '@faker-js/faker';
 
@@ -40,16 +41,19 @@ const PRODUCT_COLOR = [
   '#FFC107',
 ];
 
+const response = await axios.get('http://localhost:3001/products');
+const productos = response.data;
+
 // ----------------------------------------------------------------------
 
-export const products = [...Array(24)].map((_, index) => {
+export const products = productos.map((_, index) => { // const products = [...Array(24)].map((_, index) => {
   const setIndex = index + 1;
 
   return {
     id: faker.string.uuid(),
-    cover: `/assets/images/products/product_${setIndex}.jpg`,
-    name: PRODUCT_NAME[index],
-    price: faker.number.int({ min: 4, max: 99, precision: 0.01 }),
+    cover: `/assets/images/products/product_${setIndex}.jpg`, // productos[index].imagen
+    name: productos[index].nombre, // PRODUCT_NAME[index],
+    price: productos[index].precio, // faker.number.int({ min: 4, max: 99, precision: 0.01 }),
     priceSale: setIndex % 3 ? null : faker.number.int({ min: 19, max: 29, precision: 0.01 }),
     colors:
       (setIndex === 1 && PRODUCT_COLOR.slice(0, 2)) ||
