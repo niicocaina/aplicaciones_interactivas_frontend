@@ -9,9 +9,9 @@ import { Add as AddIcon, Remove as RemoveIcon, Delete as DeleteIcon } from '@mui
 
 const baseUrl = "http://localhost:3000/productBasket";
 
-const handleIncreaseQuantity = async (productId, currentQuantity) => {
+const handleIncreaseQuantity = async (id, currentQuantity) => {
     try {
-        const response = await axios.put(`${baseUrl}/${productId}`, {
+        const response = await axios.post(`${baseUrl}/${id}`, {
             quantity: currentQuantity + 1
         });
         if (response.status === 200) {
@@ -22,33 +22,37 @@ const handleIncreaseQuantity = async (productId, currentQuantity) => {
     }
 };
 
-const handleDecreaseQuantity = async (productId, currentQuantity) => {
-    try {
-        const response = await axios.post(`${baseUrl}/${productId}`, {
-            quantity: currentQuantity - 1
-        });
-        if (response.status === 200) {
-            console.log("Cantidad disminuida");
-        }
-    } catch (error) {
-        console.error("Error al disminuir la cantidad", error);
+const handleDecreaseQuantity = async (id, currentQuantity) => {
+    // Primero obtenemos el producto completo
+    const getResponse = await axios.get(`${baseUrl}/${id}`);
+    const productData = getResponse.data;
+
+    // Luego hacemos el PUT con todos los datos, actualizando solo la cantidad
+    const response = await axios.put(`${baseUrl}/${id}`, {
+        ...productData, // Mantenemos el resto de las propiedades
+        quantity: currentQuantity - 1 // Solo cambiamos la cantidad
+    });
+
+    if (response.status === 200) {
+        console.log("Cantidad disminuida");
     }
 };
 
-const handleRemoveProduct = async (productId) => {
+const handleRemoveProduct = async (id) => {
     try {
-        const response = await axios.delete(`${baseUrl}/${productId}`);
+        const response = await axios.delete(`${baseUrl}/${id}`);
         if (response.status === 200) {
             console.log("Producto eliminado");
         }
     } catch (error) {
+        console.log("el id pasado es: ", id)
         console.error("Error al eliminar el producto", error);
     }
 };
 
 
 export default function ProductItemCard(productBasket) {
-    const {quantity, product: { productId, price, name, img1 } } = productBasket.productBasket;
+    const {quantity, id, product: { productId, price, name, img1 } } = productBasket.productBasket;
     return (
         <Box display="flex" alignItems="center" padding={2} border={1} borderRadius={2} borderColor="grey.300">
             {/* Imagen del producto */}
@@ -67,17 +71,17 @@ export default function ProductItemCard(productBasket) {
 
             {/* Control de cantidad */}
             <Box display="flex" alignItems="center">
-                <IconButton size="small" onClick={() => handleDecreaseQuantity(productId, quantity)}>
+                <IconButton size="small" onClick={() => handleDecreaseQuantity(id, quantity)}>
                     <RemoveIcon />
                 </IconButton>
                 <Typography variant="body1" sx={{ marginX: 1 }}>{quantity}</Typography>
-                <IconButton size="small" onClick={() => handleIncreaseQuantity(productId, quantity)}>
+                <IconButton size="small" onClick={() => handleIncreaseQuantity(id, quantity)}>
                     <AddIcon />
                 </IconButton>
             </Box>
 
             {/* Botón de eliminar */}
-            <IconButton color="error" onClick={() => handleRemoveProduct(productId)}>
+            <IconButton color="error" onClick={() => handleRemoveProduct(id)}>
                 <DeleteIcon />
             </IconButton>
         </Box>

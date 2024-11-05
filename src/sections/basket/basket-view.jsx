@@ -20,6 +20,7 @@ export default function BasketView() {
                 setLoading(false); // Asegura que loading también cambie a false en caso de error.
             });
     }, []);
+
     return (
         <Container maxWidth="md" sx={{ paddingTop: 4 }}>
             <Typography variant="h4" component="h1" gutterBottom align="center" fontWeight="bold">
