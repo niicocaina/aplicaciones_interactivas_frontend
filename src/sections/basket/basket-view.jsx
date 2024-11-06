@@ -5,21 +5,38 @@ import { List, ListItem, Container, Typography, Box, Button, Grid, CircularProgr
 
 import ProductItemCard from './product-Item-card';
 
+const baseUrl = "http://localhost:3000/productBasket";
+
 export default function BasketView() {
     const [productBasket, setProductBasket] = useState([]);
     const [loading, setLoading] = useState("true");
 
+    const fetchBasket = async () => {
+        try {
+            const response = await axios.get(baseUrl);
+            setProductBasket(response.data);
+            setLoading(false); // Cambia loading a false solo después de cargar los datos.
+        } catch (error) {
+            console.error("Error al cargar el carrito", error);
+            setLoading(false); // Asegura que loading también cambie a false en caso de error.
+        }
+    };
+
+    // Cargar el carrito cuando el componente se monta
     useEffect(() => {
-        axios.get("http://localhost:3000/productBasket")
-            .then(response => {
-                setProductBasket(response.data);
-                setLoading(false); // Cambia loading a false solo después de cargar los datos.
-            })
-            .catch(err => {
-                console.log(err);
-                setLoading(false); // Asegura que loading también cambie a false en caso de error.
-            });
+        fetchBasket();
     }, []);
+
+    // Función para vaciar el carrito
+    const clearBasket = async () => {
+        try {
+            // Borra cada producto del carrito
+            await Promise.all(productBasket.map(item => axios.delete(`${baseUrl}/${item.id}`)));
+            setProductBasket([]); // Actualiza el estado local para reflejar que el carrito está vacío
+        } catch (error) {
+            console.error("Error al vaciar el carrito", error);
+        }
+    };
 
     return (
         <Container maxWidth="md" sx={{ paddingTop: 4 }}>
@@ -36,7 +53,7 @@ export default function BasketView() {
                     <Grid container spacing={3} sx={{ marginTop: 2 }}>
                         {productBasket.map(item => (
                             <Grid item xs={12} key={item.id}>
-                                <ProductItemCard productBasket={item} />
+                                <ProductItemCard productBasket={item} onUpdate={fetchBasket} />
                             </Grid>
                         ))}
                     </Grid>
@@ -50,7 +67,7 @@ export default function BasketView() {
                             variant="contained"
                             color="secondary"
                             sx={{ marginTop: 2, fontWeight: 'bold', borderRadius: 4 }}
-                            onClick={() => setProductBasket([])} // Puedes reemplazar esta función con otra que realmente vacíe el carrito.
+                            onClick={clearBasket} // Puedes reemplazar esta función con otra que realmente vacíe el carrito.
                         >
                             Limpiar Carrito
                         </Button>
