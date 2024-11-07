@@ -7,7 +7,7 @@
           "price": 77900,
           "promotionalPrice": 72900,
           "stock": 25,
-          "featured": true,
+          "featured": false,
           "category": {
             "id": 1,
             "name": "Running"
@@ -43,7 +43,7 @@
           "price": 89900,
           "promotionalPrice": 79900,
           "stock": 22,
-          "featured": true,
+          "featured": false,
           "category": {
             "id": 1,
             "name": "Running"
@@ -61,7 +61,7 @@
           "price": 84900,
           "promotionalPrice": 0,
           "stock": 18,
-          "featured": true,
+          "featured": false,
           "category": {
             "id": 2,
             "name": "Casual"
@@ -79,7 +79,7 @@
           "price": 89900,
           "promotionalPrice": 84900,
           "stock": 25,
-          "featured": true,
+          "featured": false,
           "category": {
             "id": 2,
             "name": "Casual"
@@ -115,7 +115,7 @@
           "price": 74900,
           "promotionalPrice": 0,
           "stock": 20,
-          "featured": true,
+          "featured": false,
           "category": {
             "id": 2,
             "name": "Casual"
@@ -169,7 +169,7 @@
           "price": 87900,
           "promotionalPrice": 82900,
           "stock": 30,
-          "featured": true,
+          "featured": false,
           "category": {
             "id": 3,
             "name": "Deportiva"
@@ -187,7 +187,7 @@
           "price": 99900,
           "promotionalPrice": 0,
           "stock": 12,
-          "featured": true,
+          "featured": false,
           "category": {
             "id": 3,
             "name": "Deportiva"
@@ -205,7 +205,7 @@
           "price": 99900,
           "promotionalPrice": 0,
           "stock": 12,
-          "featured": true,
+          "featured": false,
           "category": {
             "id": 3,
             "name": "Deportiva"
@@ -223,7 +223,7 @@
           "price": 99900,
           "promotionalPrice": 0,
           "stock": 12,
-          "featured": true,
+          "featured": false,
           "category": {
             "id": 3,
             "name": "Deportiva"

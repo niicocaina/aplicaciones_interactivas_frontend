@@ -47,7 +47,7 @@ const handleRemoveProduct = async (productId) => {
 
 
 export default function ProductItemCard(productBasket) {
-    const {quantity, product: { productId, price, name, img1 } } = productBasket.productBasket;
+    const {quantity, product: { productId, price, name, img1 } } = productBasket;
     return (
         <Box display="flex" alignItems="center" padding={2} border={1} borderRadius={2} borderColor="grey.300">
             {/* Imagen del producto */}
