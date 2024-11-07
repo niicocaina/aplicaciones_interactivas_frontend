@@ -222,9 +222,15 @@
       "postId": "1"
     }
   ],
-  "profile": {
-    "name": "typicode"
-  },
+  "perfil": [
+    {
+      "firstName": "juan",
+      "lastName": "perez",
+      "userName": "juanperez",
+      "email": "jperez@uade.com",
+      "password": "juanperez"
+    }
+  ],
   "productBasket": [
     {
       "id": "1",
