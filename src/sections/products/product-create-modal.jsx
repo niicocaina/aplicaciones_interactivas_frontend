@@ -15,12 +15,14 @@ import ImageUploader from './image-uploader';
 
 export default function AlertDialog() {
     const [open, setOpen] = useState(false);
+    const [images, setImages] = useState([]);
 
     const handleClickOpen = () => {
         setOpen(true);
     };
 
     const handleClose = () => {
+        setImages([]);
         setOpen(false);
     };
 
@@ -47,17 +49,37 @@ export default function AlertDialog() {
     }
 
     const getCategoria = (event) => {
-        setCategoria(event.target.value);
+        setCategoria(capitalizeFirstLetter(event.target.value));
     }
+
+    function capitalizeFirstLetter(str) {
+        return str.charAt(0).toUpperCase() + str.slice(1);
+      }      
 
     const createProduct = async () => {
         try {
-            await axios.post('http://localhost:3001/products', {
-                nombre,
-                descripcion,
-                precio,
+            let id = 0;
+            if (categoria === 'Running') {
+                id = 1;
+            } else if (categoria === 'Casual') {
+                id = 2;
+            } else if (categoria === 'Deportiva') {
+                id = 3;
+            }
+            await axios.post('http://localhost:3000/products', {
+                name: nombre,
+                description: descripcion,
+                price: precio,
                 stock,
-                categoria,
+                category:{
+                    id,
+                    name:categoria
+                },
+                img1:images[0],
+                img2:images[1],
+                img3:images[2],
+                img4:images[3],
+                img5:images[4],
             });
         } catch (error) {
             console.log("Error al crear producto");
@@ -85,7 +107,7 @@ export default function AlertDialog() {
                     <TextField placeholder='Precio' sx={{ mb: 2 }} onChange={getPrecio} fullWidth />
                     <TextField placeholder='Stock' sx={{ mb: 2 }} onChange={getStock} fullWidth />
                     <TextField placeholder='Categoria' sx={{ mb: 2 }} onChange={getCategoria} fullWidth />
-                    <ImageUploader />
+                    <ImageUploader images={images} setImages={setImages}/>
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleClose}>Cancelar</Button>

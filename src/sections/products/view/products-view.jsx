@@ -1,18 +1,19 @@
-import { useEffect, useState } from 'react';
+import axios from 'axios';
+import { useState, useEffect } from 'react';
 
 import Box from '@mui/material/Box';
-import Stack from '@mui/material/Stack';
 import Card from '@mui/material/Card';
+import Link from '@mui/material/Link';
+import Stack from '@mui/material/Stack';
+import Skeleton from '@mui/material/Skeleton';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Unstable_Grid2';
 import Typography from '@mui/material/Typography';
-import Skeleton from '@mui/material/Skeleton';
-import Link from '@mui/material/Link';
 
-import axios from 'axios';
 import ProductCard from '../product-card';
 import ProductSort from '../product-sort';
 import ProductFilters from '../product-filters';
+import CreateProduct from '../product-create-modal';
 import ProductCartWidget from '../product-cart-widget';
 
 // ----------------------------------------------------------------------
@@ -23,8 +24,10 @@ export default function ProductsView() {
   const [loading, setLoading] = useState("true");
 
   useEffect(() => {
-    axios.get("http://localhost:3000/products").then(response => setProducts(response.data)).then(setLoading("false")).catch(err => console.log(err))
-  },[])
+    axios.get("http://localhost:3000/products").
+      then(response => setProducts(response.data)).
+      then(setLoading("false")).catch(err => console.log(err))
+  }, [products]);
 
   const handleOpenFilter = () => {
     setOpenFilter(true);
@@ -33,7 +36,7 @@ export default function ProductsView() {
   const handleCloseFilter = () => {
     setOpenFilter(false);
   };
-  
+
   return (
     <Container>
       <Typography variant="h4" sx={{ mb: 5 }}>
@@ -48,12 +51,12 @@ export default function ProductsView() {
         sx={{ mb: 5 }}
       >
         <Stack direction="row" spacing={1} flexShrink={0} sx={{ my: 1 }}>
+          <CreateProduct />
           <ProductFilters
             openFilter={openFilter}
             onOpenFilter={handleOpenFilter}
             onCloseFilter={handleCloseFilter}
           />
-
           <ProductSort />
         </Stack>
       </Stack>
@@ -75,7 +78,7 @@ export default function ProductsView() {
             <ProductCard product={product} />
           </Grid>
         ))}
-      </Grid>
+      </Grid> 
 
       <ProductCartWidget />
     </Container>

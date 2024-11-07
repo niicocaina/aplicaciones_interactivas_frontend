@@ -11,13 +11,16 @@ import { fCurrency } from 'src/utils/format-number';
 import Label from 'src/components/label';
 import { ColorPreview } from 'src/components/color-utils';
 
+import EditProduct from './product-edit-modal'
+import DeleteAlert from './product-delete-alert'
+
 // ----------------------------------------------------------------------
 // ["default","primary","secondary","info","success","warning","error"]
 export default function ShopProductCard({ product }) {
   const renderStatus = (
     <Label
       variant="filled"
-      color={(product.promotionalPrice !== 0) ? "success" : "default"}
+      color="success"
       sx={{
         zIndex: 9,
         top: 16,
@@ -26,8 +29,8 @@ export default function ShopProductCard({ product }) {
         textTransform: 'uppercase',
       }}
     >
-    {(product.promotionalPrice !== 0) ? "Oferta" : ""}
-    {(product.featured === true) ? "Destacado" : ""}
+      Oferta
+      {product.featured === true && " Destacado"}
     </Label>
   );
 
@@ -67,6 +70,8 @@ export default function ShopProductCard({ product }) {
     <Card>
       <Box sx={{ pt: '100%', position: 'relative' }}>
         {renderStatus}
+        <EditProduct id={product.id}/>
+        <DeleteAlert id={product.id}/>
         {renderImg}
       </Box>
 

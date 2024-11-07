@@ -1,6 +1,7 @@
 import axios from 'axios';
 import * as React from 'react';
 import { useState} from 'react';
+import PropTypes from 'prop-types';
 
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
@@ -11,7 +12,7 @@ import DialogContent from '@mui/material/DialogContent';
 
 import Iconify from 'src/components/iconify';
 
-export default function AlertDialog() {
+export default function AlertDialog({id}) {
     const [open, setOpen] = useState(false);
     const [products, setProducts] = useState({});
     const [nombre, setNombre] = useState('Nombre');
@@ -31,14 +32,15 @@ export default function AlertDialog() {
 
     const getProducts = async () => {
         try {
-            const response = await axios.get('http://localhost:3001/products/1');
+            const response = await axios.get(`http://localhost:3000/products/${id}`);
             const producto = response.data;
+            console.log(producto);
             setProducts(producto);
-            setNombre(producto.nombre || 'Nombre'); 
-            setDescripcion(producto.descripcion || 'Descripción');
-            setPrecio(producto.precio || 'Precio');  
+            setNombre(producto.name || 'Nombre'); 
+            setDescripcion(producto.description || 'Descripción');
+            setPrecio(producto.price || 'Precio');  
             setStock(producto.stock || 'Stock'); 
-            setCategoria(producto.categoria || 'Categoria');
+            setCategoria(producto.category.name || 'Categoria');
         } catch (error) {
             console.log("Error al obtener productos");
         }
@@ -46,12 +48,12 @@ export default function AlertDialog() {
 
     const updateProducts = async () => {
         try{
-            const response = await axios.put('http://localhost:3001/products/1', {
-                nombre,
-                descripcion,
-                precio,
+            const response = await axios.patch(`http://localhost:3001/products/${id}`, {
+                name: nombre,
+                description: descripcion,
+                price: precio,
                 stock,
-                categoria
+                category: categoria
             });
             console.log(response);
         }catch(error){
@@ -110,3 +112,7 @@ export default function AlertDialog() {
         </>
     );
 }
+
+AlertDialog.propTypes = {
+    id: PropTypes.string
+};

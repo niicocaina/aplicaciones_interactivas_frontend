@@ -1,5 +1,6 @@
 import axios from 'axios';
 import * as React from 'react';
+import PropTypes from 'prop-types';
 
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
@@ -11,7 +12,7 @@ import DialogContentText from '@mui/material/DialogContentText';
 
 import Iconify from 'src/components/iconify';
 
-export default function AlertDialog() {
+export default function AlertDialog({id}) {
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -24,7 +25,7 @@ export default function AlertDialog() {
 
   const deleteProduct = async () => {
     try{
-      await axios.delete('http://localhost:3001/products/1');
+      await axios.delete(`http://localhost:3000/products/${id}`);
     }catch(error){
       console.log("Error al eliminar producto");
     }
@@ -59,3 +60,7 @@ export default function AlertDialog() {
     </>
   );
 }
+
+AlertDialog.propTypes = {
+  id: PropTypes.string
+};
