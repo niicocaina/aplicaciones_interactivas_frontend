@@ -1,11 +1,7 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 
-import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
-import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
-import Skeleton from '@mui/material/Skeleton';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Unstable_Grid2';
 import Typography from '@mui/material/Typography';
@@ -21,12 +17,12 @@ import ProductCartWidget from '../product-cart-widget';
 export default function ProductsView() {
   const [openFilter, setOpenFilter] = useState(false);
   const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState("true");
 
   useEffect(() => {
-    axios.get("http://localhost:3000/products").
-      then(response => setProducts(response.data)).
-      then(setLoading("false")).catch(err => console.log(err))
+    axios
+      .get('http://localhost:3000/products')
+      .then((response) => setProducts(response.data))
+      .catch((err) => console.log(err));
   }, [products]);
 
   const handleOpenFilter = () => {
@@ -62,23 +58,12 @@ export default function ProductsView() {
       </Stack>
 
       <Grid container spacing={3}>
-        {loading === "true" ? 
-          <Card>
-          <Skeleton width={400} height={400} />
-    
-          <Stack spacing={2} sx={{ p: 3 }}>
-    
-            <Stack direction="row" alignItems="center" justifyContent="space-between">
-            <Skeleton width={210} height={118}/>
-            </Stack>
-          </Stack>
-        </Card>
-        : products.map((product) => (
+        {products.map((product) => (
           <Grid key={product.id} xs={12} sm={6} md={3}>
             <ProductCard product={product} />
           </Grid>
         ))}
-      </Grid> 
+      </Grid>
 
       <ProductCartWidget />
     </Container>

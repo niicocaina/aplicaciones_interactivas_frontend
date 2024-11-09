@@ -12,110 +12,125 @@ import DialogContent from '@mui/material/DialogContent';
 import Iconify from 'src/components/iconify';
 
 import ImageUploader from './image-uploader';
+import CategoryMenu from './category-menu';
 
 export default function AlertDialog() {
-    const [open, setOpen] = useState(false);
-    const [images, setImages] = useState([]);
+  const [open, setOpen] = useState(false);
+  const [images, setImages] = useState([]);
 
-    const handleClickOpen = () => {
-        setOpen(true);
-    };
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
 
-    const handleClose = () => {
-        setImages([]);
-        setOpen(false);
-    };
+  const handleClose = () => {
+    setImages([]);
+    setOpen(false);
+  };
 
-    const [nombre, setNombre] = useState('');
-    const [descripcion, setDescripcion] = useState('');
-    const [precio, setPrecio] = useState('');
-    const [stock, setStock] = useState('');
-    const [categoria, setCategoria] = useState('');
+  const [nombre, setNombre] = useState('');
+  const [descripcion, setDescripcion] = useState('');
+  const [precio, setPrecio] = useState('');
+  const [stock, setStock] = useState('');
+  const [categoria, setCategoria] = useState('');
 
-    const getNombre = (event) => {
-        setNombre(event.target.value);
+  const getNombre = (event) => {
+    setNombre(event.target.value);
+  };
+
+  const getDescripcion = (event) => {
+    setDescripcion(event.target.value);
+  };
+
+  const getPrecio = (event) => {
+    setPrecio(event.target.value);
+  };
+
+  const getStock = (event) => {
+    setStock(event.target.value);
+  };
+
+  const createProduct = async () => {
+    try {
+      await axios.post('http://localhost:3000/products', {
+        name: nombre,
+        description: descripcion,
+        price: precio,
+        stock,
+        category: {
+          id: categoria.id,
+          name: categoria.label,
+        },
+        img1: images[0] || null,
+        img2: images[1] || null,
+        img3: images[2] || null,
+        img4: images[3] || null,
+        img5: images[4] || null,
+      });
+    } catch (error) {
+      console.log('Error al crear producto');
     }
+  };
 
-    const getDescripcion = (event) => {
-        setDescripcion(event.target.value);
-    }
-
-    const getPrecio = (event) => {
-        setPrecio(event.target.value);
-    }
-
-    const getStock = (event) => {
-        setStock(event.target.value);
-    }
-
-    const getCategoria = (event) => {
-        setCategoria(capitalizeFirstLetter(event.target.value));
-    }
-
-    function capitalizeFirstLetter(str) {
-        return str.charAt(0).toUpperCase() + str.slice(1);
-      }      
-
-    const createProduct = async () => {
-        try {
-            let id = 0;
-            if (categoria === 'Running') {
-                id = 1;
-            } else if (categoria === 'Casual') {
-                id = 2;
-            } else if (categoria === 'Deportiva') {
-                id = 3;
-            }
-            await axios.post('http://localhost:3000/products', {
-                name: nombre,
-                description: descripcion,
-                price: precio,
-                stock,
-                category:{
-                    id,
-                    name:categoria
-                },
-                img1:images[0],
-                img2:images[1],
-                img3:images[2],
-                img4:images[3],
-                img5:images[4],
-            });
-        } catch (error) {
-            console.log("Error al crear producto");
-        }
-    }
-
-    return (
-        <>
-            <Button variant="contained" onClick={handleClickOpen}>
-                Nuevo Producto
-                <Iconify icon="bi:plus" />
-            </Button>
-            <Dialog
-                open={open}
-                onClose={handleClose}
-                aria-labelledby="alert-dialog-title"
-                aria-describedby="alert-dialog-description"
-            >
-                <DialogTitle id="alert-dialog-title">
-                    Nuevo producto
-                </DialogTitle>
-                <DialogContent>
-                    <TextField placeholder='Nombre' sx={{ mb: 2 }} onChange={getNombre} fullWidth />
-                    <TextField placeholder='Descripcion' sx={{ mb: 2 }} onChange={getDescripcion} fullWidth />
-                    <TextField placeholder='Precio' sx={{ mb: 2 }} onChange={getPrecio} fullWidth />
-                    <TextField placeholder='Stock' sx={{ mb: 2 }} onChange={getStock} fullWidth />
-                    <TextField placeholder='Categoria' sx={{ mb: 2 }} onChange={getCategoria} fullWidth />
-                    <ImageUploader images={images} setImages={setImages}/>
-                </DialogContent>
-                <DialogActions>
-                    <Button onClick={handleClose}>Cancelar</Button>
-                    <Button onClick={() => { createProduct(); handleClose(); }} autoFocus>
-                        Confirmar
-                    </Button>
-                </DialogActions>
-            </Dialog>
-        </>
-    );
+  return (
+    <>
+      <Button variant="contained" onClick={handleClickOpen}>
+        Nuevo Producto
+        <Iconify icon="bi:plus" />
+      </Button>
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">Nuevo producto</DialogTitle>
+        <DialogContent>
+          <TextField
+            variant="outlined"
+            label="Nombre"
+            sx={{ mb: 2, mt: 2 }}
+            onChange={getNombre}
+            fullWidth
+          />
+          <TextField
+            variant="outlined"
+            label="Description"
+            sx={{ mb: 2 }}
+            onChange={getDescripcion}
+            fullWidth
+          />
+          <TextField
+            variant="outlined"
+            type="number"
+            label="Precio"
+            sx={{ mb: 2 }}
+            onChange={getPrecio}
+            fullWidth
+          />
+          <TextField
+            variant="outlined"
+            type="number"
+            label="stock"
+            sx={{ mb: 2 }}
+            onChange={getStock}
+            fullWidth
+          />
+          <CategoryMenu onCategoryChange={setCategoria} />
+          <ImageUploader images={images} setImages={setImages} />
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose}>Cancelar</Button>
+          <Button
+            onClick={() => {
+              createProduct();
+              handleClose();
+            }}
+            autoFocus
+          >
+            Confirmar
+          </Button>
+        </DialogActions>
+      </Dialog>
+    </>
+  );
 }

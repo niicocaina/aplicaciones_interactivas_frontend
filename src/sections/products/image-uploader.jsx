@@ -1,25 +1,27 @@
 import axios from 'axios';
 import PropTypes from 'prop-types';
-import React, { useState } from 'react';
+import React from 'react';
 
 import { Box, Button } from '@mui/material';
 
 function ImageUploader({ images, setImages }) {
-
   const handleImageChange = async (e) => {
     const files = Array.from(e.target.files);
 
     const uploadPromises = files.map(async (file) => {
       const formData = new FormData();
-      formData.append("file", file);
-      formData.append("upload_preset", "aplicacionesInteractivas-img"); // Reemplaza con el nombre del upload preset de Cloudinary
+      formData.append('file', file);
+      formData.append('upload_preset', 'aplicacionesInteractivas-img'); // Reemplaza con el nombre del upload preset de Cloudinary
 
       try {
         // Hacer la solicitud de carga a Cloudinary
-        const response = await axios.post(`https://api.cloudinary.com/v1_1/dvs7zpy9d/image/upload`, formData); // Reemplaza TU_CLOUD_NAME con tu Cloud Name de Cloudinary
+        const response = await axios.post(
+          `https://api.cloudinary.com/v1_1/dvs7zpy9d/image/upload`,
+          formData
+        ); // Reemplaza TU_CLOUD_NAME con tu Cloud Name de Cloudinary
         return response.data.secure_url;
       } catch (error) {
-        console.error("Error al subir la imagen:", error);
+        console.error('Error al subir la imagen:', error);
         return null;
       }
     });

@@ -1,10 +1,9 @@
-import axios from 'axios';
-import * as React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
-import { IconButton} from '@mui/material';
+import { IconButton } from '@mui/material';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
@@ -12,8 +11,10 @@ import DialogContentText from '@mui/material/DialogContentText';
 
 import Iconify from 'src/components/iconify';
 
-export default function AlertDialog({id}) {
-  const [open, setOpen] = React.useState(false);
+import { deleteProduct } from './product-service';
+
+export default function AlertDialog({ id }) {
+  const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -23,17 +24,13 @@ export default function AlertDialog({id}) {
     setOpen(false);
   };
 
-  const deleteProduct = async () => {
-    try{
-      await axios.delete(`http://localhost:3000/products/${id}`);
-    }catch(error){
-      console.log("Error al eliminar producto");
-    }
-  }
-
   return (
     <>
-      <IconButton variant="outlined" onClick={handleClickOpen} sx={{ top: 16, ml: 1, background: "white", position: 'absolute', zIndex: 10 }}>
+      <IconButton
+        variant="outlined"
+        onClick={handleClickOpen}
+        sx={{ top: 16, ml: 1, background: 'white', position: 'absolute', zIndex: 10 }}
+      >
         <Iconify icon="mdi:trash" />
       </IconButton>
       <Dialog
@@ -42,9 +39,7 @@ export default function AlertDialog({id}) {
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <DialogTitle id="alert-dialog-title">
-          Seguro que quiere eliminar el producto?
-        </DialogTitle>
+        <DialogTitle id="alert-dialog-title">Seguro que quiere eliminar el producto?</DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
             La acción no podra ser deshecha una vez realizada.
@@ -52,7 +47,13 @@ export default function AlertDialog({id}) {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Cancelar</Button>
-          <Button onClick={() => {deleteProduct();handleClose()}} autoFocus>
+          <Button
+            onClick={() => {
+              deleteProduct(id);
+              handleClose();
+            }}
+            autoFocus
+          >
             Confirmar
           </Button>
         </DialogActions>
@@ -62,5 +63,5 @@ export default function AlertDialog({id}) {
 }
 
 AlertDialog.propTypes = {
-  id: PropTypes.string
+  id: PropTypes.string,
 };
