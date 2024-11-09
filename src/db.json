@@ -234,43 +234,21 @@
   ],
   "productBasket": [
     {
-      "id": "2",
-      "quantity": 4,
+      "id": "1",
+      "quantity": 2,
       "product": {
-        "productId": 26,
-        "name": "Zapatilla Deportiva CushionFlex",
-        "description": "Zapatilla deportiva con amortiguación superior",
-        "price": 87900,
-        "promotionalPrice": 82900,
-        "stock": 30,
+        "productId": 9,
+        "name": "Zapatilla Running GripTech",
+        "description": "Zapatilla con suela antideslizante",
+        "price": 89900,
+        "promotionalPrice": 79900,
+        "stock": 22,
         "featured": true,
         "category": {
-          "id": 3,
-          "name": "Deportiva"
+          "id": 1,
+          "name": "Running"
         },
-        "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/e2cf24d7a0c64a33b7ebae9000f43591_9366/Zapatillas_adi2000_Negro_GX4634_011_hover_standard.jpg",
-        "img2": null,
-        "img3": null,
-        "img4": null,
-        "img5": null
-      }
-    },
-    {
-      "id": "3",
-      "quantity": 4,
-      "product": {
-        "productId": 24,
-        "name": "Zapatilla Deportiva ErgoPro",
-        "description": "Zapatilla deportiva con diseño ergonómico",
-        "price": 94900,
-        "promotionalPrice": 0,
-        "stock": 25,
-        "featured": true,
-        "category": {
-          "id": 3,
-          "name": "Deportiva"
-        },
-        "img1": "https://assets.adidas.com/images/w_766,h_766,f_auto,q_auto,fl_lossy,c_fill,g_auto/1928e9f306654558851f1ae022af8f02_9366/zapatillas-samba-og.jpg",
+        "img1": "https://th.bing.com/th/id/OIP.-xHS2d9FjYaSzK79SLGt3gAAAA?rs=1&pid=ImgDetMain",
         "img2": null,
         "img3": null,
         "img4": null,

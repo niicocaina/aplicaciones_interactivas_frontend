@@ -18,7 +18,7 @@ const handleIncreaseQuantity = async (id, currentQuantity, onUpdate) => {
         });
         if (response.status === 200) {
             console.log("Cantidad aumentada");
-            onUpdate();
+            onUpdate;
         }   
     } catch (error) {
         console.error("Error para disminuir el producto", error);
@@ -38,7 +38,7 @@ const handleDecreaseQuantity = async (id, currentQuantity, onUpdate) => {
             });
             if (response.status === 200) {
                 console.log("Cantidad disminuida");
-                onUpdate();
+                onUpdate;
             }
         }
         else {
@@ -54,7 +54,7 @@ const handleRemoveProduct = async (id, onUpdate) => {
         const response = await axios.delete(`${baseUrl}/${id}`);
         if (response.status === 200) {
             console.log("Producto eliminado");
-            onUpdate();
+            onUpdate;
         }
     } catch (error) {
         console.log("el id pasado es: ", id)
