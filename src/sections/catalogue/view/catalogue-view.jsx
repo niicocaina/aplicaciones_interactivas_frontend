@@ -14,6 +14,8 @@ import ProductCard from '../product-card';
 import ProductSort from '../product-sort';
 import ProductFilters from '../product-filters';
 import { useParams } from 'react-router-dom';
+import CatalogueBanner from '../catalogue-banner';
+import FeaturedProductList from '../featured-list';
 // ----------------------------------------------------------------------
 
 export default function CatalogueView() {
@@ -23,7 +25,7 @@ export default function CatalogueView() {
   const { categoryId } = useParams();
 
   useEffect(() => {
-
+    
     if (categoryId) {
       axios.get("http://localhost:3000/products").then(response => setProducts(response.data.filter(item => String(item.category.id) == String(categoryId)))).then(setLoading(false)).catch(err => console.log(err))
   
@@ -42,28 +44,15 @@ export default function CatalogueView() {
   
   return (
     <Container>
-      <Typography variant="h4" sx={{ mb: 5 }}>
-        Products
-      </Typography>
+      <CatalogueBanner
+      title="CATÁLOGO"
+      subtitle="Chusmeá nuestra selección de productos y encontrá todo lo que buscás, ¡con promos y novedades imperdibles!"
+      bannerImageUrl="https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/if_w_gt_1920,w_1920/xcat_fw24_holiday_shoes_100_under_mh_lg_mw_d_dc3379f48d.jpg"
+      />
 
-      <Stack
-        direction="row"
-        alignItems="center"
-        flexWrap="wrap-reverse"
-        justifyContent="flex-end"
-        sx={{ mb: 5 }}
-      >
-        <Stack direction="row" spacing={1} flexShrink={0} sx={{ my: 1 }}>
-          <ProductFilters
-            openFilter={openFilter}
-            onOpenFilter={handleOpenFilter}
-            onCloseFilter={handleCloseFilter}
-          />
-
-          <ProductSort />
-        </Stack>
-      </Stack>
-
+      <br/>
+      <FeaturedProductList products={products.filter((item) => item.featured === true)} loading={loading}/>
+      <br/>
       <Grid container spacing={3}>
         {loading === true ? 
           <Card>
@@ -78,7 +67,7 @@ export default function CatalogueView() {
         </Card>
         : products.map((product) => (
           <Grid key={product.id} xs={12} sm={6} md={3}>
-            <ProductCard product={product} />
+            <ProductCard product={product} similarProducts={products.filter(item => item.category.id === product.category.id)}/>
           </Grid>
         ))}
       </Grid>
