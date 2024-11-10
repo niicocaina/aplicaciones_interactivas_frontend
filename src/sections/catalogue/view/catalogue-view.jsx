@@ -13,17 +13,18 @@ import axios from 'axios';
 import ProductCard from '../product-card';
 import ProductSort from '../product-sort';
 import ProductFilters from '../product-filters';
-
+import { useParams } from 'react-router-dom';
 // ----------------------------------------------------------------------
 
 export default function CatalogueView() {
   const [openFilter, setOpenFilter] = useState(false);
   const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState("true");
+  const [loading, setLoading] = useState(true);
+  const { categoryId } = useParams();
 
   useEffect(() => {
-    axios.get("http://localhost:3000/products").then(response => setProducts(response.data)).then(setLoading("false")).catch(err => console.log(err))
-  },[])
+    axios.get("http://localhost:3000/products").then(response => setProducts(response.data.filter(item => String(item.category.id) == String(categoryId)))).then(setLoading(false)).catch(err => console.log(err))
+  },[categoryId])
 
   const handleOpenFilter = () => {
     setOpenFilter(true);
@@ -58,7 +59,7 @@ export default function CatalogueView() {
       </Stack>
 
       <Grid container spacing={3}>
-        {loading === "true" ? 
+        {loading === true ? 
           <Card>
           <Skeleton width={400} height={400} />
     

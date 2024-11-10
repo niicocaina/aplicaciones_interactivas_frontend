@@ -1,4 +1,19 @@
-{
+{   "categories":[
+    {
+      "id":"1",
+      "name":"Running"
+
+    },
+    {
+      "id":"2",
+      "name":"Casual"
+
+    },
+    {
+      "id":"3",
+      "name":"Deportivas"
+
+    }],
     "products": [
         {
           "productId": 3,
