@@ -1,6 +1,6 @@
 import axios from 'axios';
 import * as React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import Button from '@mui/material/Button';
@@ -15,22 +15,63 @@ import { handleIncreaseQuantity } from '../basket/product-Item-card';
 
 const handleAddToCart = async (product, productBasket, onUpdate) => {
   try {
-    const existingItem = productBasket.find(item => item.product.productId === newProduct.productId);
+    console.log("productBasket"+ productBasket)
+    if (!productBasket || productBasket.length === 0) {
+      // Crear el carrito con el primer producto
+      const response = await axios.post('http://localhost:3000/productBasket', {
+        id: 1,
+        quantity: 1,
+        product: {
+          productId: product.productId,
+          name: product.name,
+          description: product.description,
+          price: product.price,
+          promotionalPrice: product.promotionalPrice,
+          stock: product.stock,
+          featured: product.featured,
+          category: product.category,
+          img1: product.img1,
+          img2: product.img2,
+          img3: product.img3,
+          img4: product.img4,
+          img5: product.img5,
+        }
+      });
+      console.log('Carrito creado con el primer producto:', response.data);
+      alert('Producto agregado al carrito exitosamente');
+      onUpdate(); // Actualizar el estado del carrito
+      return;
+    }
+    const existingItem = productBasket.find(item => item.product.productId === product.productId);
     if(existingItem) {
-      handleIncreaseQuantity(productBasket.id, productBasket.quantity, onUpdate)
+      await handleIncreaseQuantity(existingItem.id, existingItem.quantity, onUpdate)
     }
     else{
+      const lastId = productBasket[productBasket.length - 1].id;
+      const newId = (Number(lastId) + 1).toString();
+
       const response = await axios.post('http://localhost:3000/productBasket', {
-        productId: product.productId,
-        name: product.name,
-        price: product.price,
-        promotionalPrice: product.promotionalPrice,
-        category: product.category,
-        img: product.img1,
-        quantity: 1 // Puedes ajustar la cantidad según la lógica que prefieras
+        id: newId,
+        quantity: 1,
+        product: {
+          productId: product.productId,
+          name: product.name,
+          description: product.description,
+          price: product.price,
+          promotionalPrice: product.promotionalPrice,
+          stock: product.stock,
+          featured: product.featured,
+          category: product.category,
+          img1: product.img1,
+          img2: product.img2,
+          img3: product.img3,
+          img4: product.img4,
+          img5: product.img5,
+        }
       });
       console.log('Producto agregado al carrito:', response.data);
       alert('Producto agregado al carrito exitosamente');
+      onUpdate;
     }
   } catch (error) {
     console.error('Error al agregar el producto al carrito:', error);
@@ -167,7 +208,7 @@ export default function ProductDetailsModal({product}) {
               ))}
             </Grid>
 
-            <Button variant="contained" color="primary" sx={{ mt: 3, width: '100%' }}>
+            <Button variant="contained" color="primary" sx={{ mt: 3, width: '100%' }} onClick={() => handleAddToCart(product, productBasket, fetchBasket)}>
               Agregar al Carrito
             </Button>
 
