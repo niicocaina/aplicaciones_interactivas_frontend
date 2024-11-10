@@ -53,7 +53,7 @@ export default function BasketView() {
                     <Grid container spacing={3} sx={{ marginTop: 2 }}>
                         {productBasket.map(item => (
                             <Grid item xs={12} key={item.id}>
-                                <ProductItemCard productBasket={item} onUpdate={fetchBasket} />
+                                <ProductItemCard productBasket={item} onUpdate={fetchBasket()} />
                             </Grid>
                         ))}
                     </Grid>

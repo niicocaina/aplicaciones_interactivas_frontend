@@ -8,29 +8,12 @@ import Typography from '@mui/material/Typography';
 
 import { fCurrency } from 'src/utils/format-number';
 
-import Label from 'src/components/label';
-import { ColorPreview } from 'src/components/color-utils';
+import EditProduct from './product-edit-modal';
+import DeleteAlert from './product-delete-alert';
 
 // ----------------------------------------------------------------------
 // ["default","primary","secondary","info","success","warning","error"]
 export default function ShopProductCard({ product }) {
-  const renderStatus = (
-    <Label
-      variant="filled"
-      color={(product.promotionalPrice !== 0) ? "success" : "default"}
-      sx={{
-        zIndex: 9,
-        top: 16,
-        right: 16,
-        position: 'absolute',
-        textTransform: 'uppercase',
-      }}
-    >
-    {(product.promotionalPrice !== 0) ? "Oferta" : ""}
-    {(product.featured === true) ? "Destacado" : ""}
-    </Label>
-  );
-
   const renderImg = (
     <Box
       component="img"
@@ -48,25 +31,20 @@ export default function ShopProductCard({ product }) {
 
   const renderPrice = (
     <Typography variant="subtitle1">
-      <Typography
-        component="span"
-        variant="body1"
-        sx={{
-          color: 'text.disabled',
-          textDecoration: 'line-through',
-        }}
-      >
-        {product.promotionalPrice !== 0 && fCurrency(product.price)}
+      <Typography component="span" variant="body1">
+        Precio: {fCurrency(product.price)}
       </Typography>
-      &nbsp;
-      {fCurrency(product.promotionalPrice ? product.promotionalPrice : product.price)}
+      {product.promotionalPrice && (
+        <Typography>Precio Especial: {fCurrency(product.promotionalPrice)}</Typography>
+      )}
     </Typography>
   );
 
   return (
     <Card>
       <Box sx={{ pt: '100%', position: 'relative' }}>
-        {renderStatus}
+        <EditProduct id={product.id} />
+        <DeleteAlert id={product.id} />
         {renderImg}
       </Box>
 

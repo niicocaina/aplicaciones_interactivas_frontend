@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useAuth } from 'src/hooks/useAuth'; 
 
 import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
@@ -22,15 +23,16 @@ import Iconify from 'src/components/iconify';
 
 // ----------------------------------------------------------------------
 
-export default function LoginView() {
+const LoginView = () => {
   const theme = useTheme();
-
-  const router = useRouter();
-
+  const navigate = useNavigate();  
+  const { login, error } = useAuth();  
   const [showPassword, setShowPassword] = useState(false);
+  const [email, setEmail] = useState("");  
+  const [password, setPassword] = useState(""); 
 
   const handleClick = () => {
-    router.push('/dashboard');
+    login(email, password);  
   };
 
   const renderForm = (
@@ -151,4 +153,6 @@ export default function LoginView() {
       </Stack>
     </Box>
   );
-}
+};
+
+export default LoginView;
