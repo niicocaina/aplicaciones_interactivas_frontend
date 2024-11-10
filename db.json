@@ -275,5 +275,29 @@
     ],
     "profile": {
       "name": "typicode"
-    }
+    },
+    "productBasket": [
+      {
+        "id": "1",
+        "quantity": 2,
+        "product": {
+          "productId": 9,
+          "name": "Zapatilla Running GripTech",
+          "description": "Zapatilla con suela antideslizante",
+          "price": 89900,
+          "promotionalPrice": 79900,
+          "stock": 22,
+          "featured": true,
+          "category": {
+            "id": 1,
+            "name": "Running"
+          },
+          "img1": "https://th.bing.com/th/id/OIP.-xHS2d9FjYaSzK79SLGt3gAAAA?rs=1&pid=ImgDetMain",
+          "img2": null,
+          "img3": null,
+          "img4": null,
+          "img5": null
+        }
+      }
+    ]
   }

@@ -14,6 +14,8 @@ import ProductCard from '../product-card';
 import ProductSort from '../product-sort';
 import ProductFilters from '../product-filters';
 import { useParams } from 'react-router-dom';
+
+import ProductCartWidget from '../../products/product-cart-widget'
 // ----------------------------------------------------------------------
 
 export default function CatalogueView() {
@@ -82,7 +84,7 @@ export default function CatalogueView() {
           </Grid>
         ))}
       </Grid>
-
+      <ProductCartWidget />
     </Container>
   );
 }

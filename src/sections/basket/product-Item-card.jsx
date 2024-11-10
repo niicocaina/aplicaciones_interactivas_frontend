@@ -6,7 +6,7 @@ import { Add as AddIcon, Remove as RemoveIcon, Delete as DeleteIcon } from '@mui
 
 const baseUrl = "http://localhost:3000/productBasket";
 
-const handleIncreaseQuantity = async (id, currentQuantity, onUpdate) => {
+export const handleIncreaseQuantity = async (id, currentQuantity, onUpdate) => {
     try {
         const getResponse = await axios.get(`${baseUrl}/${id}`);
         const productData = getResponse.data;
