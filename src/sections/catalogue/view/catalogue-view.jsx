@@ -23,8 +23,14 @@ export default function CatalogueView() {
   const { categoryId } = useParams();
 
   useEffect(() => {
-    axios.get("http://localhost:3000/products").then(response => setProducts(response.data.filter(item => String(item.category.id) == String(categoryId)))).then(setLoading(false)).catch(err => console.log(err))
-  },[categoryId])
+
+    if (categoryId) {
+      axios.get("http://localhost:3000/products").then(response => setProducts(response.data.filter(item => String(item.category.id) == String(categoryId)))).then(setLoading(false)).catch(err => console.log(err))
+  
+    } else {
+      axios.get("http://localhost:3000/products").then(response => setProducts(response.data)).then(setLoading(false)).catch(err => console.log(err))
+    }
+  }, [categoryId]);
 
   const handleOpenFilter = () => {
     setOpenFilter(true);

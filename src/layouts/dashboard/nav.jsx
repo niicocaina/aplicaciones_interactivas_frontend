@@ -54,7 +54,7 @@ export default function Nav({ openNav, onCloseNav }) {
     .then(response => 
       response.data.map(cat => ({
         title: cat.name,
-        path: "/catalogue/" + cat.id
+        path: `/catalogue/${cat.id}`
       }))
     ).then(data => {setCategories(data); setLoading(false)}).catch(err => console.log(err))
   },[])
@@ -93,7 +93,7 @@ export default function Nav({ openNav, onCloseNav }) {
   );
   const renderCategories = (
     <Stack component="nav" spacing={0.5} sx={{ px: 2 }}>
-      {loading == false ? categories.map((item) => (
+      {loading === false ? categories.map((item) => (
         <NavItem key={item.name} item={item} />
       )): "Loading"}
     </Stack>
