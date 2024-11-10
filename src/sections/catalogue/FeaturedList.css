@@ -1,0 +1,42 @@
+.featured-product-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%; /* Full width to match the banner */
+    max-width: 1200px; /* Optional max-width if you want to limit */
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  
+  .arrow {
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  
+  .product-container {
+    display: flex;
+    gap: 20px;
+    overflow: hidden;
+  }
+  
+  .product-card {
+    width: calc(100% / 4 - 20px); 
+    height: 150px; /* Reduce height to approximately half */
+    padding: 10px; /* Adjust padding for a smaller card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .product-card img {
+    width: 100%;
+    height: 100px; /* Set a fixed height for all images */
+    border-radius: 5px;
+  }
+  
