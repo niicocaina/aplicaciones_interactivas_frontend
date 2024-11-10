@@ -12,7 +12,34 @@ import Grid from '@mui/material/Grid';
 import {Typography, Box, Chip , ImageListItem, ImageList, Modal} from '@mui/material';
 import Iconify from 'src/components/iconify';
 import MediaList from './media-list';
+import { handleIncreaseQuantity } from '../basket/product-Item-card';
 
+const handleAddToCart = async (product, productBasket, onUpdate) => {
+  try {
+    const existingItem = productBasket.find(item => item.product.productId === newProduct.productId);
+    if(existingItem) {
+      handleIncreaseQuantity(productBasket.id, productBasket.quantity, onUpdate)
+    }
+    else{
+      const response = await axios.post('http://localhost:3000/productBasket', {
+        productId: product.productId,
+        name: product.name,
+        price: product.price,
+        promotionalPrice: product.promotionalPrice,
+        category: product.category,
+        img: product.img1,
+        quantity: 1 // Puedes ajustar la cantidad según la lógica que prefieras
+      });
+      console.log('Producto agregado al carrito:', response.data);
+      alert('Producto agregado al carrito exitosamente');
+    }
+  } catch (error) {
+    console.error('Error al agregar el producto al carrito:', error);
+    alert('Error al agregar el producto al carrito');
+  }
+};
+
+const baseUrl = "http://localhost:3000/productBasket";
 
 export default function ProductDetailsModal({product, similarProducts}) {
     const [open, setOpen] = useState(false);
@@ -51,6 +78,27 @@ export default function ProductDetailsModal({product, similarProducts}) {
     const getCategoria = (event) => {
         setCategoria(event.target.value);
     }
+
+    const [productBasket, setProductBasket] = useState([]);
+    const [loading, setLoading] = useState("true");
+
+    const fetchBasket = async () => {
+        try {
+            const response = await axios.get(baseUrl);
+            setProductBasket(response.data);
+            setLoading(false); // Cambia loading a false solo después de cargar los datos.
+        } catch (error) {
+            console.error("Error al cargar el carrito", error);
+            setLoading(false); // Asegura que loading también cambie a false en caso de error.
+        }
+    };
+
+    // Cargar el carrito cuando el componente se monta
+    useEffect(() => {
+        fetchBasket();
+    }, []);
+
+
     return (
       <>
   <Button variant="contained" onClick={handleClickOpen}>

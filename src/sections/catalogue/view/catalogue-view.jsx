@@ -16,6 +16,8 @@ import ProductFilters from '../product-filters';
 import { useParams } from 'react-router-dom';
 import CatalogueBanner from '../catalogue-banner';
 import FeaturedProductList from '../featured-list';
+
+import ProductCartWidget from '../../products/product-cart-widget'
 // ----------------------------------------------------------------------
 
 export default function CatalogueView() {
@@ -71,7 +73,7 @@ export default function CatalogueView() {
           </Grid>
         ))}
       </Grid>
-
+      <ProductCartWidget />
     </Container>
   );
 }
