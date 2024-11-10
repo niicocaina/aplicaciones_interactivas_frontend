@@ -28,6 +28,8 @@ export default function CatalogueView() {
 
   useEffect(() => {
     
+    setProducts([]);
+    setLoading(true);
     if (categoryId) {
       axios.get("http://localhost:3000/products").then(response => setProducts(response.data.filter(item => String(item.category.id) == String(categoryId)))).then(setLoading(false)).catch(err => console.log(err))
   
