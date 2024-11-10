@@ -21,7 +21,7 @@ export const handleIncreaseQuantity = async (id, currentQuantity, onUpdate) => {
             onUpdate;
         }   
     } catch (error) {
-        console.error("Error para disminuir el producto", error);
+        console.error("Error para aumentar el producto", error);
     }
 };
 
