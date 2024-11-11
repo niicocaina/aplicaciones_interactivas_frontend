@@ -58,7 +58,7 @@ const baseUrl = "http://localhost:3000/productBasket";
 
 export default function ProductDetailsModal({product, similarProducts}) {
     const [open, setOpen] = useState(false);
-    const maxImages = [product.img1,product.img5,product.img3,product.img4,product.img2];
+    const maxImages = [product.img1,product.img5,product.img3,product.img4,product.img2].filter(img => img != "");
     const sizes = ["40","41","42"];
     const handleClickOpen = () => {
         setOpen(true);
