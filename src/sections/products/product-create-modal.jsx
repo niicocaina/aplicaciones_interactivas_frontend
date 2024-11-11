@@ -31,7 +31,7 @@ export default function AlertDialog({ onProductChange }) {
   const [nombre, setNombre] = useState('');
   const [descripcion, setDescripcion] = useState('');
   const [precio, setPrecio] = useState('');
-  const [precioDescuento, setPrecioDescuento] = useState('');
+  const [precioDescuento, setPrecioDescuento] = useState(0);
   const [stock, setStock] = useState('');
   const [categoria, setCategoria] = useState('');
 
