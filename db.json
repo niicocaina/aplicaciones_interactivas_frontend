@@ -209,7 +209,7 @@
       "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4ae48a5181474be19166ca2d80ad35fa_9366/Runfalcon_5_Running_Shoes_Grey_IE8819_HM1.jpg",
       "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5c2aff0508f34c6fa82a50c6c081f4bc_9366/Runfalcon_5_Running_Shoes_Grey_IE8819_HM3_hover.jpg",
       "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/132fab171a3440668c7101ca671819d7_9366/Runfalcon_5_Running_Shoes_Grey_IE8819_HM4.jpg",
-      "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/f170d8b2af054d06bcfcc22eb8a1d68a_9366/Runfalcon_5_Running_Shoes_Grey_IE8819_HM5.jpg",
+      "img4": null,
       "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/76ddd35b9d234aa186dff4dac68a6104_d98c/Runfalcon_5_Running_Shoes_Grey_IE8819_video.mp4"
     },
     {
@@ -231,6 +231,16 @@
       "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/6f76607b572048b69526ec16fc07b054_d98c/Supernova_Rise_Running_Shoes_Grey_ID8782_video.mp4"
     }
   ],
+  "user":{
+    "firstName":"Ivan",
+    "lastName":"Garcia",
+    "userName": "usuario_comun",
+    "email":"ivangarcia@gmail.com",
+    "password":"hola",
+    "role":"USER",
+    "birthDate": "2024-14-08"
+  }
+  ,
   "comments": [
     {
       "id": "1",

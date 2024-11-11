@@ -103,36 +103,6 @@ export default function ShopProductCard({ product, similarProducts }) {
     </Box>
   );
 
-  const renderVid = (
-    <Box
-    sx={{
-      top: 0,
-      width: 1,
-      height: 1,
-      objectFit: 'cover',
-      position: 'absolute',
-    }}
-    >
-    <video
-              src="https://assets.adidas.com/videos/ar_1,w_720,c_fill,q_auto,f_auto/4300d7b9187942e79a82a8ab010672d5_d98c/Samba_OG_Shoes_White_B75806_video.mp4"
-              autoPlay
-              muted
-              loop
-              playsInline
-              style={{ borderRadius: '10px', width: '100%' }}
-              preload="metadata"
-            >
-            <track
-            kind="captions"
-            src='messi'
-            srcLang="en"
-            label="English captions"
-            default
-          />
-          Your browser does not support the video tag.
-        </video>
-    </Box>
-  )
 
   const renderPrice = (
     <><Typography variant="subtitle1">

@@ -1,7 +1,7 @@
 import { Password } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
-
-const { createContext, useState, Children } = require("react");
+import { serviceLogin } from "src/services/authService";
+import { createContext, useState, Children } from "react";
 
 const AuthContext = createContext();
 export function AuthProvider ({children}){
@@ -24,7 +24,7 @@ export function AuthProvider ({children}){
         setUser(null);
         navigate("/login");
     };
-
+    login("","");
     return (
         <AuthContext.Provider value={{user, login, logout, error}}>
             {Children}

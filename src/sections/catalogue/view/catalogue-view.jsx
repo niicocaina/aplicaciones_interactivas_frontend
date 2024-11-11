@@ -55,8 +55,7 @@ export default function CatalogueView() {
       />
 
       <br/>
-      <FeaturedProductList products={products.filter((item) => item.featured === true)} loading={loading}/>
-      <br/>
+      
       <Grid container spacing={3}>
         {loading === true ? 
           <Card>
@@ -76,6 +75,9 @@ export default function CatalogueView() {
         ))}
       </Grid>
       <ProductCartWidget />
+      <br/>
+      <FeaturedProductList products={products.filter((item) => item.featured === true)} loading={loading}/>
+      <br/>
     </Container>
   );
 }
