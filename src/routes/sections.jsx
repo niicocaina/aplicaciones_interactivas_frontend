@@ -15,12 +15,13 @@ export const Page404 = lazy(() => import('src/pages/page-not-found'));
 
 // ----------------------------------------------------------------------
 
+const user = {"role":"admin"}
 export default function Router() {
   const routes = useRoutes([
     {
       element: (
         <DashboardLayout>
-          <CataloguePage/>
+          {user.role === "admin" ? <ProductsPage/>: <CataloguePage/>}
         </DashboardLayout>
       ),
       children: [

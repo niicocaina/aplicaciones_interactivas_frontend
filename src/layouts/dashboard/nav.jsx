@@ -35,7 +35,7 @@ const icon = (name) => (
 export default function Nav({ openNav, onCloseNav }) {
   const pathname = usePathname();
 
-  const [user, setUser] = useState({"role":"user"});
+  const [user, setUser] = useState({"role":"admin"});
   const [categories, setCategories] = useState(null);
   const [loading, setLoading] = useState(true);
 
