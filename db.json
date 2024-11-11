@@ -246,28 +246,5 @@
   "profile": {
     "name": "typicode"
   },
-  "productBasket": [
-    {
-      "id": "4",
-      "quantity": 1,
-      "product": {
-        "productId": 26,
-        "name": "Zapatilla RunFalcon 3",
-        "description": "Zapatilla deportiva con amortiguación superior",
-        "price": 87900,
-        "promotionalPrice": 82900,
-        "stock": 30,
-        "featured": false,
-        "category": {
-          "id": 3,
-          "name": "Deportiva"
-        },
-        "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/17d21769f92f4f009da3af3800df9320_9366/Runfalcon_3_Cloudfoam_Low_Running_Shoes_Black_HP7544_01_standard.jpg",
-        "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5be8c7db7f2541a1ac06af3800e43cf1_9366/Runfalcon_3_Cloudfoam_Low_Running_Shoes_Black_HP7544_02_standard_hover.jpg",
-        "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4c57f28bab4c414bb422af3800e4468a_9366/Runfalcon_3_Cloudfoam_Low_Running_Shoes_Black_HP7544_03_standard.jpg",
-        "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/a501584bfe2c4883a40faf3800e44eb9_9366/Runfalcon_3_Cloudfoam_Low_Running_Shoes_Black_HP7544_04_standard.jpg",
-        "img5": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9da7a73600224919b16baf3800e43422_9366/Runfalcon_3_Cloudfoam_Low_Running_Shoes_Black_HP7544_06_standard.jpg"
-      }
-    }
-  ]
+  "productBasket": []
 }

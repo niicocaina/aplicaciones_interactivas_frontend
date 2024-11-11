@@ -15,7 +15,7 @@ import Iconify from 'src/components/iconify';
 import MediaList from './media-list';
 import { handleIncreaseQuantity } from '../basket/product-Item-card';
 
-const handleAddToCart = async (product, productBasket, onUpdate) => {
+export const handleAddToCart = async (product, productBasket, onUpdate) => {
   try {
     console.log("productBasket"+ productBasket)
     if (!productBasket || productBasket.length === 0) {
@@ -23,24 +23,10 @@ const handleAddToCart = async (product, productBasket, onUpdate) => {
       const response = await axios.post('http://localhost:3000/productBasket', {
         id: "1",
         quantity: 1,
-        product: {
-          productId: product.productId,
-          name: product.name,
-          description: product.description,
-          price: product.price,
-          promotionalPrice: product.promotionalPrice,
-          stock: product.stock,
-          featured: product.featured,
-          category: product.category,
-          img1: product.img1,
-          img2: product.img2,
-          img3: product.img3,
-          img4: product.img4,
-          img5: product.img5,
-        }
+        product: product
       });
       console.log('Carrito creado con el primer producto:', response.data);
-      alert('Producto agregado al carrito exitosamente');
+      alert('Producto agregado al carrito exitosamente (se creo el primer elemento)');
       onUpdate(); // Actualizar el estado del carrito
       return;
     }
@@ -56,21 +42,7 @@ const handleAddToCart = async (product, productBasket, onUpdate) => {
       const response = await axios.post('http://localhost:3000/productBasket', {
         id: newId,
         quantity: 1,
-        product: {
-          productId: product.productId,
-          name: product.name,
-          description: product.description,
-          price: product.price,
-          promotionalPrice: product.promotionalPrice,
-          stock: product.stock,
-          featured: product.featured,
-          category: product.category,
-          img1: product.img1,
-          img2: product.img2,
-          img3: product.img3,
-          img4: product.img4,
-          img5: product.img5,
-        }
+        product: product
       });
       console.log('Producto agregado al carrito:', response.data);
       alert('Producto agregado al carrito exitosamente');

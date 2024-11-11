@@ -148,7 +148,7 @@ export default function ShopProductCard({ product, similarProducts }) {
       </Typography>
       &nbsp;
       {fCurrency(product.promotionalPrice ? product.promotionalPrice : product.price)}
-    </Typography><Button onClick={() => alert("Producto añadido")}><Iconify icon="mdi:cart" /></Button></>
+      </Typography></>
   );
 
   return (
