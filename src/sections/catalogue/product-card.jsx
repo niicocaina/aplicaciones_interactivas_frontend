@@ -31,10 +31,13 @@ const HoverImage = ({ img1, img2, alt }) => {
       onMouseEnter={() => setCurrentSrc(img2)}
       onMouseLeave={() => setCurrentSrc(img1)}
       sx={{
-        width: '100%',
-        height: 'auto',
+        top: 0,
+        width: 1,
+        height: 1,
         borderRadius: '10px',
-        transition: 'all 0.3s ease-in-out'
+        transition: 'all 0.3s ease-in-out',
+        objectFit: 'cover',
+        position: 'absolute',
       }}
     />
   );
