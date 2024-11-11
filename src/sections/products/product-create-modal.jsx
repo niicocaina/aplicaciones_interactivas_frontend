@@ -1,4 +1,3 @@
-import axios from 'axios';
 import * as React from 'react';
 import { useState } from 'react';
 
@@ -11,10 +10,12 @@ import DialogContent from '@mui/material/DialogContent';
 
 import Iconify from 'src/components/iconify';
 
+import PropTypes from 'prop-types';
 import ImageUploader from './image-uploader';
 import CategoryMenu from './category-menu';
+import { createProduct } from './product-service';
 
-export default function AlertDialog() {
+export default function AlertDialog({ onProductChange }) {
   const [open, setOpen] = useState(false);
   const [images, setImages] = useState([]);
 
@@ -30,6 +31,7 @@ export default function AlertDialog() {
   const [nombre, setNombre] = useState('');
   const [descripcion, setDescripcion] = useState('');
   const [precio, setPrecio] = useState('');
+  const [precioDescuento, setPrecioDescuento] = useState('');
   const [stock, setStock] = useState('');
   const [categoria, setCategoria] = useState('');
 
@@ -49,26 +51,8 @@ export default function AlertDialog() {
     setStock(event.target.value);
   };
 
-  const createProduct = async () => {
-    try {
-      await axios.post('http://localhost:3000/products', {
-        name: nombre,
-        description: descripcion,
-        price: precio,
-        stock,
-        category: {
-          id: categoria.id,
-          name: categoria.label,
-        },
-        img1: images[0] || null,
-        img2: images[1] || null,
-        img3: images[2] || null,
-        img4: images[3] || null,
-        img5: images[4] || null,
-      });
-    } catch (error) {
-      console.log('Error al crear producto');
-    }
+  const getPrecioDescuento = (event) => {
+    setPrecioDescuento(event.target.value);
   };
 
   return (
@@ -110,6 +94,14 @@ export default function AlertDialog() {
           <TextField
             variant="outlined"
             type="number"
+            label="Precio Promocional"
+            sx={{ mb: 2 }}
+            onChange={getPrecioDescuento}
+            fullWidth
+          />
+          <TextField
+            variant="outlined"
+            type="number"
             label="stock"
             sx={{ mb: 2 }}
             onChange={getStock}
@@ -122,7 +114,19 @@ export default function AlertDialog() {
           <Button onClick={handleClose}>Cancelar</Button>
           <Button
             onClick={() => {
-              createProduct();
+              createProduct({
+                name: nombre,
+                description: descripcion,
+                price: precio,
+                promotionalPrice: precioDescuento,
+                stock,
+                category: categoria,
+                img1: images[0] || null,
+                img2: images[1] || null,
+                img3: images[2] || null,
+                img4: images[3] || null,
+                img5: images[4] || null,
+              }).then(() => onProductChange());
               handleClose();
             }}
             autoFocus
@@ -134,3 +138,7 @@ export default function AlertDialog() {
     </>
   );
 }
+
+AlertDialog.propTypes = {
+  onProductChange: PropTypes.func.isRequired,
+};

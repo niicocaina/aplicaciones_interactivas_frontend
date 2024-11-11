@@ -13,7 +13,7 @@ import Iconify from 'src/components/iconify';
 
 import { deleteProduct } from './product-service';
 
-export default function AlertDialog({ id }) {
+export default function AlertDialog({ id, onChange }) {
   const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
@@ -49,7 +49,7 @@ export default function AlertDialog({ id }) {
           <Button onClick={handleClose}>Cancelar</Button>
           <Button
             onClick={() => {
-              deleteProduct(id);
+              deleteProduct(id).then(() => onChange());
               handleClose();
             }}
             autoFocus
@@ -64,4 +64,5 @@ export default function AlertDialog({ id }) {
 
 AlertDialog.propTypes = {
   id: PropTypes.string,
+  onChange: PropTypes.func,
 };

@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { useState, useEffect } from 'react';
 
 import Stack from '@mui/material/Stack';
@@ -11,6 +10,7 @@ import ProductSort from '../product-sort';
 import ProductFilters from '../product-filters';
 import CreateProduct from '../product-create-modal';
 import ProductCartWidget from '../product-cart-widget';
+import { getProducts } from '../product-service';
 
 // ----------------------------------------------------------------------
 
@@ -18,12 +18,16 @@ export default function ProductsView() {
   const [openFilter, setOpenFilter] = useState(false);
   const [products, setProducts] = useState([]);
 
+  // Función para cargar productos desde la api
+  const loadProducts = async () => {
+    const productos = await getProducts();
+    setProducts(productos);
+  };
+
+  // Cargar productos solo al montar el componente
   useEffect(() => {
-    axios
-      .get('http://localhost:3000/products')
-      .then((response) => setProducts(response.data))
-      .catch((err) => console.log(err));
-  }, [products]);
+    loadProducts();
+  }, []);
 
   const handleOpenFilter = () => {
     setOpenFilter(true);
@@ -47,7 +51,7 @@ export default function ProductsView() {
         sx={{ mb: 5 }}
       >
         <Stack direction="row" spacing={1} flexShrink={0} sx={{ my: 1 }}>
-          <CreateProduct />
+          <CreateProduct onProductChange={loadProducts} />
           <ProductFilters
             openFilter={openFilter}
             onOpenFilter={handleOpenFilter}
@@ -60,7 +64,7 @@ export default function ProductsView() {
       <Grid container spacing={3}>
         {products.map((product) => (
           <Grid key={product.id} xs={12} sm={6} md={3}>
-            <ProductCard product={product} />
+            <ProductCard product={product} onProductChange={loadProducts} />
           </Grid>
         ))}
       </Grid>

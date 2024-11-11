@@ -1,4 +1,3 @@
-import axios from 'axios';
 import * as React from 'react';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
@@ -14,44 +13,29 @@ import Iconify from 'src/components/iconify';
 import CategoryMenu from './category-menu';
 import { getProduct, updateProduct } from './product-service';
 
-export default function AlertDialog({ id }) {
+export default function AlertDialog({ id, onChange }) {
   const [open, setOpen] = useState(false);
-  const [producto, setProducto] = useState({});
-  const [nombre, setNombre] = useState('Nombre');
-  const [descripcion, setDescripcion] = useState('Descripción');
-  const [precio, setPrecio] = useState('Precio');
-  const [stock, setStock] = useState('stock');
-  const [categoria, setCategoria] = useState('Categoria');
+  const [nombre, setNombre] = useState('');
+  const [descripcion, setDescripcion] = useState('');
+  const [precio, setPrecio] = useState('');
+  const [precioDescuento, setPrecioDescuento] = useState('');
+  const [stock, setStock] = useState('');
+  const [categoria, setCategoria] = useState('');
 
   const handleClickOpen = () => {
     getProduct(id).then((product) => {
-        setProducto(product);
-        setNombre(product.name || 'Nombre');
-        setDescripcion(product.description || 'Descripción');
-        setPrecio(product.price || 'Precio');
-        setStock(product.stock || 'Stock');
-        setCategoria(product.category || 'Categoria');
+      setNombre(product.name);
+      setDescripcion(product.description);
+      setPrecio(product.price);
+      setPrecioDescuento(product.promotionalPrice > 0 ? product.promotionalPrice : '');
+      setStock(product.stock);
+      setCategoria(product.category);
     });
     setOpen(true);
   };
 
   const handleClose = () => {
     setOpen(false);
-  };
-
-  const updateProducts = async () => {
-    try {
-      const response = await axios.patch(`http://localhost:3000/products/${id}`, {
-        name: nombre,
-        description: descripcion,
-        price: precio,
-        stock,
-        category: categoria,
-      });
-      console.log(response);
-    } catch (error) {
-      console.log('Error al actualizar producto');
-    }
   };
 
   const handleChangeNombre = (event) => {
@@ -64,6 +48,10 @@ export default function AlertDialog({ id }) {
 
   const handleChangePrecio = (event) => {
     setPrecio(event.target.value);
+  };
+
+  const handleChangePrecioDescuento = (event) => {
+    setPrecioDescuento(event.target.value);
   };
 
   const handleChangeStock = (event) => {
@@ -95,8 +83,8 @@ export default function AlertDialog({ id }) {
             fullWidth
           />
           <TextField
-            value={descripcion}
             label="Descripcion"
+            value={descripcion}
             sx={{ mb: 2 }}
             onChange={handleChangeDescripcion}
             fullWidth
@@ -107,6 +95,14 @@ export default function AlertDialog({ id }) {
             value={precio}
             sx={{ mb: 2 }}
             onChange={handleChangePrecio}
+            fullWidth
+          />
+          <TextField
+            type="number"
+            label="Precio Promocional"
+            value={precioDescuento}
+            sx={{ mb: 2 }}
+            onChange={handleChangePrecioDescuento}
             fullWidth
           />
           <TextField
@@ -124,7 +120,14 @@ export default function AlertDialog({ id }) {
           <Button onClick={handleClose}>Cancelar</Button>
           <Button
             onClick={() => {
-              updateProducts();
+              updateProduct(id, {
+                name: nombre,
+                description: descripcion,
+                price: precio,
+                promotionalPrice: precioDescuento,
+                stock,
+                category: categoria,
+              }).then(() => onChange());
               handleClose();
             }}
             autoFocus
@@ -139,4 +142,5 @@ export default function AlertDialog({ id }) {
 
 AlertDialog.propTypes = {
   id: PropTypes.string,
+  onChange: PropTypes.func,
 };

@@ -13,7 +13,7 @@ import DeleteAlert from './product-delete-alert';
 
 // ----------------------------------------------------------------------
 // ["default","primary","secondary","info","success","warning","error"]
-export default function ShopProductCard({ product }) {
+export default function ShopProductCard({ product, onProductChange }) {
   const renderImg = (
     <Box
       component="img"
@@ -34,7 +34,7 @@ export default function ShopProductCard({ product }) {
       <Typography component="span" variant="body1">
         Precio: {fCurrency(product.price)}
       </Typography>
-      {product.promotionalPrice && (
+      {product.promotionalPrice > 0 && (
         <Typography>Precio Especial: {fCurrency(product.promotionalPrice)}</Typography>
       )}
     </Typography>
@@ -43,8 +43,8 @@ export default function ShopProductCard({ product }) {
   return (
     <Card>
       <Box sx={{ pt: '100%', position: 'relative' }}>
-        <EditProduct id={product.id} />
-        <DeleteAlert id={product.id} />
+        <EditProduct id={product.id} onChange={onProductChange} />
+        <DeleteAlert id={product.id} onChange={onProductChange} />
         {renderImg}
       </Box>
 
@@ -63,4 +63,5 @@ export default function ShopProductCard({ product }) {
 
 ShopProductCard.propTypes = {
   product: PropTypes.object,
+  onProductChange: PropTypes.func.isRequired,
 };
