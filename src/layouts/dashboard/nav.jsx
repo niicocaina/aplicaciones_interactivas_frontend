@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import Box from '@mui/material/Box';
@@ -23,10 +23,21 @@ import Scrollbar from 'src/components/scrollbar';
 import { NAV } from './config-layout';
 import navConfig from './config-navigation';
 
+import axios from 'axios';
+import SvgColor from 'src/components/svg-color';
+
 // ----------------------------------------------------------------------
+
+const icon = (name) => (
+  <SvgColor src={`/assets/icons/navbar/${name}.svg`} sx={{ width: 1, height: 1 }} />
+  );
 
 export default function Nav({ openNav, onCloseNav }) {
   const pathname = usePathname();
+
+  const [user, setUser] = useState({"role":"user"});
+  const [categories, setCategories] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const upLg = useResponsive('up', 'lg');
 
@@ -36,6 +47,17 @@ export default function Nav({ openNav, onCloseNav }) {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
+
+    
+  useEffect(() => {
+    axios.get("http://localhost:3000/categories")
+    .then(response => 
+      response.data.map(cat => ({
+        title: cat.name,
+        path: `/catalogue/${cat.id}`
+      }))
+    ).then(data => {setCategories(data); setLoading(false)}).catch(err => console.log(err))
+  },[])
 
   const renderAccount = (
     <Box
@@ -66,38 +88,18 @@ export default function Nav({ openNav, onCloseNav }) {
     <Stack component="nav" spacing={0.5} sx={{ px: 2 }}>
       {navConfig.map((item) => (
         <NavItem key={item.title} item={item} />
-      ))}
+      )) }
+    </Stack>
+  );
+  const renderCategories = (
+    <Stack component="nav" spacing={0.5} sx={{ px: 2 }}>
+    <NavItem key={"Catalogo"} item={{"path":"/catalogue/","title":"Zapatillas"}} />
+      {loading === false ? categories.map((item) => (
+        <NavItem key={item.name} item={item} />
+      )): "Loading"}
     </Stack>
   );
 
-  const renderUpgrade = (
-    <Box sx={{ px: 2.5, pb: 3, mt: 10 }}>
-      <Stack alignItems="center" spacing={3} sx={{ pt: 5, borderRadius: 2, position: 'relative' }}>
-        <Box
-          component="img"
-          src="/assets/illustrations/illustration_avatar.png"
-          sx={{ width: 100, position: 'absolute', top: -50 }}
-        />
-
-        <Box sx={{ textAlign: 'center' }}>
-          <Typography variant="h6">Get more?</Typography>
-
-          <Typography variant="body2" sx={{ color: 'text.secondary', mt: 1 }}>
-            From only $69
-          </Typography>
-        </Box>
-
-        <Button
-          href="https://material-ui.com/store/items/minimal-dashboard/"
-          target="_blank"
-          variant="contained"
-          color="inherit"
-        >
-          Upgrade to Pro
-        </Button>
-      </Stack>
-    </Box>
-  );
 
   const renderContent = (
     <Scrollbar
@@ -114,11 +116,10 @@ export default function Nav({ openNav, onCloseNav }) {
 
       {renderAccount}
 
-      {renderMenu}
+      {user.role === "admin" ? renderMenu : renderCategories}
 
       <Box sx={{ flexGrow: 1 }} />
 
-      {renderUpgrade}
     </Scrollbar>
   );
 
@@ -191,7 +192,7 @@ function NavItem({ item }) {
       }}
     >
       <Box component="span" sx={{ width: 24, height: 24, mr: 2 }}>
-        {item.icon}
+        {item.icon ? item.icon : ""}
       </Box>
 
       <Box component="span">{item.title} </Box>

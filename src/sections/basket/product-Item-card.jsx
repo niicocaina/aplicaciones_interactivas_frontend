@@ -6,7 +6,7 @@ import { Add as AddIcon, Remove as RemoveIcon, Delete as DeleteIcon } from '@mui
 
 const baseUrl = "http://localhost:3000/productBasket";
 
-const handleIncreaseQuantity = async (id, currentQuantity, onUpdate) => {
+export const handleIncreaseQuantity = async (id, currentQuantity, onUpdate) => {
     try {
         const getResponse = await axios.get(`${baseUrl}/${id}`);
         const productData = getResponse.data;
@@ -21,7 +21,7 @@ const handleIncreaseQuantity = async (id, currentQuantity, onUpdate) => {
             onUpdate;
         }   
     } catch (error) {
-        console.error("Error para disminuir el producto", error);
+        console.error("Error para aumentar el producto", error);
     }
 };
 

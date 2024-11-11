@@ -14,6 +14,7 @@ import Label from 'src/components/label';
 import { ColorPreview } from 'src/components/color-utils';
 import { Button } from '@mui/material';
 import ProductDetailsModal from './product-details-modal';
+import Iconify from 'src/components/iconify';
 
 // ----------------------------------------------------------------------
 // ["default","primary","secondary","info","success","warning","error"]
@@ -49,7 +50,11 @@ HoverImage.defaultProps = {
   alt: 'Product image'
 };
 
-export default function ShopProductCard({ product }) {
+export default function ShopProductCard({ product, similarProducts }) {
+
+  console.log(product)
+  similarProducts = similarProducts.filter(item => item.productId !== product.productId);
+
   const renderSale = (
     <Label
       variant="filled"
@@ -93,8 +98,8 @@ export default function ShopProductCard({ product }) {
       }}
     >
     <HoverImage img1={product.img1}
-    img2="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/a384cde536db45e7acb1af560093e048_9366/Zapatillas_Web_Boost_Negro_HQ4155_01_standard.jpg" 
-    alt="Example product"/>
+    img2={product.img2 ? product.img2 : product.img1} 
+    alt="Imagen no definida"/>
     </Box>
   );
 
@@ -130,7 +135,7 @@ export default function ShopProductCard({ product }) {
   )
 
   const renderPrice = (
-    <Typography variant="subtitle1">
+    <><Typography variant="subtitle1">
       <Typography
         component="span"
         variant="body1"
@@ -143,14 +148,14 @@ export default function ShopProductCard({ product }) {
       </Typography>
       &nbsp;
       {fCurrency(product.promotionalPrice ? product.promotionalPrice : product.price)}
-    </Typography>
+      </Typography></>
   );
 
   return (
     <Card>
       <Box sx={{ pt: '100%', position: 'relative' }}>
         {(product.promotionalPrice === 0 && product.featured === false) ? "" : (product.featured === true) ? renderFeatured : renderSale}
-        {product.featured === true ? renderVid : renderImg}
+        {renderImg}
       </Box>
 
       <Stack spacing={2} sx={{ p: 3 }}>
@@ -162,7 +167,7 @@ export default function ShopProductCard({ product }) {
           {renderPrice}
         </Stack>
 
-        <ProductDetailsModal product = {product}/>
+        <ProductDetailsModal product = {product} similarProducts = {similarProducts}/>
       </Stack>
     </Card>
   );
@@ -170,4 +175,5 @@ export default function ShopProductCard({ product }) {
 
 ShopProductCard.propTypes = {
   product: PropTypes.object,
+  similarProducts: PropTypes.array
 };
