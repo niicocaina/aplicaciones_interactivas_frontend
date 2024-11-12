@@ -4,7 +4,7 @@ import { serviceLogin } from 'src/services/authService';
 import AuthContext, { AuthProvider } from 'src/context/authContext';
 
 import Box from '@mui/material/Box';
-import Link from '@mui/material/Link';
+import {Link} from 'react-router-dom';
 import Card from '@mui/material/Card';
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
@@ -118,9 +118,9 @@ const LoginView = () => {
           <Typography variant="h4">Sign in</Typography>
 
           <Typography variant="body2" sx={{ mt: 2, mb: 5 }}>
-            Don’t have an account?
-            <Link variant="subtitle2" sx={{ ml: 0.5 }}>
-              Get started
+            No tenes cuenta?
+            <Link variant="subtitle2" sx={{ ml: 0.5 }} to="/crear-cuenta">
+              Crear una
             </Link>
           </Typography>
 

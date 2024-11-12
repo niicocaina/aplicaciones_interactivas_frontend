@@ -57,6 +57,7 @@ export default function Nav({ openNav, onCloseNav }) {
         path: `/catalogue/${cat.id}`
       }))
     ).then(data => {setCategories(data); setLoading(false)}).catch(err => console.log(err))
+
   },[])
 
   const renderAccount = (
@@ -116,7 +117,7 @@ export default function Nav({ openNav, onCloseNav }) {
 
       {renderAccount}
 
-      {user.role === "admin" ? renderMenu : renderCategories}
+      {user.role === "ADMIN" ? renderMenu : renderCategories}
 
       <Box sx={{ flexGrow: 1 }} />
 
