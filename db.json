@@ -233,6 +233,7 @@
   ],
   "user": [
     {
+      "id": "1",
       "firstName": "Ivan",
       "lastName": "Garcia",
       "userName": "usuario_comun",
@@ -242,6 +243,7 @@
       "birthDate": "2024-14-08"
     },
     {
+      "id": "2",
       "firstName": "Nicolas",
       "lastName": "Blanco",
       "userName": "nicocaina",
@@ -1589,43 +1591,1389 @@
         "id": "f5d7"
       },
       "id": "2da1"
-    }
-  ],
-  "productBasket": [
+    },
     {
-      "id": "1",
-      "quantity": 2,
-      "product": {
-        "productId": 5,
-        "name": "Zapatilla Finesse",
-        "description": "Zapatilla transpirable para running",
-        "price": 79900,
-        "promotionalPrice": 74900,
-        "stock": 30,
-        "featured": true,
+      "0": {
+        "productId": 9,
+        "name": "Zapatilla SprintStart",
+        "description": "Zapatilla con suela antideslizante",
+        "price": 89900,
+        "promotionalPrice": 79900,
+        "stock": 22,
+        "featured": false,
         "category": {
           "id": 1,
           "name": "Running"
         },
-        "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3c1cdb0c61ce409b88268f831510197c_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM1.jpg",
-        "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d6bc5abb00aa44afa5c659c551385460_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM3_hover.jpg",
-        "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5c2b175d4cfa48b4aa9d3a577498d3c8_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM4.jpg",
-        "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b80e82f5d4774fb385a05fd05bc29ea4_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM5.jpg",
-        "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/5f36748a5890430cb55d73657dc69448_d98c/Adizero_Finesse_Running_Shoes_Black_IF1151_video.mp4"
-      }
+        "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/61b11947db2c40f2b02c27c18bc19678_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM1.jpg",
+        "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4b8acdd2dbbd401086af631f3dbf8f2b_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM3_hover.jpg",
+        "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9c2b45940abd4c52b326cda7f86da8d8_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM4.jpg",
+        "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/fdcfde84ebad49a59fbccdbd61479df5_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM5.jpg",
+        "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/e839c40e44df482ba2948a5f2dfd38ad_d98c/Adizero_Sprintstar_Shoes_Orange_IF1233_video.mp4"
+      },
+      "1": {
+        "0": {
+          "productId": 5,
+          "name": "Zapatilla Finesse",
+          "description": "Zapatilla transpirable para running",
+          "price": 79900,
+          "promotionalPrice": 74900,
+          "stock": 30,
+          "featured": true,
+          "category": {
+            "id": 1,
+            "name": "Running"
+          },
+          "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3c1cdb0c61ce409b88268f831510197c_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM1.jpg",
+          "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d6bc5abb00aa44afa5c659c551385460_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM3_hover.jpg",
+          "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5c2b175d4cfa48b4aa9d3a577498d3c8_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM4.jpg",
+          "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b80e82f5d4774fb385a05fd05bc29ea4_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM5.jpg",
+          "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/5f36748a5890430cb55d73657dc69448_d98c/Adizero_Finesse_Running_Shoes_Black_IF1151_video.mp4"
+        },
+        "id": "6831"
+      },
+      "2": {
+        "0": {
+          "productId": 9,
+          "name": "Zapatilla SprintStart",
+          "description": "Zapatilla con suela antideslizante",
+          "price": 89900,
+          "promotionalPrice": 79900,
+          "stock": 22,
+          "featured": false,
+          "category": {
+            "id": 1,
+            "name": "Running"
+          },
+          "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/61b11947db2c40f2b02c27c18bc19678_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM1.jpg",
+          "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4b8acdd2dbbd401086af631f3dbf8f2b_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM3_hover.jpg",
+          "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9c2b45940abd4c52b326cda7f86da8d8_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM4.jpg",
+          "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/fdcfde84ebad49a59fbccdbd61479df5_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM5.jpg",
+          "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/e839c40e44df482ba2948a5f2dfd38ad_d98c/Adizero_Sprintstar_Shoes_Orange_IF1233_video.mp4"
+        },
+        "1": {
+          "0": {
+            "productId": 5,
+            "name": "Zapatilla Finesse",
+            "description": "Zapatilla transpirable para running",
+            "price": 79900,
+            "promotionalPrice": 74900,
+            "stock": 30,
+            "featured": true,
+            "category": {
+              "id": 1,
+              "name": "Running"
+            },
+            "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3c1cdb0c61ce409b88268f831510197c_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM1.jpg",
+            "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d6bc5abb00aa44afa5c659c551385460_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM3_hover.jpg",
+            "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5c2b175d4cfa48b4aa9d3a577498d3c8_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM4.jpg",
+            "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b80e82f5d4774fb385a05fd05bc29ea4_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM5.jpg",
+            "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/5f36748a5890430cb55d73657dc69448_d98c/Adizero_Finesse_Running_Shoes_Black_IF1151_video.mp4"
+          },
+          "id": "6831"
+        },
+        "id": "29ae"
+      },
+      "3": {
+        "0": {
+          "productId": 18,
+          "name": "Zapatilla SL 72",
+          "description": "Zapatilla casual resistente al agua",
+          "price": 84900,
+          "promotionalPrice": 0,
+          "stock": 12,
+          "featured": true,
+          "category": {
+            "id": 2,
+            "name": "Casual"
+          },
+          "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/90c3be6f7da944acb62f979c335ce45f_9366/SL_72_OG_Shoes_Green_IF1938_01_standard.jpg",
+          "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/ec0282c9855f402488d39a949a66addc_9366/SL_72_OG_Shoes_Green_IF1938_02_standard_hover.jpg",
+          "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/92fd77d2428e4c0aa31b9779f0e11101_9366/SL_72_OG_Shoes_Green_IF1938_03_standard.jpg",
+          "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/7308545395664ebea992e5c94aa668ca_9366/SL_72_OG_Shoes_Green_IF1938_04_standard.jpg",
+          "img5": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/07930842f14f45d298aa279bf1c7cea7_9366/SL_72_OG_Shoes_Green_IF1938_05_standard.jpg"
+        },
+        "1": {
+          "0": {
+            "productId": 5,
+            "name": "Zapatilla Finesse",
+            "description": "Zapatilla transpirable para running",
+            "price": 79900,
+            "promotionalPrice": 74900,
+            "stock": 30,
+            "featured": true,
+            "category": {
+              "id": 1,
+              "name": "Running"
+            },
+            "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3c1cdb0c61ce409b88268f831510197c_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM1.jpg",
+            "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d6bc5abb00aa44afa5c659c551385460_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM3_hover.jpg",
+            "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5c2b175d4cfa48b4aa9d3a577498d3c8_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM4.jpg",
+            "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b80e82f5d4774fb385a05fd05bc29ea4_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM5.jpg",
+            "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/5f36748a5890430cb55d73657dc69448_d98c/Adizero_Finesse_Running_Shoes_Black_IF1151_video.mp4"
+          },
+          "id": "6831"
+        },
+        "2": {
+          "0": {
+            "productId": 9,
+            "name": "Zapatilla SprintStart",
+            "description": "Zapatilla con suela antideslizante",
+            "price": 89900,
+            "promotionalPrice": 79900,
+            "stock": 22,
+            "featured": false,
+            "category": {
+              "id": 1,
+              "name": "Running"
+            },
+            "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/61b11947db2c40f2b02c27c18bc19678_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM1.jpg",
+            "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4b8acdd2dbbd401086af631f3dbf8f2b_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM3_hover.jpg",
+            "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9c2b45940abd4c52b326cda7f86da8d8_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM4.jpg",
+            "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/fdcfde84ebad49a59fbccdbd61479df5_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM5.jpg",
+            "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/e839c40e44df482ba2948a5f2dfd38ad_d98c/Adizero_Sprintstar_Shoes_Orange_IF1233_video.mp4"
+          },
+          "1": {
+            "0": {
+              "productId": 5,
+              "name": "Zapatilla Finesse",
+              "description": "Zapatilla transpirable para running",
+              "price": 79900,
+              "promotionalPrice": 74900,
+              "stock": 30,
+              "featured": true,
+              "category": {
+                "id": 1,
+                "name": "Running"
+              },
+              "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3c1cdb0c61ce409b88268f831510197c_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM1.jpg",
+              "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d6bc5abb00aa44afa5c659c551385460_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM3_hover.jpg",
+              "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5c2b175d4cfa48b4aa9d3a577498d3c8_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM4.jpg",
+              "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b80e82f5d4774fb385a05fd05bc29ea4_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM5.jpg",
+              "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/5f36748a5890430cb55d73657dc69448_d98c/Adizero_Finesse_Running_Shoes_Black_IF1151_video.mp4"
+            },
+            "id": "6831"
+          },
+          "id": "29ae"
+        },
+        "id": "29d3"
+      },
+      "4": {
+        "0": {
+          "productId": 29,
+          "name": "Zapatilla RunFalcon 5",
+          "description": "Zapatilla deportiva para entrenamientos intensos",
+          "price": 99900,
+          "promotionalPrice": 0,
+          "stock": 12,
+          "featured": false,
+          "category": {
+            "id": 3,
+            "name": "Deportiva"
+          },
+          "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4ae48a5181474be19166ca2d80ad35fa_9366/Runfalcon_5_Running_Shoes_Grey_IE8819_HM1.jpg",
+          "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5c2aff0508f34c6fa82a50c6c081f4bc_9366/Runfalcon_5_Running_Shoes_Grey_IE8819_HM3_hover.jpg",
+          "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/132fab171a3440668c7101ca671819d7_9366/Runfalcon_5_Running_Shoes_Grey_IE8819_HM4.jpg",
+          "img4": null,
+          "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/76ddd35b9d234aa186dff4dac68a6104_d98c/Runfalcon_5_Running_Shoes_Grey_IE8819_video.mp4"
+        },
+        "1": {
+          "0": {
+            "productId": 5,
+            "name": "Zapatilla Finesse",
+            "description": "Zapatilla transpirable para running",
+            "price": 79900,
+            "promotionalPrice": 74900,
+            "stock": 30,
+            "featured": true,
+            "category": {
+              "id": 1,
+              "name": "Running"
+            },
+            "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3c1cdb0c61ce409b88268f831510197c_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM1.jpg",
+            "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d6bc5abb00aa44afa5c659c551385460_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM3_hover.jpg",
+            "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5c2b175d4cfa48b4aa9d3a577498d3c8_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM4.jpg",
+            "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b80e82f5d4774fb385a05fd05bc29ea4_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM5.jpg",
+            "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/5f36748a5890430cb55d73657dc69448_d98c/Adizero_Finesse_Running_Shoes_Black_IF1151_video.mp4"
+          },
+          "id": "6831"
+        },
+        "2": {
+          "0": {
+            "productId": 9,
+            "name": "Zapatilla SprintStart",
+            "description": "Zapatilla con suela antideslizante",
+            "price": 89900,
+            "promotionalPrice": 79900,
+            "stock": 22,
+            "featured": false,
+            "category": {
+              "id": 1,
+              "name": "Running"
+            },
+            "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/61b11947db2c40f2b02c27c18bc19678_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM1.jpg",
+            "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4b8acdd2dbbd401086af631f3dbf8f2b_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM3_hover.jpg",
+            "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9c2b45940abd4c52b326cda7f86da8d8_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM4.jpg",
+            "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/fdcfde84ebad49a59fbccdbd61479df5_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM5.jpg",
+            "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/e839c40e44df482ba2948a5f2dfd38ad_d98c/Adizero_Sprintstar_Shoes_Orange_IF1233_video.mp4"
+          },
+          "1": {
+            "0": {
+              "productId": 5,
+              "name": "Zapatilla Finesse",
+              "description": "Zapatilla transpirable para running",
+              "price": 79900,
+              "promotionalPrice": 74900,
+              "stock": 30,
+              "featured": true,
+              "category": {
+                "id": 1,
+                "name": "Running"
+              },
+              "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3c1cdb0c61ce409b88268f831510197c_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM1.jpg",
+              "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d6bc5abb00aa44afa5c659c551385460_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM3_hover.jpg",
+              "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5c2b175d4cfa48b4aa9d3a577498d3c8_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM4.jpg",
+              "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b80e82f5d4774fb385a05fd05bc29ea4_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM5.jpg",
+              "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/5f36748a5890430cb55d73657dc69448_d98c/Adizero_Finesse_Running_Shoes_Black_IF1151_video.mp4"
+            },
+            "id": "6831"
+          },
+          "id": "29ae"
+        },
+        "3": {
+          "0": {
+            "productId": 18,
+            "name": "Zapatilla SL 72",
+            "description": "Zapatilla casual resistente al agua",
+            "price": 84900,
+            "promotionalPrice": 0,
+            "stock": 12,
+            "featured": true,
+            "category": {
+              "id": 2,
+              "name": "Casual"
+            },
+            "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/90c3be6f7da944acb62f979c335ce45f_9366/SL_72_OG_Shoes_Green_IF1938_01_standard.jpg",
+            "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/ec0282c9855f402488d39a949a66addc_9366/SL_72_OG_Shoes_Green_IF1938_02_standard_hover.jpg",
+            "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/92fd77d2428e4c0aa31b9779f0e11101_9366/SL_72_OG_Shoes_Green_IF1938_03_standard.jpg",
+            "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/7308545395664ebea992e5c94aa668ca_9366/SL_72_OG_Shoes_Green_IF1938_04_standard.jpg",
+            "img5": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/07930842f14f45d298aa279bf1c7cea7_9366/SL_72_OG_Shoes_Green_IF1938_05_standard.jpg"
+          },
+          "1": {
+            "0": {
+              "productId": 5,
+              "name": "Zapatilla Finesse",
+              "description": "Zapatilla transpirable para running",
+              "price": 79900,
+              "promotionalPrice": 74900,
+              "stock": 30,
+              "featured": true,
+              "category": {
+                "id": 1,
+                "name": "Running"
+              },
+              "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3c1cdb0c61ce409b88268f831510197c_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM1.jpg",
+              "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d6bc5abb00aa44afa5c659c551385460_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM3_hover.jpg",
+              "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5c2b175d4cfa48b4aa9d3a577498d3c8_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM4.jpg",
+              "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b80e82f5d4774fb385a05fd05bc29ea4_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM5.jpg",
+              "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/5f36748a5890430cb55d73657dc69448_d98c/Adizero_Finesse_Running_Shoes_Black_IF1151_video.mp4"
+            },
+            "id": "6831"
+          },
+          "2": {
+            "0": {
+              "productId": 9,
+              "name": "Zapatilla SprintStart",
+              "description": "Zapatilla con suela antideslizante",
+              "price": 89900,
+              "promotionalPrice": 79900,
+              "stock": 22,
+              "featured": false,
+              "category": {
+                "id": 1,
+                "name": "Running"
+              },
+              "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/61b11947db2c40f2b02c27c18bc19678_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM1.jpg",
+              "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4b8acdd2dbbd401086af631f3dbf8f2b_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM3_hover.jpg",
+              "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9c2b45940abd4c52b326cda7f86da8d8_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM4.jpg",
+              "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/fdcfde84ebad49a59fbccdbd61479df5_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM5.jpg",
+              "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/e839c40e44df482ba2948a5f2dfd38ad_d98c/Adizero_Sprintstar_Shoes_Orange_IF1233_video.mp4"
+            },
+            "1": {
+              "0": {
+                "productId": 5,
+                "name": "Zapatilla Finesse",
+                "description": "Zapatilla transpirable para running",
+                "price": 79900,
+                "promotionalPrice": 74900,
+                "stock": 30,
+                "featured": true,
+                "category": {
+                  "id": 1,
+                  "name": "Running"
+                },
+                "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3c1cdb0c61ce409b88268f831510197c_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM1.jpg",
+                "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d6bc5abb00aa44afa5c659c551385460_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM3_hover.jpg",
+                "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5c2b175d4cfa48b4aa9d3a577498d3c8_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM4.jpg",
+                "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b80e82f5d4774fb385a05fd05bc29ea4_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM5.jpg",
+                "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/5f36748a5890430cb55d73657dc69448_d98c/Adizero_Finesse_Running_Shoes_Black_IF1151_video.mp4"
+              },
+              "id": "6831"
+            },
+            "id": "29ae"
+          },
+          "id": "29d3"
+        },
+        "id": "f5d7"
+      },
+      "id": "90fa"
+    },
+    {
+      "0": {
+        "productId": 9,
+        "name": "Zapatilla SprintStart",
+        "description": "Zapatilla con suela antideslizante",
+        "price": 89900,
+        "promotionalPrice": 79900,
+        "stock": 22,
+        "featured": false,
+        "category": {
+          "id": 1,
+          "name": "Running"
+        },
+        "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/61b11947db2c40f2b02c27c18bc19678_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM1.jpg",
+        "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4b8acdd2dbbd401086af631f3dbf8f2b_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM3_hover.jpg",
+        "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9c2b45940abd4c52b326cda7f86da8d8_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM4.jpg",
+        "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/fdcfde84ebad49a59fbccdbd61479df5_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM5.jpg",
+        "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/e839c40e44df482ba2948a5f2dfd38ad_d98c/Adizero_Sprintstar_Shoes_Orange_IF1233_video.mp4"
+      },
+      "1": {
+        "0": {
+          "productId": 5,
+          "name": "Zapatilla Finesse",
+          "description": "Zapatilla transpirable para running",
+          "price": 79900,
+          "promotionalPrice": 74900,
+          "stock": 30,
+          "featured": true,
+          "category": {
+            "id": 1,
+            "name": "Running"
+          },
+          "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3c1cdb0c61ce409b88268f831510197c_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM1.jpg",
+          "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d6bc5abb00aa44afa5c659c551385460_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM3_hover.jpg",
+          "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5c2b175d4cfa48b4aa9d3a577498d3c8_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM4.jpg",
+          "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b80e82f5d4774fb385a05fd05bc29ea4_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM5.jpg",
+          "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/5f36748a5890430cb55d73657dc69448_d98c/Adizero_Finesse_Running_Shoes_Black_IF1151_video.mp4"
+        },
+        "id": "6831"
+      },
+      "2": {
+        "0": {
+          "productId": 9,
+          "name": "Zapatilla SprintStart",
+          "description": "Zapatilla con suela antideslizante",
+          "price": 89900,
+          "promotionalPrice": 79900,
+          "stock": 22,
+          "featured": false,
+          "category": {
+            "id": 1,
+            "name": "Running"
+          },
+          "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/61b11947db2c40f2b02c27c18bc19678_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM1.jpg",
+          "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4b8acdd2dbbd401086af631f3dbf8f2b_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM3_hover.jpg",
+          "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9c2b45940abd4c52b326cda7f86da8d8_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM4.jpg",
+          "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/fdcfde84ebad49a59fbccdbd61479df5_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM5.jpg",
+          "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/e839c40e44df482ba2948a5f2dfd38ad_d98c/Adizero_Sprintstar_Shoes_Orange_IF1233_video.mp4"
+        },
+        "1": {
+          "0": {
+            "productId": 5,
+            "name": "Zapatilla Finesse",
+            "description": "Zapatilla transpirable para running",
+            "price": 79900,
+            "promotionalPrice": 74900,
+            "stock": 30,
+            "featured": true,
+            "category": {
+              "id": 1,
+              "name": "Running"
+            },
+            "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3c1cdb0c61ce409b88268f831510197c_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM1.jpg",
+            "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d6bc5abb00aa44afa5c659c551385460_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM3_hover.jpg",
+            "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5c2b175d4cfa48b4aa9d3a577498d3c8_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM4.jpg",
+            "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b80e82f5d4774fb385a05fd05bc29ea4_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM5.jpg",
+            "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/5f36748a5890430cb55d73657dc69448_d98c/Adizero_Finesse_Running_Shoes_Black_IF1151_video.mp4"
+          },
+          "id": "6831"
+        },
+        "id": "29ae"
+      },
+      "3": {
+        "0": {
+          "productId": 18,
+          "name": "Zapatilla SL 72",
+          "description": "Zapatilla casual resistente al agua",
+          "price": 84900,
+          "promotionalPrice": 0,
+          "stock": 12,
+          "featured": true,
+          "category": {
+            "id": 2,
+            "name": "Casual"
+          },
+          "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/90c3be6f7da944acb62f979c335ce45f_9366/SL_72_OG_Shoes_Green_IF1938_01_standard.jpg",
+          "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/ec0282c9855f402488d39a949a66addc_9366/SL_72_OG_Shoes_Green_IF1938_02_standard_hover.jpg",
+          "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/92fd77d2428e4c0aa31b9779f0e11101_9366/SL_72_OG_Shoes_Green_IF1938_03_standard.jpg",
+          "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/7308545395664ebea992e5c94aa668ca_9366/SL_72_OG_Shoes_Green_IF1938_04_standard.jpg",
+          "img5": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/07930842f14f45d298aa279bf1c7cea7_9366/SL_72_OG_Shoes_Green_IF1938_05_standard.jpg"
+        },
+        "1": {
+          "0": {
+            "productId": 5,
+            "name": "Zapatilla Finesse",
+            "description": "Zapatilla transpirable para running",
+            "price": 79900,
+            "promotionalPrice": 74900,
+            "stock": 30,
+            "featured": true,
+            "category": {
+              "id": 1,
+              "name": "Running"
+            },
+            "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3c1cdb0c61ce409b88268f831510197c_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM1.jpg",
+            "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d6bc5abb00aa44afa5c659c551385460_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM3_hover.jpg",
+            "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5c2b175d4cfa48b4aa9d3a577498d3c8_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM4.jpg",
+            "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b80e82f5d4774fb385a05fd05bc29ea4_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM5.jpg",
+            "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/5f36748a5890430cb55d73657dc69448_d98c/Adizero_Finesse_Running_Shoes_Black_IF1151_video.mp4"
+          },
+          "id": "6831"
+        },
+        "2": {
+          "0": {
+            "productId": 9,
+            "name": "Zapatilla SprintStart",
+            "description": "Zapatilla con suela antideslizante",
+            "price": 89900,
+            "promotionalPrice": 79900,
+            "stock": 22,
+            "featured": false,
+            "category": {
+              "id": 1,
+              "name": "Running"
+            },
+            "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/61b11947db2c40f2b02c27c18bc19678_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM1.jpg",
+            "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4b8acdd2dbbd401086af631f3dbf8f2b_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM3_hover.jpg",
+            "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9c2b45940abd4c52b326cda7f86da8d8_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM4.jpg",
+            "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/fdcfde84ebad49a59fbccdbd61479df5_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM5.jpg",
+            "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/e839c40e44df482ba2948a5f2dfd38ad_d98c/Adizero_Sprintstar_Shoes_Orange_IF1233_video.mp4"
+          },
+          "1": {
+            "0": {
+              "productId": 5,
+              "name": "Zapatilla Finesse",
+              "description": "Zapatilla transpirable para running",
+              "price": 79900,
+              "promotionalPrice": 74900,
+              "stock": 30,
+              "featured": true,
+              "category": {
+                "id": 1,
+                "name": "Running"
+              },
+              "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3c1cdb0c61ce409b88268f831510197c_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM1.jpg",
+              "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d6bc5abb00aa44afa5c659c551385460_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM3_hover.jpg",
+              "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5c2b175d4cfa48b4aa9d3a577498d3c8_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM4.jpg",
+              "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b80e82f5d4774fb385a05fd05bc29ea4_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM5.jpg",
+              "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/5f36748a5890430cb55d73657dc69448_d98c/Adizero_Finesse_Running_Shoes_Black_IF1151_video.mp4"
+            },
+            "id": "6831"
+          },
+          "id": "29ae"
+        },
+        "id": "29d3"
+      },
+      "4": {
+        "0": {
+          "productId": 29,
+          "name": "Zapatilla RunFalcon 5",
+          "description": "Zapatilla deportiva para entrenamientos intensos",
+          "price": 99900,
+          "promotionalPrice": 0,
+          "stock": 12,
+          "featured": false,
+          "category": {
+            "id": 3,
+            "name": "Deportiva"
+          },
+          "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4ae48a5181474be19166ca2d80ad35fa_9366/Runfalcon_5_Running_Shoes_Grey_IE8819_HM1.jpg",
+          "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5c2aff0508f34c6fa82a50c6c081f4bc_9366/Runfalcon_5_Running_Shoes_Grey_IE8819_HM3_hover.jpg",
+          "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/132fab171a3440668c7101ca671819d7_9366/Runfalcon_5_Running_Shoes_Grey_IE8819_HM4.jpg",
+          "img4": null,
+          "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/76ddd35b9d234aa186dff4dac68a6104_d98c/Runfalcon_5_Running_Shoes_Grey_IE8819_video.mp4"
+        },
+        "1": {
+          "0": {
+            "productId": 5,
+            "name": "Zapatilla Finesse",
+            "description": "Zapatilla transpirable para running",
+            "price": 79900,
+            "promotionalPrice": 74900,
+            "stock": 30,
+            "featured": true,
+            "category": {
+              "id": 1,
+              "name": "Running"
+            },
+            "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3c1cdb0c61ce409b88268f831510197c_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM1.jpg",
+            "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d6bc5abb00aa44afa5c659c551385460_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM3_hover.jpg",
+            "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5c2b175d4cfa48b4aa9d3a577498d3c8_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM4.jpg",
+            "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b80e82f5d4774fb385a05fd05bc29ea4_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM5.jpg",
+            "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/5f36748a5890430cb55d73657dc69448_d98c/Adizero_Finesse_Running_Shoes_Black_IF1151_video.mp4"
+          },
+          "id": "6831"
+        },
+        "2": {
+          "0": {
+            "productId": 9,
+            "name": "Zapatilla SprintStart",
+            "description": "Zapatilla con suela antideslizante",
+            "price": 89900,
+            "promotionalPrice": 79900,
+            "stock": 22,
+            "featured": false,
+            "category": {
+              "id": 1,
+              "name": "Running"
+            },
+            "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/61b11947db2c40f2b02c27c18bc19678_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM1.jpg",
+            "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4b8acdd2dbbd401086af631f3dbf8f2b_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM3_hover.jpg",
+            "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9c2b45940abd4c52b326cda7f86da8d8_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM4.jpg",
+            "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/fdcfde84ebad49a59fbccdbd61479df5_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM5.jpg",
+            "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/e839c40e44df482ba2948a5f2dfd38ad_d98c/Adizero_Sprintstar_Shoes_Orange_IF1233_video.mp4"
+          },
+          "1": {
+            "0": {
+              "productId": 5,
+              "name": "Zapatilla Finesse",
+              "description": "Zapatilla transpirable para running",
+              "price": 79900,
+              "promotionalPrice": 74900,
+              "stock": 30,
+              "featured": true,
+              "category": {
+                "id": 1,
+                "name": "Running"
+              },
+              "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3c1cdb0c61ce409b88268f831510197c_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM1.jpg",
+              "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d6bc5abb00aa44afa5c659c551385460_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM3_hover.jpg",
+              "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5c2b175d4cfa48b4aa9d3a577498d3c8_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM4.jpg",
+              "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b80e82f5d4774fb385a05fd05bc29ea4_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM5.jpg",
+              "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/5f36748a5890430cb55d73657dc69448_d98c/Adizero_Finesse_Running_Shoes_Black_IF1151_video.mp4"
+            },
+            "id": "6831"
+          },
+          "id": "29ae"
+        },
+        "3": {
+          "0": {
+            "productId": 18,
+            "name": "Zapatilla SL 72",
+            "description": "Zapatilla casual resistente al agua",
+            "price": 84900,
+            "promotionalPrice": 0,
+            "stock": 12,
+            "featured": true,
+            "category": {
+              "id": 2,
+              "name": "Casual"
+            },
+            "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/90c3be6f7da944acb62f979c335ce45f_9366/SL_72_OG_Shoes_Green_IF1938_01_standard.jpg",
+            "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/ec0282c9855f402488d39a949a66addc_9366/SL_72_OG_Shoes_Green_IF1938_02_standard_hover.jpg",
+            "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/92fd77d2428e4c0aa31b9779f0e11101_9366/SL_72_OG_Shoes_Green_IF1938_03_standard.jpg",
+            "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/7308545395664ebea992e5c94aa668ca_9366/SL_72_OG_Shoes_Green_IF1938_04_standard.jpg",
+            "img5": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/07930842f14f45d298aa279bf1c7cea7_9366/SL_72_OG_Shoes_Green_IF1938_05_standard.jpg"
+          },
+          "1": {
+            "0": {
+              "productId": 5,
+              "name": "Zapatilla Finesse",
+              "description": "Zapatilla transpirable para running",
+              "price": 79900,
+              "promotionalPrice": 74900,
+              "stock": 30,
+              "featured": true,
+              "category": {
+                "id": 1,
+                "name": "Running"
+              },
+              "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3c1cdb0c61ce409b88268f831510197c_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM1.jpg",
+              "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d6bc5abb00aa44afa5c659c551385460_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM3_hover.jpg",
+              "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5c2b175d4cfa48b4aa9d3a577498d3c8_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM4.jpg",
+              "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b80e82f5d4774fb385a05fd05bc29ea4_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM5.jpg",
+              "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/5f36748a5890430cb55d73657dc69448_d98c/Adizero_Finesse_Running_Shoes_Black_IF1151_video.mp4"
+            },
+            "id": "6831"
+          },
+          "2": {
+            "0": {
+              "productId": 9,
+              "name": "Zapatilla SprintStart",
+              "description": "Zapatilla con suela antideslizante",
+              "price": 89900,
+              "promotionalPrice": 79900,
+              "stock": 22,
+              "featured": false,
+              "category": {
+                "id": 1,
+                "name": "Running"
+              },
+              "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/61b11947db2c40f2b02c27c18bc19678_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM1.jpg",
+              "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4b8acdd2dbbd401086af631f3dbf8f2b_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM3_hover.jpg",
+              "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9c2b45940abd4c52b326cda7f86da8d8_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM4.jpg",
+              "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/fdcfde84ebad49a59fbccdbd61479df5_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM5.jpg",
+              "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/e839c40e44df482ba2948a5f2dfd38ad_d98c/Adizero_Sprintstar_Shoes_Orange_IF1233_video.mp4"
+            },
+            "1": {
+              "0": {
+                "productId": 5,
+                "name": "Zapatilla Finesse",
+                "description": "Zapatilla transpirable para running",
+                "price": 79900,
+                "promotionalPrice": 74900,
+                "stock": 30,
+                "featured": true,
+                "category": {
+                  "id": 1,
+                  "name": "Running"
+                },
+                "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3c1cdb0c61ce409b88268f831510197c_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM1.jpg",
+                "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d6bc5abb00aa44afa5c659c551385460_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM3_hover.jpg",
+                "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5c2b175d4cfa48b4aa9d3a577498d3c8_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM4.jpg",
+                "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b80e82f5d4774fb385a05fd05bc29ea4_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM5.jpg",
+                "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/5f36748a5890430cb55d73657dc69448_d98c/Adizero_Finesse_Running_Shoes_Black_IF1151_video.mp4"
+              },
+              "id": "6831"
+            },
+            "id": "29ae"
+          },
+          "id": "29d3"
+        },
+        "id": "f5d7"
+      },
+      "id": "95e6"
+    },
+    {
+      "0": {
+        "productId": 9,
+        "name": "Zapatilla SprintStart",
+        "description": "Zapatilla con suela antideslizante",
+        "price": 89900,
+        "promotionalPrice": 79900,
+        "stock": 22,
+        "featured": false,
+        "category": {
+          "id": 1,
+          "name": "Running"
+        },
+        "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/61b11947db2c40f2b02c27c18bc19678_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM1.jpg",
+        "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4b8acdd2dbbd401086af631f3dbf8f2b_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM3_hover.jpg",
+        "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9c2b45940abd4c52b326cda7f86da8d8_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM4.jpg",
+        "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/fdcfde84ebad49a59fbccdbd61479df5_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM5.jpg",
+        "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/e839c40e44df482ba2948a5f2dfd38ad_d98c/Adizero_Sprintstar_Shoes_Orange_IF1233_video.mp4"
+      },
+      "1": {
+        "0": {
+          "productId": 5,
+          "name": "Zapatilla Finesse",
+          "description": "Zapatilla transpirable para running",
+          "price": 79900,
+          "promotionalPrice": 74900,
+          "stock": 30,
+          "featured": true,
+          "category": {
+            "id": 1,
+            "name": "Running"
+          },
+          "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3c1cdb0c61ce409b88268f831510197c_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM1.jpg",
+          "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d6bc5abb00aa44afa5c659c551385460_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM3_hover.jpg",
+          "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5c2b175d4cfa48b4aa9d3a577498d3c8_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM4.jpg",
+          "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b80e82f5d4774fb385a05fd05bc29ea4_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM5.jpg",
+          "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/5f36748a5890430cb55d73657dc69448_d98c/Adizero_Finesse_Running_Shoes_Black_IF1151_video.mp4"
+        },
+        "id": "6831"
+      },
+      "2": {
+        "0": {
+          "productId": 9,
+          "name": "Zapatilla SprintStart",
+          "description": "Zapatilla con suela antideslizante",
+          "price": 89900,
+          "promotionalPrice": 79900,
+          "stock": 22,
+          "featured": false,
+          "category": {
+            "id": 1,
+            "name": "Running"
+          },
+          "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/61b11947db2c40f2b02c27c18bc19678_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM1.jpg",
+          "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4b8acdd2dbbd401086af631f3dbf8f2b_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM3_hover.jpg",
+          "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9c2b45940abd4c52b326cda7f86da8d8_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM4.jpg",
+          "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/fdcfde84ebad49a59fbccdbd61479df5_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM5.jpg",
+          "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/e839c40e44df482ba2948a5f2dfd38ad_d98c/Adizero_Sprintstar_Shoes_Orange_IF1233_video.mp4"
+        },
+        "1": {
+          "0": {
+            "productId": 5,
+            "name": "Zapatilla Finesse",
+            "description": "Zapatilla transpirable para running",
+            "price": 79900,
+            "promotionalPrice": 74900,
+            "stock": 30,
+            "featured": true,
+            "category": {
+              "id": 1,
+              "name": "Running"
+            },
+            "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3c1cdb0c61ce409b88268f831510197c_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM1.jpg",
+            "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d6bc5abb00aa44afa5c659c551385460_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM3_hover.jpg",
+            "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5c2b175d4cfa48b4aa9d3a577498d3c8_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM4.jpg",
+            "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b80e82f5d4774fb385a05fd05bc29ea4_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM5.jpg",
+            "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/5f36748a5890430cb55d73657dc69448_d98c/Adizero_Finesse_Running_Shoes_Black_IF1151_video.mp4"
+          },
+          "id": "6831"
+        },
+        "id": "29ae"
+      },
+      "3": {
+        "0": {
+          "productId": 18,
+          "name": "Zapatilla SL 72",
+          "description": "Zapatilla casual resistente al agua",
+          "price": 84900,
+          "promotionalPrice": 0,
+          "stock": 12,
+          "featured": true,
+          "category": {
+            "id": 2,
+            "name": "Casual"
+          },
+          "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/90c3be6f7da944acb62f979c335ce45f_9366/SL_72_OG_Shoes_Green_IF1938_01_standard.jpg",
+          "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/ec0282c9855f402488d39a949a66addc_9366/SL_72_OG_Shoes_Green_IF1938_02_standard_hover.jpg",
+          "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/92fd77d2428e4c0aa31b9779f0e11101_9366/SL_72_OG_Shoes_Green_IF1938_03_standard.jpg",
+          "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/7308545395664ebea992e5c94aa668ca_9366/SL_72_OG_Shoes_Green_IF1938_04_standard.jpg",
+          "img5": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/07930842f14f45d298aa279bf1c7cea7_9366/SL_72_OG_Shoes_Green_IF1938_05_standard.jpg"
+        },
+        "1": {
+          "0": {
+            "productId": 5,
+            "name": "Zapatilla Finesse",
+            "description": "Zapatilla transpirable para running",
+            "price": 79900,
+            "promotionalPrice": 74900,
+            "stock": 30,
+            "featured": true,
+            "category": {
+              "id": 1,
+              "name": "Running"
+            },
+            "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3c1cdb0c61ce409b88268f831510197c_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM1.jpg",
+            "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d6bc5abb00aa44afa5c659c551385460_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM3_hover.jpg",
+            "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5c2b175d4cfa48b4aa9d3a577498d3c8_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM4.jpg",
+            "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b80e82f5d4774fb385a05fd05bc29ea4_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM5.jpg",
+            "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/5f36748a5890430cb55d73657dc69448_d98c/Adizero_Finesse_Running_Shoes_Black_IF1151_video.mp4"
+          },
+          "id": "6831"
+        },
+        "2": {
+          "0": {
+            "productId": 9,
+            "name": "Zapatilla SprintStart",
+            "description": "Zapatilla con suela antideslizante",
+            "price": 89900,
+            "promotionalPrice": 79900,
+            "stock": 22,
+            "featured": false,
+            "category": {
+              "id": 1,
+              "name": "Running"
+            },
+            "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/61b11947db2c40f2b02c27c18bc19678_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM1.jpg",
+            "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4b8acdd2dbbd401086af631f3dbf8f2b_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM3_hover.jpg",
+            "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9c2b45940abd4c52b326cda7f86da8d8_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM4.jpg",
+            "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/fdcfde84ebad49a59fbccdbd61479df5_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM5.jpg",
+            "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/e839c40e44df482ba2948a5f2dfd38ad_d98c/Adizero_Sprintstar_Shoes_Orange_IF1233_video.mp4"
+          },
+          "1": {
+            "0": {
+              "productId": 5,
+              "name": "Zapatilla Finesse",
+              "description": "Zapatilla transpirable para running",
+              "price": 79900,
+              "promotionalPrice": 74900,
+              "stock": 30,
+              "featured": true,
+              "category": {
+                "id": 1,
+                "name": "Running"
+              },
+              "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3c1cdb0c61ce409b88268f831510197c_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM1.jpg",
+              "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d6bc5abb00aa44afa5c659c551385460_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM3_hover.jpg",
+              "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5c2b175d4cfa48b4aa9d3a577498d3c8_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM4.jpg",
+              "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b80e82f5d4774fb385a05fd05bc29ea4_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM5.jpg",
+              "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/5f36748a5890430cb55d73657dc69448_d98c/Adizero_Finesse_Running_Shoes_Black_IF1151_video.mp4"
+            },
+            "id": "6831"
+          },
+          "id": "29ae"
+        },
+        "id": "29d3"
+      },
+      "4": {
+        "0": {
+          "productId": 29,
+          "name": "Zapatilla RunFalcon 5",
+          "description": "Zapatilla deportiva para entrenamientos intensos",
+          "price": 99900,
+          "promotionalPrice": 0,
+          "stock": 12,
+          "featured": false,
+          "category": {
+            "id": 3,
+            "name": "Deportiva"
+          },
+          "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4ae48a5181474be19166ca2d80ad35fa_9366/Runfalcon_5_Running_Shoes_Grey_IE8819_HM1.jpg",
+          "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5c2aff0508f34c6fa82a50c6c081f4bc_9366/Runfalcon_5_Running_Shoes_Grey_IE8819_HM3_hover.jpg",
+          "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/132fab171a3440668c7101ca671819d7_9366/Runfalcon_5_Running_Shoes_Grey_IE8819_HM4.jpg",
+          "img4": null,
+          "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/76ddd35b9d234aa186dff4dac68a6104_d98c/Runfalcon_5_Running_Shoes_Grey_IE8819_video.mp4"
+        },
+        "1": {
+          "0": {
+            "productId": 5,
+            "name": "Zapatilla Finesse",
+            "description": "Zapatilla transpirable para running",
+            "price": 79900,
+            "promotionalPrice": 74900,
+            "stock": 30,
+            "featured": true,
+            "category": {
+              "id": 1,
+              "name": "Running"
+            },
+            "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3c1cdb0c61ce409b88268f831510197c_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM1.jpg",
+            "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d6bc5abb00aa44afa5c659c551385460_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM3_hover.jpg",
+            "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5c2b175d4cfa48b4aa9d3a577498d3c8_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM4.jpg",
+            "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b80e82f5d4774fb385a05fd05bc29ea4_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM5.jpg",
+            "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/5f36748a5890430cb55d73657dc69448_d98c/Adizero_Finesse_Running_Shoes_Black_IF1151_video.mp4"
+          },
+          "id": "6831"
+        },
+        "2": {
+          "0": {
+            "productId": 9,
+            "name": "Zapatilla SprintStart",
+            "description": "Zapatilla con suela antideslizante",
+            "price": 89900,
+            "promotionalPrice": 79900,
+            "stock": 22,
+            "featured": false,
+            "category": {
+              "id": 1,
+              "name": "Running"
+            },
+            "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/61b11947db2c40f2b02c27c18bc19678_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM1.jpg",
+            "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4b8acdd2dbbd401086af631f3dbf8f2b_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM3_hover.jpg",
+            "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9c2b45940abd4c52b326cda7f86da8d8_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM4.jpg",
+            "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/fdcfde84ebad49a59fbccdbd61479df5_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM5.jpg",
+            "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/e839c40e44df482ba2948a5f2dfd38ad_d98c/Adizero_Sprintstar_Shoes_Orange_IF1233_video.mp4"
+          },
+          "1": {
+            "0": {
+              "productId": 5,
+              "name": "Zapatilla Finesse",
+              "description": "Zapatilla transpirable para running",
+              "price": 79900,
+              "promotionalPrice": 74900,
+              "stock": 30,
+              "featured": true,
+              "category": {
+                "id": 1,
+                "name": "Running"
+              },
+              "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3c1cdb0c61ce409b88268f831510197c_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM1.jpg",
+              "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d6bc5abb00aa44afa5c659c551385460_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM3_hover.jpg",
+              "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5c2b175d4cfa48b4aa9d3a577498d3c8_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM4.jpg",
+              "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b80e82f5d4774fb385a05fd05bc29ea4_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM5.jpg",
+              "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/5f36748a5890430cb55d73657dc69448_d98c/Adizero_Finesse_Running_Shoes_Black_IF1151_video.mp4"
+            },
+            "id": "6831"
+          },
+          "id": "29ae"
+        },
+        "3": {
+          "0": {
+            "productId": 18,
+            "name": "Zapatilla SL 72",
+            "description": "Zapatilla casual resistente al agua",
+            "price": 84900,
+            "promotionalPrice": 0,
+            "stock": 12,
+            "featured": true,
+            "category": {
+              "id": 2,
+              "name": "Casual"
+            },
+            "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/90c3be6f7da944acb62f979c335ce45f_9366/SL_72_OG_Shoes_Green_IF1938_01_standard.jpg",
+            "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/ec0282c9855f402488d39a949a66addc_9366/SL_72_OG_Shoes_Green_IF1938_02_standard_hover.jpg",
+            "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/92fd77d2428e4c0aa31b9779f0e11101_9366/SL_72_OG_Shoes_Green_IF1938_03_standard.jpg",
+            "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/7308545395664ebea992e5c94aa668ca_9366/SL_72_OG_Shoes_Green_IF1938_04_standard.jpg",
+            "img5": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/07930842f14f45d298aa279bf1c7cea7_9366/SL_72_OG_Shoes_Green_IF1938_05_standard.jpg"
+          },
+          "1": {
+            "0": {
+              "productId": 5,
+              "name": "Zapatilla Finesse",
+              "description": "Zapatilla transpirable para running",
+              "price": 79900,
+              "promotionalPrice": 74900,
+              "stock": 30,
+              "featured": true,
+              "category": {
+                "id": 1,
+                "name": "Running"
+              },
+              "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3c1cdb0c61ce409b88268f831510197c_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM1.jpg",
+              "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d6bc5abb00aa44afa5c659c551385460_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM3_hover.jpg",
+              "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5c2b175d4cfa48b4aa9d3a577498d3c8_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM4.jpg",
+              "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b80e82f5d4774fb385a05fd05bc29ea4_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM5.jpg",
+              "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/5f36748a5890430cb55d73657dc69448_d98c/Adizero_Finesse_Running_Shoes_Black_IF1151_video.mp4"
+            },
+            "id": "6831"
+          },
+          "2": {
+            "0": {
+              "productId": 9,
+              "name": "Zapatilla SprintStart",
+              "description": "Zapatilla con suela antideslizante",
+              "price": 89900,
+              "promotionalPrice": 79900,
+              "stock": 22,
+              "featured": false,
+              "category": {
+                "id": 1,
+                "name": "Running"
+              },
+              "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/61b11947db2c40f2b02c27c18bc19678_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM1.jpg",
+              "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4b8acdd2dbbd401086af631f3dbf8f2b_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM3_hover.jpg",
+              "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9c2b45940abd4c52b326cda7f86da8d8_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM4.jpg",
+              "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/fdcfde84ebad49a59fbccdbd61479df5_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM5.jpg",
+              "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/e839c40e44df482ba2948a5f2dfd38ad_d98c/Adizero_Sprintstar_Shoes_Orange_IF1233_video.mp4"
+            },
+            "1": {
+              "0": {
+                "productId": 5,
+                "name": "Zapatilla Finesse",
+                "description": "Zapatilla transpirable para running",
+                "price": 79900,
+                "promotionalPrice": 74900,
+                "stock": 30,
+                "featured": true,
+                "category": {
+                  "id": 1,
+                  "name": "Running"
+                },
+                "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3c1cdb0c61ce409b88268f831510197c_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM1.jpg",
+                "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d6bc5abb00aa44afa5c659c551385460_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM3_hover.jpg",
+                "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5c2b175d4cfa48b4aa9d3a577498d3c8_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM4.jpg",
+                "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b80e82f5d4774fb385a05fd05bc29ea4_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM5.jpg",
+                "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/5f36748a5890430cb55d73657dc69448_d98c/Adizero_Finesse_Running_Shoes_Black_IF1151_video.mp4"
+              },
+              "id": "6831"
+            },
+            "id": "29ae"
+          },
+          "id": "29d3"
+        },
+        "id": "f5d7"
+      },
+      "id": "8693"
+    },
+    {
+      "0": {
+        "productId": 9,
+        "name": "Zapatilla SprintStart",
+        "description": "Zapatilla con suela antideslizante",
+        "price": 89900,
+        "promotionalPrice": 79900,
+        "stock": 22,
+        "featured": false,
+        "category": {
+          "id": 1,
+          "name": "Running"
+        },
+        "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/61b11947db2c40f2b02c27c18bc19678_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM1.jpg",
+        "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4b8acdd2dbbd401086af631f3dbf8f2b_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM3_hover.jpg",
+        "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9c2b45940abd4c52b326cda7f86da8d8_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM4.jpg",
+        "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/fdcfde84ebad49a59fbccdbd61479df5_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM5.jpg",
+        "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/e839c40e44df482ba2948a5f2dfd38ad_d98c/Adizero_Sprintstar_Shoes_Orange_IF1233_video.mp4"
+      },
+      "1": {
+        "0": {
+          "productId": 5,
+          "name": "Zapatilla Finesse",
+          "description": "Zapatilla transpirable para running",
+          "price": 79900,
+          "promotionalPrice": 74900,
+          "stock": 30,
+          "featured": true,
+          "category": {
+            "id": 1,
+            "name": "Running"
+          },
+          "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3c1cdb0c61ce409b88268f831510197c_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM1.jpg",
+          "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d6bc5abb00aa44afa5c659c551385460_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM3_hover.jpg",
+          "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5c2b175d4cfa48b4aa9d3a577498d3c8_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM4.jpg",
+          "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b80e82f5d4774fb385a05fd05bc29ea4_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM5.jpg",
+          "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/5f36748a5890430cb55d73657dc69448_d98c/Adizero_Finesse_Running_Shoes_Black_IF1151_video.mp4"
+        },
+        "id": "6831"
+      },
+      "2": {
+        "0": {
+          "productId": 9,
+          "name": "Zapatilla SprintStart",
+          "description": "Zapatilla con suela antideslizante",
+          "price": 89900,
+          "promotionalPrice": 79900,
+          "stock": 22,
+          "featured": false,
+          "category": {
+            "id": 1,
+            "name": "Running"
+          },
+          "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/61b11947db2c40f2b02c27c18bc19678_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM1.jpg",
+          "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4b8acdd2dbbd401086af631f3dbf8f2b_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM3_hover.jpg",
+          "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9c2b45940abd4c52b326cda7f86da8d8_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM4.jpg",
+          "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/fdcfde84ebad49a59fbccdbd61479df5_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM5.jpg",
+          "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/e839c40e44df482ba2948a5f2dfd38ad_d98c/Adizero_Sprintstar_Shoes_Orange_IF1233_video.mp4"
+        },
+        "1": {
+          "0": {
+            "productId": 5,
+            "name": "Zapatilla Finesse",
+            "description": "Zapatilla transpirable para running",
+            "price": 79900,
+            "promotionalPrice": 74900,
+            "stock": 30,
+            "featured": true,
+            "category": {
+              "id": 1,
+              "name": "Running"
+            },
+            "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3c1cdb0c61ce409b88268f831510197c_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM1.jpg",
+            "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d6bc5abb00aa44afa5c659c551385460_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM3_hover.jpg",
+            "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5c2b175d4cfa48b4aa9d3a577498d3c8_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM4.jpg",
+            "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b80e82f5d4774fb385a05fd05bc29ea4_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM5.jpg",
+            "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/5f36748a5890430cb55d73657dc69448_d98c/Adizero_Finesse_Running_Shoes_Black_IF1151_video.mp4"
+          },
+          "id": "6831"
+        },
+        "id": "29ae"
+      },
+      "3": {
+        "0": {
+          "productId": 18,
+          "name": "Zapatilla SL 72",
+          "description": "Zapatilla casual resistente al agua",
+          "price": 84900,
+          "promotionalPrice": 0,
+          "stock": 12,
+          "featured": true,
+          "category": {
+            "id": 2,
+            "name": "Casual"
+          },
+          "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/90c3be6f7da944acb62f979c335ce45f_9366/SL_72_OG_Shoes_Green_IF1938_01_standard.jpg",
+          "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/ec0282c9855f402488d39a949a66addc_9366/SL_72_OG_Shoes_Green_IF1938_02_standard_hover.jpg",
+          "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/92fd77d2428e4c0aa31b9779f0e11101_9366/SL_72_OG_Shoes_Green_IF1938_03_standard.jpg",
+          "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/7308545395664ebea992e5c94aa668ca_9366/SL_72_OG_Shoes_Green_IF1938_04_standard.jpg",
+          "img5": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/07930842f14f45d298aa279bf1c7cea7_9366/SL_72_OG_Shoes_Green_IF1938_05_standard.jpg"
+        },
+        "1": {
+          "0": {
+            "productId": 5,
+            "name": "Zapatilla Finesse",
+            "description": "Zapatilla transpirable para running",
+            "price": 79900,
+            "promotionalPrice": 74900,
+            "stock": 30,
+            "featured": true,
+            "category": {
+              "id": 1,
+              "name": "Running"
+            },
+            "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3c1cdb0c61ce409b88268f831510197c_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM1.jpg",
+            "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d6bc5abb00aa44afa5c659c551385460_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM3_hover.jpg",
+            "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5c2b175d4cfa48b4aa9d3a577498d3c8_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM4.jpg",
+            "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b80e82f5d4774fb385a05fd05bc29ea4_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM5.jpg",
+            "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/5f36748a5890430cb55d73657dc69448_d98c/Adizero_Finesse_Running_Shoes_Black_IF1151_video.mp4"
+          },
+          "id": "6831"
+        },
+        "2": {
+          "0": {
+            "productId": 9,
+            "name": "Zapatilla SprintStart",
+            "description": "Zapatilla con suela antideslizante",
+            "price": 89900,
+            "promotionalPrice": 79900,
+            "stock": 22,
+            "featured": false,
+            "category": {
+              "id": 1,
+              "name": "Running"
+            },
+            "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/61b11947db2c40f2b02c27c18bc19678_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM1.jpg",
+            "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4b8acdd2dbbd401086af631f3dbf8f2b_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM3_hover.jpg",
+            "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9c2b45940abd4c52b326cda7f86da8d8_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM4.jpg",
+            "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/fdcfde84ebad49a59fbccdbd61479df5_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM5.jpg",
+            "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/e839c40e44df482ba2948a5f2dfd38ad_d98c/Adizero_Sprintstar_Shoes_Orange_IF1233_video.mp4"
+          },
+          "1": {
+            "0": {
+              "productId": 5,
+              "name": "Zapatilla Finesse",
+              "description": "Zapatilla transpirable para running",
+              "price": 79900,
+              "promotionalPrice": 74900,
+              "stock": 30,
+              "featured": true,
+              "category": {
+                "id": 1,
+                "name": "Running"
+              },
+              "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3c1cdb0c61ce409b88268f831510197c_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM1.jpg",
+              "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d6bc5abb00aa44afa5c659c551385460_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM3_hover.jpg",
+              "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5c2b175d4cfa48b4aa9d3a577498d3c8_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM4.jpg",
+              "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b80e82f5d4774fb385a05fd05bc29ea4_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM5.jpg",
+              "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/5f36748a5890430cb55d73657dc69448_d98c/Adizero_Finesse_Running_Shoes_Black_IF1151_video.mp4"
+            },
+            "id": "6831"
+          },
+          "id": "29ae"
+        },
+        "id": "29d3"
+      },
+      "4": {
+        "0": {
+          "productId": 29,
+          "name": "Zapatilla RunFalcon 5",
+          "description": "Zapatilla deportiva para entrenamientos intensos",
+          "price": 99900,
+          "promotionalPrice": 0,
+          "stock": 12,
+          "featured": false,
+          "category": {
+            "id": 3,
+            "name": "Deportiva"
+          },
+          "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4ae48a5181474be19166ca2d80ad35fa_9366/Runfalcon_5_Running_Shoes_Grey_IE8819_HM1.jpg",
+          "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5c2aff0508f34c6fa82a50c6c081f4bc_9366/Runfalcon_5_Running_Shoes_Grey_IE8819_HM3_hover.jpg",
+          "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/132fab171a3440668c7101ca671819d7_9366/Runfalcon_5_Running_Shoes_Grey_IE8819_HM4.jpg",
+          "img4": null,
+          "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/76ddd35b9d234aa186dff4dac68a6104_d98c/Runfalcon_5_Running_Shoes_Grey_IE8819_video.mp4"
+        },
+        "1": {
+          "0": {
+            "productId": 5,
+            "name": "Zapatilla Finesse",
+            "description": "Zapatilla transpirable para running",
+            "price": 79900,
+            "promotionalPrice": 74900,
+            "stock": 30,
+            "featured": true,
+            "category": {
+              "id": 1,
+              "name": "Running"
+            },
+            "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3c1cdb0c61ce409b88268f831510197c_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM1.jpg",
+            "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d6bc5abb00aa44afa5c659c551385460_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM3_hover.jpg",
+            "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5c2b175d4cfa48b4aa9d3a577498d3c8_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM4.jpg",
+            "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b80e82f5d4774fb385a05fd05bc29ea4_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM5.jpg",
+            "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/5f36748a5890430cb55d73657dc69448_d98c/Adizero_Finesse_Running_Shoes_Black_IF1151_video.mp4"
+          },
+          "id": "6831"
+        },
+        "2": {
+          "0": {
+            "productId": 9,
+            "name": "Zapatilla SprintStart",
+            "description": "Zapatilla con suela antideslizante",
+            "price": 89900,
+            "promotionalPrice": 79900,
+            "stock": 22,
+            "featured": false,
+            "category": {
+              "id": 1,
+              "name": "Running"
+            },
+            "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/61b11947db2c40f2b02c27c18bc19678_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM1.jpg",
+            "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4b8acdd2dbbd401086af631f3dbf8f2b_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM3_hover.jpg",
+            "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9c2b45940abd4c52b326cda7f86da8d8_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM4.jpg",
+            "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/fdcfde84ebad49a59fbccdbd61479df5_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM5.jpg",
+            "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/e839c40e44df482ba2948a5f2dfd38ad_d98c/Adizero_Sprintstar_Shoes_Orange_IF1233_video.mp4"
+          },
+          "1": {
+            "0": {
+              "productId": 5,
+              "name": "Zapatilla Finesse",
+              "description": "Zapatilla transpirable para running",
+              "price": 79900,
+              "promotionalPrice": 74900,
+              "stock": 30,
+              "featured": true,
+              "category": {
+                "id": 1,
+                "name": "Running"
+              },
+              "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3c1cdb0c61ce409b88268f831510197c_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM1.jpg",
+              "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d6bc5abb00aa44afa5c659c551385460_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM3_hover.jpg",
+              "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5c2b175d4cfa48b4aa9d3a577498d3c8_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM4.jpg",
+              "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b80e82f5d4774fb385a05fd05bc29ea4_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM5.jpg",
+              "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/5f36748a5890430cb55d73657dc69448_d98c/Adizero_Finesse_Running_Shoes_Black_IF1151_video.mp4"
+            },
+            "id": "6831"
+          },
+          "id": "29ae"
+        },
+        "3": {
+          "0": {
+            "productId": 18,
+            "name": "Zapatilla SL 72",
+            "description": "Zapatilla casual resistente al agua",
+            "price": 84900,
+            "promotionalPrice": 0,
+            "stock": 12,
+            "featured": true,
+            "category": {
+              "id": 2,
+              "name": "Casual"
+            },
+            "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/90c3be6f7da944acb62f979c335ce45f_9366/SL_72_OG_Shoes_Green_IF1938_01_standard.jpg",
+            "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/ec0282c9855f402488d39a949a66addc_9366/SL_72_OG_Shoes_Green_IF1938_02_standard_hover.jpg",
+            "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/92fd77d2428e4c0aa31b9779f0e11101_9366/SL_72_OG_Shoes_Green_IF1938_03_standard.jpg",
+            "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/7308545395664ebea992e5c94aa668ca_9366/SL_72_OG_Shoes_Green_IF1938_04_standard.jpg",
+            "img5": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/07930842f14f45d298aa279bf1c7cea7_9366/SL_72_OG_Shoes_Green_IF1938_05_standard.jpg"
+          },
+          "1": {
+            "0": {
+              "productId": 5,
+              "name": "Zapatilla Finesse",
+              "description": "Zapatilla transpirable para running",
+              "price": 79900,
+              "promotionalPrice": 74900,
+              "stock": 30,
+              "featured": true,
+              "category": {
+                "id": 1,
+                "name": "Running"
+              },
+              "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3c1cdb0c61ce409b88268f831510197c_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM1.jpg",
+              "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d6bc5abb00aa44afa5c659c551385460_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM3_hover.jpg",
+              "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5c2b175d4cfa48b4aa9d3a577498d3c8_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM4.jpg",
+              "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b80e82f5d4774fb385a05fd05bc29ea4_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM5.jpg",
+              "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/5f36748a5890430cb55d73657dc69448_d98c/Adizero_Finesse_Running_Shoes_Black_IF1151_video.mp4"
+            },
+            "id": "6831"
+          },
+          "2": {
+            "0": {
+              "productId": 9,
+              "name": "Zapatilla SprintStart",
+              "description": "Zapatilla con suela antideslizante",
+              "price": 89900,
+              "promotionalPrice": 79900,
+              "stock": 22,
+              "featured": false,
+              "category": {
+                "id": 1,
+                "name": "Running"
+              },
+              "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/61b11947db2c40f2b02c27c18bc19678_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM1.jpg",
+              "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4b8acdd2dbbd401086af631f3dbf8f2b_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM3_hover.jpg",
+              "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9c2b45940abd4c52b326cda7f86da8d8_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM4.jpg",
+              "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/fdcfde84ebad49a59fbccdbd61479df5_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM5.jpg",
+              "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/e839c40e44df482ba2948a5f2dfd38ad_d98c/Adizero_Sprintstar_Shoes_Orange_IF1233_video.mp4"
+            },
+            "1": {
+              "0": {
+                "productId": 5,
+                "name": "Zapatilla Finesse",
+                "description": "Zapatilla transpirable para running",
+                "price": 79900,
+                "promotionalPrice": 74900,
+                "stock": 30,
+                "featured": true,
+                "category": {
+                  "id": 1,
+                  "name": "Running"
+                },
+                "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3c1cdb0c61ce409b88268f831510197c_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM1.jpg",
+                "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d6bc5abb00aa44afa5c659c551385460_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM3_hover.jpg",
+                "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5c2b175d4cfa48b4aa9d3a577498d3c8_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM4.jpg",
+                "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b80e82f5d4774fb385a05fd05bc29ea4_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM5.jpg",
+                "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/5f36748a5890430cb55d73657dc69448_d98c/Adizero_Finesse_Running_Shoes_Black_IF1151_video.mp4"
+              },
+              "id": "6831"
+            },
+            "id": "29ae"
+          },
+          "id": "29d3"
+        },
+        "id": "f5d7"
+      },
+      "id": "5792"
     }
   ],
+  "productBasket": [],
   "checkOut": [
     {
-      "id":"",
-      "fechaCompra":"",
-      "total": 10,
-      "idUser": 1,
-      "product":[
+      "id": "49ab",
+      "userId": "1",
+      "items": [
         {
-          
+          "quantity": 3,
+          "price": 79900
         }
-      ]
+      ],
+      "totalAmount": 239700,
+      "fechaCompra": "2024-11-12T20:16:07.739Z"
+    },
+    {
+      "id": "af1d",
+      "userId": "1",
+      "items": [
+        {
+          "quantity": 3,
+          "price": 79900
+        }
+      ],
+      "totalAmount": 239700,
+      "fechaCompra": "2024-11-12T20:17:45.088Z"
+    },
+    {
+      "id": "4b27",
+      "userId": "1",
+      "items": [
+        {
+          "quantity": 2,
+          "price": 89900
+        }
+      ],
+      "totalAmount": 179800,
+      "fechaCompra": "2024-11-12T20:23:56.887Z"
     }
   ]
 }

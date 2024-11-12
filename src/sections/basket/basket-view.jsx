@@ -65,7 +65,7 @@ export default function BasketView() {
             // Solicitud POST para procesar el checkout
             const response = await axios.post("http://localhost:3000/checkOut", purchaseData);
             
-            if (response.status === 200) {
+            if (response.status === 201) {
                 alert("Compra realizada con éxito!");
                 console.log("Datos de la compra:", response.data);
                 clearBasket();  // Vaciar el carrito después de la compra
