@@ -78,9 +78,8 @@ export default function ProductsView() {
     </Container>
   );
 }else{
-  logout();
   return(
-    <Navigate to="/login"/>
+    <Navigate to="/404"/>
   )
 }
 }else{
