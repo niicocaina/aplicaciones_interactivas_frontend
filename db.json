@@ -15,6 +15,7 @@
   ],
   "products": [
     {
+      "id": "1",
       "productId": 3,
       "name": "Zapatilla Prime Strung",
       "description": "Zapatilla ligera para largas distancias",
@@ -33,12 +34,13 @@
       "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/2d0dcacd097044b8ad286d658f479381_d98c/Adizero_Prime_SP_3_Strung_Shoes_Black_IG4330_video.mp4"
     },
     {
+      "id": "2",
       "productId": 5,
       "name": "Zapatilla Finesse",
       "description": "Zapatilla transpirable para running",
       "price": 79900,
       "promotionalPrice": 74900,
-      "stock": 30,
+      "stock": 28,
       "featured": true,
       "category": {
         "id": 1,
@@ -51,6 +53,7 @@
       "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/5f36748a5890430cb55d73657dc69448_d98c/Adizero_Finesse_Running_Shoes_Black_IF1151_video.mp4"
     },
     {
+      "id": "3",
       "productId": 9,
       "name": "Zapatilla SprintStart",
       "description": "Zapatilla con suela antideslizante",
@@ -69,12 +72,13 @@
       "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/e839c40e44df482ba2948a5f2dfd38ad_d98c/Adizero_Sprintstar_Shoes_Orange_IF1233_video.mp4"
     },
     {
+      "id": "4",
       "productId": 12,
       "name": "Zapatilla Samba OG",
       "description": "Zapatilla casual con diseño minimalista",
       "price": 84900,
       "promotionalPrice": 0,
-      "stock": 18,
+      "stock": 17,
       "featured": false,
       "category": {
         "id": 2,
@@ -87,6 +91,7 @@
       "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/ac75c508106c478eaf64259e68cc2096_d98c/SAMBA_OG_W_Black_IE5836_video.mp4"
     },
     {
+      "id": "5",
       "productId": 14,
       "name": "Gazelle Indoor",
       "description": "Zapatilla con suela gruesa y diseño casual",
@@ -105,6 +110,7 @@
       "img5": null
     },
     {
+      "id": "6",
       "productId": 18,
       "name": "Zapatilla SL 72",
       "description": "Zapatilla casual resistente al agua",
@@ -123,6 +129,7 @@
       "img5": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/07930842f14f45d298aa279bf1c7cea7_9366/SL_72_OG_Shoes_Green_IF1938_05_standard.jpg"
     },
     {
+      "id": "7",
       "productId": 20,
       "name": "Zapatilla Samba White",
       "description": "Zapatilla casual para uso diario",
@@ -141,6 +148,7 @@
       "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/4300d7b9187942e79a82a8ab010672d5_d98c/Samba_OG_Shoes_White_B75806_video.mp4"
     },
     {
+      "id": "8",
       "productId": 22,
       "name": "Zapatilla Ultraboost 5X",
       "description": "Zapatilla deportiva con alta tracción",
@@ -159,6 +167,7 @@
       "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/5e513c40f27d4220b0e01b2c755d4488_d98c/Ultraboost_5X_Shoes_Brown_IH3239_video.mp4"
     },
     {
+      "id": "9",
       "productId": 24,
       "name": "Zapatilla RunFalcon 5",
       "description": "Zapatilla deportiva con diseño ergonómico",
@@ -177,6 +186,7 @@
       "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/88d3bd1ba98c44dd9746abf2f9e1fbe3_d98c/Runfalcon_5_Running_Shoes_Black_IH7758_video.mp4"
     },
     {
+      "id": "10",
       "productId": 26,
       "name": "Zapatilla RunFalcon 3",
       "description": "Zapatilla deportiva con amortiguación superior",
@@ -195,6 +205,7 @@
       "img5": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9da7a73600224919b16baf3800e43422_9366/Runfalcon_3_Cloudfoam_Low_Running_Shoes_Black_HP7544_06_standard.jpg"
     },
     {
+      "id": "11",
       "productId": 29,
       "name": "Zapatilla RunFalcon 5",
       "description": "Zapatilla deportiva para entrenamientos intensos",
@@ -213,6 +224,7 @@
       "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/76ddd35b9d234aa186dff4dac68a6104_d98c/Runfalcon_5_Running_Shoes_Grey_IE8819_video.mp4"
     },
     {
+      "id": "12",
       "productId": 29,
       "name": "Zapatilla Supernova Rise",
       "description": "Zapatilla deportiva para entrenamientos intensos",
@@ -233,21 +245,23 @@
   ],
   "user": [
     {
+      "id": "1",
       "firstName": "Ivan",
       "lastName": "Garcia",
       "userName": "usuario_comun",
-      "email":"ivangarcia@gmail.com",
-      "password":"hola",
-      "role":"USER",
+      "email": "ivangarcia@gmail.com",
+      "password": "hola",
+      "role": "USER",
       "birthDate": "2024-14-08"
     },
     {
+      "id": "2",
       "firstName": "Nicolas",
       "lastName": "Blanco",
       "userName": "nicocaina",
-      "email":"nico@gmail.com",
-      "password":"chau",
-      "role":"ADMIN",
+      "email": "nico@gmail.com",
+      "password": "chau",
+      "role": "ADMIN",
       "birthDate": "2024-25-07"
     }
   ],
@@ -266,20 +280,211 @@
   "profile": {
     "name": "typicode"
   },
-  "recentlyViewed": [],
+  "recentlyViewed": [
+    {
+      "id": "c3c8",
+      "productId": 14,
+      "name": "Gazelle Indoor",
+      "description": "Zapatilla con suela gruesa y diseño casual",
+      "price": 89900,
+      "promotionalPrice": 84900,
+      "stock": 25,
+      "featured": false,
+      "category": {
+        "id": 2,
+        "name": "Casual"
+      },
+      "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/a28fd1b628484c96ac8f54273f7f457e_9366/Gazelle_Indoor_Shoes_Beige_IH5482_01_standard.jpg",
+      "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/8b2d509469ad401db9b160fb2bd87290_9366/Gazelle_Indoor_Shoes_Beige_IH5482_02_standard_hover.jpg",
+      "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/ed199ff76f8440afa4021cfb47e3666d_9366/Gazelle_Indoor_Shoes_Beige_IH5482_03_standard.jpg",
+      "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9e5eacd280524111a7be006bf3e433ad_9366/Gazelle_Indoor_Shoes_Beige_IH5482_04_standard.jpg",
+      "img5": null
+    },
+    {
+      "id": "f893",
+      "productId": 18,
+      "name": "Zapatilla SL 72",
+      "description": "Zapatilla casual resistente al agua",
+      "price": 84900,
+      "promotionalPrice": 0,
+      "stock": 12,
+      "featured": true,
+      "category": {
+        "id": 2,
+        "name": "Casual"
+      },
+      "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/90c3be6f7da944acb62f979c335ce45f_9366/SL_72_OG_Shoes_Green_IF1938_01_standard.jpg",
+      "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/ec0282c9855f402488d39a949a66addc_9366/SL_72_OG_Shoes_Green_IF1938_02_standard_hover.jpg",
+      "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/92fd77d2428e4c0aa31b9779f0e11101_9366/SL_72_OG_Shoes_Green_IF1938_03_standard.jpg",
+      "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/7308545395664ebea992e5c94aa668ca_9366/SL_72_OG_Shoes_Green_IF1938_04_standard.jpg",
+      "img5": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/07930842f14f45d298aa279bf1c7cea7_9366/SL_72_OG_Shoes_Green_IF1938_05_standard.jpg"
+    },
+    {
+      "id": "2",
+      "productId": 5,
+      "name": "Zapatilla Finesse",
+      "description": "Zapatilla transpirable para running",
+      "price": 79900,
+      "promotionalPrice": 74900,
+      "stock": 30,
+      "featured": true,
+      "category": {
+        "id": 1,
+        "name": "Running"
+      },
+      "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3c1cdb0c61ce409b88268f831510197c_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM1.jpg",
+      "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d6bc5abb00aa44afa5c659c551385460_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM3_hover.jpg",
+      "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5c2b175d4cfa48b4aa9d3a577498d3c8_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM4.jpg",
+      "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b80e82f5d4774fb385a05fd05bc29ea4_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM5.jpg",
+      "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/5f36748a5890430cb55d73657dc69448_d98c/Adizero_Finesse_Running_Shoes_Black_IF1151_video.mp4"
+    },
+    {
+      "id": "4",
+      "productId": 12,
+      "name": "Zapatilla Samba OG",
+      "description": "Zapatilla casual con diseño minimalista",
+      "price": 84900,
+      "promotionalPrice": 0,
+      "stock": 18,
+      "featured": false,
+      "category": {
+        "id": 2,
+        "name": "Casual"
+      },
+      "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/78d7cfcb3077424fa15c371399a5f110_9366/SAMBA_OG_W_Black_IE5836_01_standard.jpg",
+      "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/e62cb163d6c04881a4c919f27d66ebde_9366/SAMBA_OG_W_Black_IE5836_02_standard_hover_hover_hover.jpg",
+      "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/c570e0b0c5e94b31ac6c2c9201270ec8_9366/SAMBA_OG_W_Black_IE5836_03_standard.jpg",
+      "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d5d5124436804937a60e24db53e82c60_9366/SAMBA_OG_W_Black_IE5836_04_standard.jpg",
+      "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/ac75c508106c478eaf64259e68cc2096_d98c/SAMBA_OG_W_Black_IE5836_video.mp4"
+    },
+    {
+      "id": "1",
+      "productId": 3,
+      "name": "Zapatilla Prime Strung",
+      "description": "Zapatilla ligera para largas distancias",
+      "price": 77900,
+      "promotionalPrice": 72900,
+      "stock": 25,
+      "featured": false,
+      "category": {
+        "id": 1,
+        "name": "Running"
+      },
+      "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d9611498155143b1a588646250bf2205_9366/Adizero_Prime_SP_3_Strung_Shoes_Black_IG4330_HM1.jpg",
+      "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/1a61a090015b4595b1bf4f512367473c_9366/Adizero_Prime_SP_3_Strung_Shoes_Black_IG4330_HM3_hover.jpg",
+      "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/bf520824d8534a26af240597c8641443_9366/Adizero_Prime_SP_3_Strung_Shoes_Black_IG4330_HM4.jpg",
+      "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/8c450fe2b5d545fb8ee13bdaefb139eb_9366/Adizero_Prime_SP_3_Strung_Shoes_Black_IG4330_HM5.jpg",
+      "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/2d0dcacd097044b8ad286d658f479381_d98c/Adizero_Prime_SP_3_Strung_Shoes_Black_IG4330_video.mp4"
+    },
+    {
+      "id": "3",
+      "productId": 9,
+      "name": "Zapatilla SprintStart",
+      "description": "Zapatilla con suela antideslizante",
+      "price": 89900,
+      "promotionalPrice": 79900,
+      "stock": 22,
+      "featured": false,
+      "category": {
+        "id": 1,
+        "name": "Running"
+      },
+      "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/61b11947db2c40f2b02c27c18bc19678_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM1.jpg",
+      "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4b8acdd2dbbd401086af631f3dbf8f2b_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM3_hover.jpg",
+      "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9c2b45940abd4c52b326cda7f86da8d8_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM4.jpg",
+      "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/fdcfde84ebad49a59fbccdbd61479df5_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM5.jpg",
+      "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/e839c40e44df482ba2948a5f2dfd38ad_d98c/Adizero_Sprintstar_Shoes_Orange_IF1233_video.mp4"
+    }
+  ],
   "productBasket": [],
-  "favorite":[],
+  "favorite": [
+    {
+      "id": "1",
+      "productId": 3,
+      "name": "Zapatilla Prime Strung",
+      "description": "Zapatilla ligera para largas distancias",
+      "price": 77900,
+      "promotionalPrice": 72900,
+      "stock": 25,
+      "featured": false,
+      "category": {
+        "id": 1,
+        "name": "Running"
+      },
+      "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d9611498155143b1a588646250bf2205_9366/Adizero_Prime_SP_3_Strung_Shoes_Black_IG4330_HM1.jpg",
+      "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/1a61a090015b4595b1bf4f512367473c_9366/Adizero_Prime_SP_3_Strung_Shoes_Black_IG4330_HM3_hover.jpg",
+      "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/bf520824d8534a26af240597c8641443_9366/Adizero_Prime_SP_3_Strung_Shoes_Black_IG4330_HM4.jpg",
+      "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/8c450fe2b5d545fb8ee13bdaefb139eb_9366/Adizero_Prime_SP_3_Strung_Shoes_Black_IG4330_HM5.jpg",
+      "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/2d0dcacd097044b8ad286d658f479381_d98c/Adizero_Prime_SP_3_Strung_Shoes_Black_IG4330_video.mp4"
+    },
+    {
+      "id": "3",
+      "productId": 9,
+      "name": "Zapatilla SprintStart",
+      "description": "Zapatilla con suela antideslizante",
+      "price": 89900,
+      "promotionalPrice": 79900,
+      "stock": 22,
+      "featured": false,
+      "category": {
+        "id": 1,
+        "name": "Running"
+      },
+      "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/61b11947db2c40f2b02c27c18bc19678_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM1.jpg",
+      "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4b8acdd2dbbd401086af631f3dbf8f2b_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM3_hover.jpg",
+      "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9c2b45940abd4c52b326cda7f86da8d8_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM4.jpg",
+      "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/fdcfde84ebad49a59fbccdbd61479df5_9366/Adizero_Sprintstar_Shoes_Orange_IF1233_HM5.jpg",
+      "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/e839c40e44df482ba2948a5f2dfd38ad_d98c/Adizero_Sprintstar_Shoes_Orange_IF1233_video.mp4"
+    }
+  ],
   "checkOut": [
     {
-      "id":"",
-      "fechaCompra":"",
-      "total": 10,
-      "idUser": 1,
-      "product":[
+      "id": "dfc7",
+      "items": [
         {
-          
+          "quantity": 1,
+          "price": 89900
         }
-      ]
+      ],
+      "totalAmount": 89900,
+      "fechaCompra": "2024-11-12T21:06:38.070Z"
+    },
+    {
+      "id": "2bfc",
+      "items": [
+        {
+          "quantity": 1,
+          "price": 89900
+        }
+      ],
+      "totalAmount": 89900,
+      "fechaCompra": "2024-11-12T21:11:59.569Z"
+    },
+    {
+      "id": "39e2",
+      "items": [
+        {
+          "quantity": 1,
+          "price": 79900
+        }
+      ],
+      "totalAmount": 79900,
+      "fechaCompra": "2024-11-12T21:23:30.512Z"
+    },
+    {
+      "id": "7f67",
+      "items": [
+        {
+          "quantity": 1,
+          "price": 79900
+        },
+        {
+          "quantity": 1,
+          "price": 84900
+        }
+      ],
+      "totalAmount": 164800,
+      "fechaCompra": "2024-11-12T21:29:54.388Z"
     }
   ]
 }

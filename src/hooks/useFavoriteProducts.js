@@ -42,9 +42,14 @@ function useFavoriteProducts(maxFavorite = 5) {
     setFavoriteProducts((prevFavorite) => {
       const updatedFavorite = prevFavorite.filter(item => item.productId !== productId);
 
-      axios.delete(`http://localhost:3000/favorite/${productId}`)
-        .catch(() => console.log("Error al eliminar el archivo"));
+      axios.get("http://localhost:3000/favorite").then(res => res.data).then((data) =>{
 
+      
+      const product_to_delete = data.filter(item => item.productId === productId)
+      const id_to_delete = product_to_delete[0]["id"]
+      axios.delete(`http://localhost:3000/favorite/${id_to_delete}`)
+        .catch(() => console.log("Error al eliminar el archivo"));
+      })  
       return updatedFavorite;
     });
   }, []);
