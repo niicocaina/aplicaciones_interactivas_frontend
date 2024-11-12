@@ -10,6 +10,7 @@ import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import axios from 'axios';  
 import AuthContext from 'src/context/authContext';
+import { Link } from 'react-router-dom';
 
 const MENU_OPTIONS = [
   {
@@ -53,7 +54,7 @@ export default function AccountPopover() {
   }, []);  
 
   if (!user) {
-    return <div>Loading...</div>;
+    return <Link to ="/login">Login</Link>;
   }
 
   return (

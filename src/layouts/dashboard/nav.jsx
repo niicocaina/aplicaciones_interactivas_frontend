@@ -74,7 +74,7 @@ export default function Nav({ openNav, onCloseNav }) {
       </Avatar>
       <Box sx={{ ml: 2 }}>
         <Typography variant="subtitle2">
-          {user ? `${user.firstName} ${user.lastName}` : 'Loading...'}
+          {user ? `${user.firstName} ${user.lastName}` : ''}
         </Typography>
       </Box>
     </Box>
