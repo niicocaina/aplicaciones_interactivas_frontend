@@ -71,6 +71,14 @@ export default function BasketView() {
                         >
                             Limpiar Carrito
                         </Button>
+                        <Button
+                            variant="contained"
+                            color="primary"
+                            sx={{ marginTop: 2, fontWeight: 'bold', borderRadius: 4, marginLeft: 2 }}
+                            //  onClick={"handlePurchase"}
+                        >
+                            Realizar Compra
+                        </Button>
                     </Box>
                 </>
             )}

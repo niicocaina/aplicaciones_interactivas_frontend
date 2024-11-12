@@ -5,21 +5,33 @@ import {Box, Avatar, Typography, IconButton} from '@mui/material';
 import { Add as AddIcon, Remove as RemoveIcon, Delete as DeleteIcon } from '@mui/icons-material';
 
 const baseUrl = "http://localhost:3000/productBasket";
+const baseUrl2 = "http://localhost:3000/products";
 
 export const handleIncreaseQuantity = async (id, currentQuantity, onUpdate) => {
     try {
-        const getResponse = await axios.get(`${baseUrl}/${id}`);
-        const productData = getResponse.data;
-
+        const getBasket = await axios.get(`${baseUrl}/${id}`);
+        const BasketData = getBasket.data;
+        const productIdFromBasket = BasketData.product.productId;
+        const getProductos = await axios.get(`${baseUrl2}`);
+        const productosData = getProductos.data
+        const product = productosData.filter(item => item.productId === productIdFromBasket)
+        const stock = product[0].stock;
+        
+        if(stock > currentQuantity){
+            const response = await axios.put(`${baseUrl}/${id}`, {
+                ...BasketData, // Mantenemos el resto de las propiedades
+                quantity: currentQuantity + 1 // Solo cambiamos la cantidad
+            });
+            if (response.status === 200) {
+                console.log("Cantidad aumentada");
+                onUpdate;
+            }   
+        }
+        else {
+            console.log("No se pueden agregar mas productos")
+            alert("No contamos con mas stock")
+        }
         // Luego hacemos el PUT con todos los datos, actualizando solo la cantidad
-        const response = await axios.put(`${baseUrl}/${id}`, {
-            ...productData, // Mantenemos el resto de las propiedades
-            quantity: currentQuantity + 1 // Solo cambiamos la cantidad
-        });
-        if (response.status === 200) {
-            console.log("Cantidad aumentada");
-            onUpdate;
-        }   
     } catch (error) {
         console.error("Error para aumentar el producto", error);
     }

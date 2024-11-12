@@ -26,14 +26,12 @@ export const handleAddToCart = async (product, productBasket, onUpdate) => {
         product: product
       });
       console.log('Carrito creado con el primer producto:', response.data);
-      alert('Producto agregado al carrito exitosamente (se creo el primer elemento)');
       onUpdate(); // Actualizar el estado del carrito
       return;
     }
     const existingItem = productBasket.find(item => item.product.productId === product.productId);
     if(existingItem) {
       await handleIncreaseQuantity(existingItem.id, existingItem.quantity, onUpdate);
-      alert('El producto ya esta en el carrito, se aumenta la cantidad');
     }
     else{
       const lastId = productBasket[productBasket.length - 1].id;
@@ -45,7 +43,7 @@ export const handleAddToCart = async (product, productBasket, onUpdate) => {
         product: product
       });
       console.log('Producto agregado al carrito:', response.data);
-      alert('Producto agregado al carrito exitosamente');
+      
       onUpdate;
     }
   } catch (error) {
