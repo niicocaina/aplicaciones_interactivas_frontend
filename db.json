@@ -21,7 +21,7 @@
       "description": "Zapatilla ligera para largas distancias",
       "price": 77900,
       "promotionalPrice": 72900,
-      "stock": 25,
+      "stock": 24,
       "featured": false,
       "category": {
         "id": 1,
@@ -116,7 +116,7 @@
       "description": "Zapatilla casual resistente al agua",
       "price": 84900,
       "promotionalPrice": 0,
-      "stock": 11,
+      "stock": 10,
       "featured": true,
       "category": {
         "id": 2,
@@ -639,6 +639,55 @@
       "totalAmount": 277700,
       "totalItems": 3,
       "fechaCompra": "2024-11-12T22:36:24.017Z"
+    },
+    {
+      "id": "32ad",
+      "userId": "1",
+      "items": [
+        {
+          "id": "1",
+          "productId": 3,
+          "name": "Zapatilla Prime Strung",
+          "description": "Zapatilla ligera para largas distancias",
+          "price": 77900,
+          "promotionalPrice": 72900,
+          "stock": 25,
+          "featured": false,
+          "category": {
+            "id": 1,
+            "name": "Running"
+          },
+          "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d9611498155143b1a588646250bf2205_9366/Adizero_Prime_SP_3_Strung_Shoes_Black_IG4330_HM1.jpg",
+          "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/1a61a090015b4595b1bf4f512367473c_9366/Adizero_Prime_SP_3_Strung_Shoes_Black_IG4330_HM3_hover.jpg",
+          "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/bf520824d8534a26af240597c8641443_9366/Adizero_Prime_SP_3_Strung_Shoes_Black_IG4330_HM4.jpg",
+          "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/8c450fe2b5d545fb8ee13bdaefb139eb_9366/Adizero_Prime_SP_3_Strung_Shoes_Black_IG4330_HM5.jpg",
+          "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/2d0dcacd097044b8ad286d658f479381_d98c/Adizero_Prime_SP_3_Strung_Shoes_Black_IG4330_video.mp4",
+          "quantity": 1
+        },
+        {
+          "id": "6",
+          "productId": 18,
+          "name": "Zapatilla SL 72",
+          "description": "Zapatilla casual resistente al agua",
+          "price": 84900,
+          "promotionalPrice": 0,
+          "stock": 11,
+          "featured": true,
+          "category": {
+            "id": 2,
+            "name": "Casual"
+          },
+          "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/90c3be6f7da944acb62f979c335ce45f_9366/SL_72_OG_Shoes_Green_IF1938_01_standard.jpg",
+          "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/ec0282c9855f402488d39a949a66addc_9366/SL_72_OG_Shoes_Green_IF1938_02_standard_hover.jpg",
+          "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/92fd77d2428e4c0aa31b9779f0e11101_9366/SL_72_OG_Shoes_Green_IF1938_03_standard.jpg",
+          "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/7308545395664ebea992e5c94aa668ca_9366/SL_72_OG_Shoes_Green_IF1938_04_standard.jpg",
+          "img5": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/07930842f14f45d298aa279bf1c7cea7_9366/SL_72_OG_Shoes_Green_IF1938_05_standard.jpg",
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 162800,
+      "totalItems": 2,
+      "fechaCompra": "2024-11-12T22:49:33.262Z"
     }
   ]
 }
