@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 import axios from 'axios';
 import { List, ListItem, Container, Typography, Box, Button, Grid, CircularProgress} from "@mui/material";
 
 import ProductItemCard from './product-Item-card';
+import AuthContext from 'src/context/authContext';
 
 const baseUrl = "http://localhost:3000/productBasket";
+const baseCheckOutUrl ="http://localhost:3000/checkOut"
 
 export default function BasketView() {
     const [productBasket, setProductBasket] = useState([]);
@@ -35,6 +37,43 @@ export default function BasketView() {
             setProductBasket([]); // Actualiza el estado local para reflejar que el carrito está vacío
         } catch (error) {
             console.error("Error al vaciar el carrito", error);
+        }
+    };
+
+    const { user } = useContext(AuthContext);
+
+    const handleCheckOut = async () => {
+        try {
+            if (user === null) {
+                alert("Inicie sesión para poder comprar");
+                console.log("Usuario no logueado");
+                return;
+            }
+
+            // Datos de la compra a enviar al backend
+            const purchaseData = {
+                userId: user.id,  // Asume que tienes un campo 'id' en el objeto 'user'
+                items: productBasket.map(item => ({
+                    productId: item.product.protductId,
+                    quantity: item.quantity,
+                    price: item.product.price,
+                })),
+                totalAmount: productBasket.reduce((sum, item) => sum + (item.product.price * item.quantity), 0),
+                fechaCompra: new Date().toISOString() // Fecha de la compra
+            };
+
+            // Solicitud POST para procesar el checkout
+            const response = await axios.post("http://localhost:3000/checkOut", purchaseData);
+            
+            if (response.status === 200) {
+                alert("Compra realizada con éxito!");
+                console.log("Datos de la compra:", response.data);
+                clearBasket();  // Vaciar el carrito después de la compra
+            } else {
+                console.log("Error al realizar la compra:", response.statusText);
+            }
+        } catch (error) {
+            console.error("Error", error)
         }
     };
 
@@ -70,6 +109,14 @@ export default function BasketView() {
                             onClick={clearBasket} // Puedes reemplazar esta función con otra que realmente vacíe el carrito.
                         >
                             Limpiar Carrito
+                        </Button>
+                        <Button
+                            variant="contained"
+                            color="primary"
+                            sx={{ marginTop: 2, fontWeight: 'bold', borderRadius: 4, marginLeft: 2 }}
+                            onClick={handleCheckOut}
+                        >
+                            Realizar Compra
                         </Button>
                     </Box>
                 </>
