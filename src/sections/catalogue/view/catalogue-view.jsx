@@ -80,13 +80,15 @@ export default function CatalogueView() {
       <ProductCartWidget />
       <br/>
       <Typography variant='subtitle1'> Productos destacados</Typography>
+      <br/>
       <FeaturedProductList products={products.filter((item) => item.featured === true)} loading={loading}/>
       <br/>
       {recentProducts.length === 0 ? "":
         <>
         <br/>
         <Typography variant='subtitle1'> Vistos Recientemente</Typography>
-        <FeaturedProductList products={recentProducts.map(item => item[0])} loading={loading}/>
+        <br/>
+        <FeaturedProductList products={recentProducts} loading={loading}/>
         <br/>
         </>}
     </Container>
