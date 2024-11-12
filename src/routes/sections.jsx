@@ -16,7 +16,6 @@ export const CrearCuenta = lazy(() => import('src/pages/crearCuenta'));
 
 // ----------------------------------------------------------------------
 
-const user = {"role":"admin"}
 export default function Router() {
   const routes = useRoutes([
     {
@@ -28,7 +27,7 @@ export default function Router() {
         </DashboardLayout>
       ),
       children: [
-        { element: <IndexPage />, index: true },
+        { element: <CataloguePage />, index: true },
         { path: 'user', element: <UserPage /> },
         { path: 'products', element: <ProductsPage /> },
         { path: 'blog', element: <BlogPage /> },
