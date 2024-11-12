@@ -8,7 +8,7 @@ import Grid from '@mui/material/Unstable_Grid2';
 import Typography from '@mui/material/Typography';
 import Skeleton from '@mui/material/Skeleton';
 import Link from '@mui/material/Link';
-
+import { Button } from '@mui/material';
 import axios from 'axios';
 import ProductCard from '../product-card';
 import ProductSort from '../product-sort';
@@ -16,8 +16,11 @@ import ProductFilters from '../product-filters';
 import { useParams } from 'react-router-dom';
 import CatalogueBanner from '../catalogue-banner';
 import FeaturedProductList from '../featured-list';
-
+import useAuth from '../../../context/authContext';
 import ProductCartWidget from '../../products/product-cart-widget'
+import useRecentProducts from 'src/hooks/useRecentProducts';
+import FavoritesModal from '../favorites-modal';
+import useFavoriteProducts from 'src/hooks/useFavoriteProducts';
 // ----------------------------------------------------------------------
 
 export default function CatalogueView() {
@@ -25,6 +28,9 @@ export default function CatalogueView() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const { categoryId } = useParams();
+  const {recentProducts, addRecentProduct} = useRecentProducts();
+  const {favoriteProducts, addFavoriteProduct} = useFavoriteProducts();
+  const [isFavoritesModalOpen, setFavoritesModalOpen] = useState(false);
 
   useEffect(() => {
     
@@ -45,6 +51,9 @@ export default function CatalogueView() {
   const handleCloseFilter = () => {
     setOpenFilter(false);
   };
+
+  const handleOpenModal = () => setFavoritesModalOpen(true);
+  const handleCloseModal = () => { console.log("Modal close function executed"); setFavoritesModalOpen(false); console.log(isFavoritesModalOpen)};
   
   return (
     <Container>
@@ -55,7 +64,17 @@ export default function CatalogueView() {
       />
 
       <br/>
+      <Button  variant="contained" color="primary" onClick={handleOpenModal}>
       
+      Ver Favoritos
+      </Button>
+      <br/>
+      <br/>
+      <FavoritesModal
+        open={isFavoritesModalOpen}
+        onClose={handleCloseModal}
+        favorites={favoriteProducts}
+      />
       <Grid container spacing={3}>
         {loading === true ? 
           <Card>
@@ -76,8 +95,18 @@ export default function CatalogueView() {
       </Grid>
       <ProductCartWidget />
       <br/>
+      <Typography variant='subtitle1'> Productos destacados</Typography>
+      <br/>
       <FeaturedProductList products={products.filter((item) => item.featured === true)} loading={loading}/>
       <br/>
+      {recentProducts.length === 0 ? "":
+        <>
+        <br/>
+        <Typography variant='subtitle1'> Vistos Recientemente</Typography>
+        <br/>
+        <FeaturedProductList products={recentProducts} loading={loading}/>
+        <br/>
+        </>}
     </Container>
   );
 }

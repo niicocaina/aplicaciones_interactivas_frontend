@@ -14,10 +14,11 @@ import {Typography, Box, Chip , ImageListItem, ImageList, Modal} from '@mui/mate
 import Iconify from 'src/components/iconify';
 import MediaList from './media-list';
 import { handleIncreaseQuantity } from '../basket/product-Item-card';
+import useRecentProducts from 'src/hooks/useRecentProducts';
+import useFavoriteProducts from 'src/hooks/useFavoriteProducts';
 
 export const handleAddToCart = async (product, productBasket, onUpdate) => {
   try {
-    console.log("productBasket"+ productBasket)
     if (!productBasket || productBasket.length === 0) {
       // Crear el carrito con el primer producto
       const response = await axios.post('http://localhost:3000/productBasket', {
@@ -26,14 +27,12 @@ export const handleAddToCart = async (product, productBasket, onUpdate) => {
         product: product
       });
       console.log('Carrito creado con el primer producto:', response.data);
-      alert('Producto agregado al carrito exitosamente (se creo el primer elemento)');
       onUpdate(); // Actualizar el estado del carrito
       return;
     }
     const existingItem = productBasket.find(item => item.product.productId === product.productId);
     if(existingItem) {
       await handleIncreaseQuantity(existingItem.id, existingItem.quantity, onUpdate);
-      alert('El producto ya esta en el carrito, se aumenta la cantidad');
     }
     else{
       const lastId = productBasket[productBasket.length - 1].id;
@@ -45,7 +44,7 @@ export const handleAddToCart = async (product, productBasket, onUpdate) => {
         product: product
       });
       console.log('Producto agregado al carrito:', response.data);
-      alert('Producto agregado al carrito exitosamente');
+      
       onUpdate;
     }
   } catch (error) {
@@ -57,11 +56,16 @@ export const handleAddToCart = async (product, productBasket, onUpdate) => {
 const baseUrl = "http://localhost:3000/productBasket";
 
 export default function ProductDetailsModal({product, similarProducts}) {
+
+    const {recentProducts, addRecentProduct} = useRecentProducts();
+    const {favoriteProducts, addFavoriteProduct, removeFavoriteProduct} = useFavoriteProducts();
     const [open, setOpen] = useState(false);
     const maxImages = [product.img1,product.img5,product.img3,product.img4,product.img2].filter(img => img != null);
     const sizes = ["40","41","42"];
+
     const handleClickOpen = () => {
         setOpen(true);
+        addRecentProduct(product);
     };
 
     const handleClose = () => {
@@ -101,10 +105,10 @@ export default function ProductDetailsModal({product, similarProducts}) {
         try {
             const response = await axios.get(baseUrl);
             setProductBasket(response.data);
-            setLoading(false); // Cambia loading a false solo después de cargar los datos.
+            setLoading(false); 
         } catch (error) {
             console.error("Error al cargar el carrito", error);
-            setLoading(false); // Asegura que loading también cambie a false en caso de error.
+            setLoading(false);
         }
     };
 
@@ -136,8 +140,8 @@ export default function ProductDetailsModal({product, similarProducts}) {
       '&::-webkit-scrollbar': {
         display: 'none', // Hide scrollbar in WebKit browsers
       },
-      '-ms-overflow-style': 'none',  // Hide scrollbar in IE and Edge
-      'scrollbar-width': 'none', // Hide scrollbar in Firefox
+      '-ms-overflow-style': 'none', 
+      'scrollbar-width': 'none', 
     }}
       onClick={handleClickOpen}
     >
@@ -161,6 +165,9 @@ export default function ProductDetailsModal({product, similarProducts}) {
             <Typography variant="h4" fontWeight="bold" gutterBottom>
               {product.name}
             </Typography>
+            <Button onClick={() => addFavoriteProduct(product)}>
+            {favoriteProducts.some(item => item.productId === product.productId) ? <Iconify icon="fluent-mdl2:favorite-star-fill" />:<Iconify icon="fluent-mdl2:favorite-star-fill"  style={{"color": "black"}} />}
+            </Button>
             <Typography variant="h5" color="text.secondary" mb={2}>
               ${product.price}
             </Typography>
@@ -184,11 +191,12 @@ export default function ProductDetailsModal({product, similarProducts}) {
                 </Grid>
               ))}
             </Grid>
-
+            {
+              product.stock !== 0 ?
             <Button variant="contained" color="primary" sx={{ mt: 3, width: '100%' }} onClick={() => handleAddToCart(product, productBasket, fetchBasket)}>
 
               Agregar al Carrito
-            </Button>
+            </Button> : <Typography variant="body1" color="text.secondary" mt={2}> STOCK AGOTADO </Typography>}
             <Typography variant="body2" color="text.secondary" mt={2}>
               Devoluciones Gratis para Socios
             </Typography>

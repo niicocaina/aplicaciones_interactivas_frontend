@@ -55,7 +55,6 @@ HoverImage.defaultProps = {
 
 export default function ShopProductCard({ product, similarProducts }) {
 
-  console.log(product)
   similarProducts = similarProducts.filter(item => item.productId !== product.productId);
 
   const renderSale = (

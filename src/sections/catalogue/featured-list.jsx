@@ -20,7 +20,6 @@ const FeaturedProductList = ({ products = [], loading }) => {
 
   const displayedProducts = products.slice(startIndex, startIndex + visibleProducts);
   if(loading === false){
-    console.log("este es product", products);
   return (
     <div className="featured-product-list">
       <button className="arrow left-arrow" onClick={handlePrevious}>
