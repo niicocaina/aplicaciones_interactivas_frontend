@@ -231,16 +231,26 @@
       "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/6f76607b572048b69526ec16fc07b054_d98c/Supernova_Rise_Running_Shoes_Grey_ID8782_video.mp4"
     }
   ],
-  "user":{
-    "firstName":"Ivan",
-    "lastName":"Garcia",
-    "userName": "usuario_comun",
-    "email":"ivangarcia@gmail.com",
-    "password":"hola",
-    "role":"USER",
-    "birthDate": "2024-14-08"
-  }
-  ,
+  "user":[
+    {
+      "firstName":"Ivan",
+      "lastName":"Garcia",
+      "userName": "usuario_comun",
+      "email":"ivangarcia@gmail.com",
+      "password":"hola",
+      "role":"USER",
+      "birthDate": "2024-14-08"
+    },
+    {
+      "firstName":"Nicolas",
+      "lastName":"Blanco",
+      "userName": "nicocaina",
+      "email":"nico@gmail.com",
+      "password":"chau",
+      "role":"ADMIN",
+      "birthDate": "2024-25-07"
+    }
+ ],
   "comments": [
     {
       "id": "1",

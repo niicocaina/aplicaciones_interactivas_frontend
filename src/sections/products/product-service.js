@@ -3,7 +3,6 @@ import axios from 'axios';
 export const getProducts = async () => {
   try {
     const response = await axios.get('http://localhost:3000/products');
-    console.log("bolas");
     return response.data;
   } catch (error) {
     console.log('Error al obtener productos');

@@ -20,7 +20,9 @@ export default function Router() {
     {
       element: (
         <DashboardLayout>
-          <CataloguePage/>
+          <Suspense>
+            <Outlet />
+          </Suspense>
         </DashboardLayout>
       ),
       children: [
