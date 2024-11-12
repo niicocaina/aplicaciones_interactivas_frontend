@@ -14,7 +14,7 @@ import {Typography, Box, Chip , ImageListItem, ImageList, Modal} from '@mui/mate
 import Iconify from 'src/components/iconify';
 import MediaList from './media-list';
 import { handleIncreaseQuantity } from '../basket/product-Item-card';
-
+import useRecentProducts from 'src/hooks/useRecentProducts';
 export const handleAddToCart = async (product, productBasket, onUpdate) => {
   try {
     console.log("productBasket"+ productBasket)
@@ -57,11 +57,16 @@ export const handleAddToCart = async (product, productBasket, onUpdate) => {
 const baseUrl = "http://localhost:3000/productBasket";
 
 export default function ProductDetailsModal({product, similarProducts}) {
+
+    const {recentProducts, addRecentProduct} = useRecentProducts();
     const [open, setOpen] = useState(false);
     const maxImages = [product.img1,product.img5,product.img3,product.img4,product.img2].filter(img => img != null);
     const sizes = ["40","41","42"];
+    
     const handleClickOpen = () => {
         setOpen(true);
+        console.log(product);
+        addRecentProduct(product);
     };
 
     const handleClose = () => {

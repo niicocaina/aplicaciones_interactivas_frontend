@@ -16,8 +16,9 @@ import ProductFilters from '../product-filters';
 import { useParams } from 'react-router-dom';
 import CatalogueBanner from '../catalogue-banner';
 import FeaturedProductList from '../featured-list';
-
+import useAuth from '../../../context/authContext';
 import ProductCartWidget from '../../products/product-cart-widget'
+import useRecentProducts from 'src/hooks/useRecentProducts';
 // ----------------------------------------------------------------------
 
 export default function CatalogueView() {
@@ -25,6 +26,8 @@ export default function CatalogueView() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const { categoryId } = useParams();
+  const {recentProducts, addRecentProduct} = useRecentProducts();
+  
 
   useEffect(() => {
     
@@ -76,8 +79,16 @@ export default function CatalogueView() {
       </Grid>
       <ProductCartWidget />
       <br/>
+      <Typography variant='subtitle1'> Productos destacados</Typography>
       <FeaturedProductList products={products.filter((item) => item.featured === true)} loading={loading}/>
       <br/>
+      {recentProducts.length === 0 ? "":
+        <>
+        <br/>
+        <Typography variant='subtitle1'> Vistos Recientemente</Typography>
+        <FeaturedProductList products={recentProducts.map(item => item[0])} loading={loading}/>
+        <br/>
+        </>}
     </Container>
   );
 }
