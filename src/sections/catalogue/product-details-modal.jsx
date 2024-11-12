@@ -93,6 +93,14 @@ export default function ProductDetailsModal({product, similarProducts}) {
     const getStock = (event) => {
         setStock(event.target.value);
     }
+    
+    const handleFavorite = () => {
+      if(!favoriteProducts.some(item => item.productId === product.productId)){
+        addFavoriteProduct(product);
+      }else{
+      removeFavoriteProduct(product.productId);
+      }
+    }
 
     const getCategoria = (event) => {
         setCategoria(event.target.value);
@@ -165,7 +173,7 @@ export default function ProductDetailsModal({product, similarProducts}) {
             <Typography variant="h4" fontWeight="bold" gutterBottom>
               {product.name}
             </Typography>
-            <Button onClick={() => addFavoriteProduct(product)}>
+            <Button onClick={handleFavorite}>
             {favoriteProducts.some(item => item.productId === product.productId) ? <Iconify icon="fluent-mdl2:favorite-star-fill" />:<Iconify icon="fluent-mdl2:favorite-star-fill"  style={{"color": "black"}} />}
             </Button>
             <Typography variant="h5" color="text.secondary" mb={2}>
