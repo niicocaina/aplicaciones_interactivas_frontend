@@ -1,54 +1,130 @@
-import Container from '@mui/material/Container';
-import Stack from '@mui/material/Stack';
-import Typography from '@mui/material/Typography';
-import { useEffect, useState } from 'react';
-import axios from 'axios';
-import PostCard from '../post-card'; 
+import React, { useState, useEffect, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import AuthContext from 'src/context/authContext';
 
-export default function BlogView() {
-  const [user, setUser] = useState(null);
+const BlogView = () => {
+  const { user } = useContext(AuthContext);  
+  const [purchases, setPurchases] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    const getUserProfile = async () => {
+    const fetchPurchases = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/perfil'); 
-        setUser(response.data[0]); // Establecemos el usuario con la respuesta de la API
+        const response = await fetch('http://localhost:3000/checkOut');
+        let data = await response.json();
+        console.log("esto es data, ", data);
+
+        // Accede correctamente a los productos dentro de los "items"
+        const simulatedPurchases = data.map((purchase) => ({
+          ...purchase,
+          items: purchase.items.map(item => ({
+            ...item,
+            // Asegúrate de que cada producto esté completo con la información que necesitas
+            product: {
+              name: item.name,
+              description: item.description,
+              price: item.price,
+              promotionalPrice: item.promotionalPrice,
+              img1: item.img1,
+              stock: item.stock,
+            },
+            quantity: item.quantity
+          })),
+        }));
+
+        // Filtrar las compras de este usuario
+        const userPurchases = simulatedPurchases.filter((purchase) => String(purchase.userId) === String(user?.id));
+        setPurchases(userPurchases);
+        setIsLoading(false);  
       } catch (error) {
-        console.error("Error al obtener el perfil del usuario:", error);
+        console.error('Error al obtener el historial de compras:', error);
+        setIsLoading(false); 
       }
     };
 
-    getUserProfile();
-  }, []);
+    if (user) {
+      fetchPurchases();  
+    }
+  }, [user]);  
 
-  if (!user) {
-    return <div>Cargando...</div>; // Cargando si no hay datos del usuario
+  // Redirigir al login si no hay usuario
+  useEffect(() => {
+    if (!user) {
+      navigate('/login');  
+    }
+  }, [user, navigate]);  
+
+  if (isLoading) {
+    return <div>Cargando...</div>;  
   }
 
-  // Aquí pasamos los datos reales del usuario al objeto userProfile
-  const userProfile = {
-    id: user.userName,
-    cover: '/assets/images/avatars/avatar_25.jpg', // Mantienes la portada si deseas
-    title: '',
-    createdAt: new Date(),
-    author: {
-      name: `${user.firstName} ${user.lastName}`, // Nombre completo
-      avatarUrl: `/assets/images/avatars/avatar_${user.id}.jpg`, // Usamos la ruta relativa aquí
-    },
-    email: user.email, // Agregar el email
-  };
-
-  console.log(user); // Verificación de los datos que estás recibiendo
-
   return (
-    <Container>
-      <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
-        <Typography variant="h4">Perfil</Typography>
-      </Stack>
+    <div className="container" style={{ marginTop: '20px', maxWidth: '800px' }}>
+      {/* Perfil del usuario */}
+      <div className="card" style={{ padding: '20px', marginBottom: '30px' }}>
+        <div className="card-header" style={{ borderBottom: '2px solid #ddd', paddingBottom: '10px' }}>
+          <h3>Perfil de {user?.firstName} {user?.lastName}</h3>
+        </div>
+        <div className="card-body" style={{ padding: '20px' }}>
+          <p><strong>Nombre de usuario:</strong> {user?.userName}</p>
+          <p><strong>Nombre:</strong> {user?.firstName}</p>
+          <p><strong>Apellido:</strong> {user?.lastName}</p>
+          <p><strong>Email:</strong> {user?.email}</p>
+          <p><strong>Fecha de nacimiento:</strong> {user?.birthDate}</p>
+          
+          {/* Mostrar "Rol: Admin" solo si el rol es 'ADMIN' */}
+          {user?.role === 'ADMIN' && (
+            <p><strong>Rol:</strong> Admin</p>
+          )}
+        </div>
+      </div>
 
-      <Stack spacing={3}>
-        <PostCard key={userProfile.id} post={userProfile} /> {/* Pasamos el objeto completo */}
-      </Stack>
-    </Container>
+      {/* Historial de compras - Solo si el rol es 'USER' */}
+      {user?.role === 'USER' && (
+        <div className="card" style={{ padding: '20px' }}>
+          <div className="card-header" style={{ borderBottom: '2px solid #ddd', paddingBottom: '10px' }}>
+            <h3>Historial de Compras</h3>
+          </div>
+          <div className="card-body" style={{ padding: '20px' }}>
+            {purchases.length === 0 ? (
+              <p>No has realizado ninguna compra.</p>
+            ) : (
+              <ul>
+                {purchases.map((purchase) => (
+                  <li key={purchase.id} style={{ marginBottom: '20px', borderBottom: '1px solid #f1f1f1', paddingBottom: '15px' }}>
+                    {purchase.items.map((item) => (
+                      <div key={item.id} style={{ display: 'flex', alignItems: 'center' }}>
+                        <img
+                          src={item.product.img1}
+                          alt={item.product.name}
+                          style={{ width: '100px', height: '100px', objectFit: 'cover', marginRight: '20px' }}
+                        />
+                        <div>
+                          <h5 style={{ margin: '0', fontSize: '16px', fontWeight: 'bold' }}>
+                            {item.product.name}
+                          </h5>
+                          <p style={{ margin: '5px 0', fontSize: '14px' }}>
+                            <strong>Descripción:</strong> {item.product.description}
+                          </p>
+                          <p style={{ margin: '5px 0', fontSize: '14px' }}>
+                            <strong>Precio:</strong> ${item.product.promotionalPrice || item.product.price}
+                          </p>
+                          <p style={{ margin: '5px 0', fontSize: '14px' }}>
+                            <strong>Cantidad:</strong> {item.quantity}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </div>
+      )}
+    </div>
   );
-}
+};
+
+export default BlogView;

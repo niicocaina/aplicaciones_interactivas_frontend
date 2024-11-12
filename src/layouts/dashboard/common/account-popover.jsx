@@ -1,5 +1,4 @@
 import { useState } from 'react';
-
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
 import Divider from '@mui/material/Divider';
@@ -8,11 +7,8 @@ import { alpha } from '@mui/material/styles';
 import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
-
 import { account } from 'src/_mock/account';
-
 // ----------------------------------------------------------------------
-
 const MENU_OPTIONS = [
   {
     label: 'Home',
@@ -27,20 +23,15 @@ const MENU_OPTIONS = [
     icon: 'eva:settings-2-fill',
   },
 ];
-
 // ----------------------------------------------------------------------
-
 export default function AccountPopover() {
   const [open, setOpen] = useState(null);
-
   const handleOpen = (event) => {
     setOpen(event.currentTarget);
   };
-
   const handleClose = () => {
     setOpen(null);
   };
-
   return (
     <>
       <IconButton
@@ -67,7 +58,6 @@ export default function AccountPopover() {
           {account.displayName.charAt(0).toUpperCase()}
         </Avatar>
       </IconButton>
-
       <Popover
         open={!!open}
         anchorEl={open}
@@ -91,17 +81,13 @@ export default function AccountPopover() {
             {account.email}
           </Typography>
         </Box>
-
         <Divider sx={{ borderStyle: 'dashed' }} />
-
         {MENU_OPTIONS.map((option) => (
           <MenuItem key={option.label} onClick={handleClose}>
             {option.label}
           </MenuItem>
         ))}
-
         <Divider sx={{ borderStyle: 'dashed', m: 0 }} />
-
         <MenuItem
           disableRipple
           disableTouchRipple

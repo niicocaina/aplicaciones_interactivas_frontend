@@ -1,64 +1,60 @@
-import { useEffect, useState, useContext} from 'react';
+import { useContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Drawer from '@mui/material/Drawer';
 import Button from '@mui/material/Button';
-import Avatar from '@mui/material/Avatar';
+import Avatar from '@mui/material/Avatar';  
 import { alpha } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import ListItemButton from '@mui/material/ListItemButton';
-
 import { usePathname } from 'src/routes/hooks';
 import { RouterLink } from 'src/routes/components';
-
 import { useResponsive } from 'src/hooks/use-responsive';
-
-import { account } from 'src/_mock/account';
-
 import Logo from 'src/components/logo';
 import Scrollbar from 'src/components/scrollbar';
-
 import { NAV } from './config-layout';
 import navConfig from './config-navigation';
-
 import axios from 'axios';
 import SvgColor from 'src/components/svg-color';
 import AuthContext from 'src/context/authContext';
 // ----------------------------------------------------------------------
-
 const icon = (name) => (
   <SvgColor src={`/assets/icons/navbar/${name}.svg`} sx={{ width: 1, height: 1 }} />
-  );
-
+);
 export default function Nav({ openNav, onCloseNav }) {
   const pathname = usePathname();
-
-  const { user } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);  
   const [categories, setCategories] = useState(null);
   const [loading, setLoading] = useState(true);
-
   const upLg = useResponsive('up', 'lg');
-
   useEffect(() => {
     if (openNav) {
       onCloseNav();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
+  useEffect(() => {
+    axios.get("http://localhost:3000/user")
+      .then(response => {
+        const userData = response.data[0];  
+        setUser(userData);  
+      })
+      .catch(err => console.log(err));
+  }, []);
 
-    
   useEffect(() => {
     axios.get("http://localhost:3000/categories")
-    .then(response => 
-      response.data.map(cat => ({
-        title: cat.name,
-        path: `/catalogue/${cat.id}`
-      }))
-    ).then(data => {setCategories(data); setLoading(false)}).catch(err => console.log(err))
-  },[])
-
+      .then(response => 
+        response.data.map(cat => ({
+          title: cat.name,
+          path: `/catalogue/${cat.id}`
+        }))
+      ).then(data => {
+        setCategories(data);
+        setLoading(false);
+      })
+      .catch(err => console.log(err));
+  }, []);
   const renderAccount = (
     <Box
       sx={{
@@ -72,23 +68,22 @@ export default function Nav({ openNav, onCloseNav }) {
         bgcolor: (theme) => alpha(theme.palette.grey[500], 0.12),
       }}
     >
-      <Avatar src={account.photoURL} alt="photoURL" />
-
+      {}
+      <Avatar sx={{ bgcolor: 'primary.main', width: 40, height: 40 }}>
+        {user ? `${user.firstName.charAt(0)}${user.lastName.charAt(0)}` : 'U'}  {}
+      </Avatar>
       <Box sx={{ ml: 2 }}>
-        <Typography variant="subtitle2">{account.displayName}</Typography>
-
-        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-          {account.role}
+        <Typography variant="subtitle2">
+          {user ? `${user.firstName} ${user.lastName}` : 'Loading...'}
         </Typography>
       </Box>
     </Box>
   );
-
   const renderMenu = (
     <Stack component="nav" spacing={0.5} sx={{ px: 2 }}>
       {navConfig.map((item) => (
         <NavItem key={item.title} item={item} />
-      )) }
+      ))}
     </Stack>
   );
   const renderCategories = (
@@ -96,10 +91,9 @@ export default function Nav({ openNav, onCloseNav }) {
     <NavItem key={"Catalogo"} item={{"path":"/catalogue/","title":"Zapatillas"}} />
       {loading === false ? categories.map((item) => (
         <NavItem key={item.name} item={item} />
-      )): "Loading"}
+      )) : "Loading..."}
     </Stack>
   );
-
 
   const renderContent = (
     <Scrollbar
@@ -113,16 +107,11 @@ export default function Nav({ openNav, onCloseNav }) {
       }}
     >
       <Logo sx={{ mt: 3, ml: 4 }} />
-
       {renderAccount}
-
-      {user ? user.role === "ADMIN" ? renderMenu : renderCategories : renderCategories}
-
+      {user?.role === "ADMIN" ? renderMenu : renderCategories}
       <Box sx={{ flexGrow: 1 }} />
-
     </Scrollbar>
   );
-
   return (
     <Box
       sx={{
@@ -157,19 +146,14 @@ export default function Nav({ openNav, onCloseNav }) {
     </Box>
   );
 }
-
 Nav.propTypes = {
   openNav: PropTypes.bool,
   onCloseNav: PropTypes.func,
 };
-
 // ----------------------------------------------------------------------
-
 function NavItem({ item }) {
   const pathname = usePathname();
-
   const active = item.path === pathname;
-
   return (
     <ListItemButton
       component={RouterLink}
@@ -194,12 +178,10 @@ function NavItem({ item }) {
       <Box component="span" sx={{ width: 24, height: 24, mr: 2 }}>
         {item.icon ? item.icon : ""}
       </Box>
-
       <Box component="span">{item.title} </Box>
     </ListItemButton>
   );
 }
-
 NavItem.propTypes = {
   item: PropTypes.object,
 };

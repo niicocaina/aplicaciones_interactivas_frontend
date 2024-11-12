@@ -6,7 +6,7 @@ import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 
 export default function PostCard({ post }) {
-  const { cover, title, author, email } = post; // Desestructuramos el objeto `post`
+  const { cover, title, author, email } = post; 
 
   return (
     <Card sx={{ display: 'flex', p: 2, maxWidth: 600, width: '100%' }}>
@@ -44,6 +44,6 @@ PostCard.propTypes = {
       name: PropTypes.string.isRequired,
       avatarUrl: PropTypes.string.isRequired,
     }).isRequired,
-    email: PropTypes.string.isRequired, // Añadimos la prop `email`
+    email: PropTypes.string.isRequired, 
   }).isRequired,
 };

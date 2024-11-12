@@ -52,14 +52,14 @@ export default function BasketView() {
 
             // Datos de la compra a enviar al backend
             const purchaseData = {
-                userId: user.id,  // Asume que tienes un campo 'id' en el objeto 'user'
+                userId: user.id,  // ID del usuario que realiza la compra
                 items: productBasket.map(item => ({
-                    productId: item.product.protductId,
-                    quantity: item.quantity,
-                    price: item.product.price,
+                    ...item.product,  // Incluye todos los detalles del producto (como nombre, descripción, etc.)
+                    quantity: item.quantity // Agrega la cantidad comprada como un campo adicional
                 })),
                 totalAmount: productBasket.reduce((sum, item) => sum + (item.product.price * item.quantity), 0),
-                fechaCompra: new Date().toISOString() // Fecha de la compra
+                totalItems: productBasket.reduce((sum, item) => sum + item.quantity, 0), // Cantidad total de productos
+                fechaCompra: new Date().toISOString() 
             };
 
             // Solicitud POST para procesar el checkout
