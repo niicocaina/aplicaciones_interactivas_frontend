@@ -40,6 +40,7 @@ export default function ProductsView() {
   const handleCloseFilter = () => {
     setOpenFilter(false);
   };
+  if(user){
   if(user.role =="ADMIN"){
   return (
     <Container>
@@ -76,6 +77,11 @@ export default function ProductsView() {
       <ProductCartWidget />
     </Container>
   );
+}else{
+  return(
+    <Navigate to="/404"/>
+  )
+}
 }else{
   return(
     <Navigate to="/404"/>
