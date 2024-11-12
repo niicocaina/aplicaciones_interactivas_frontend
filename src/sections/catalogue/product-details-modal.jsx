@@ -22,12 +22,12 @@ export const handleAddToCart = async (product, productBasket, onUpdate) => {
     if (!productBasket || productBasket.length === 0) {
       // Crear el carrito con el primer producto
       const response = await axios.post('http://localhost:3000/productBasket', {
-        id: "1",
+        //id: "1",
         quantity: 1,
         product: product
       });
       console.log('Carrito creado con el primer producto:', response.data);
-      onUpdate(); // Actualizar el estado del carrito
+      onUpdate; // Actualizar el estado del carrito
       return;
     }
     const existingItem = productBasket.find(item => item.product.productId === product.productId);
@@ -35,11 +35,11 @@ export const handleAddToCart = async (product, productBasket, onUpdate) => {
       await handleIncreaseQuantity(existingItem.id, existingItem.quantity, onUpdate);
     }
     else{
-      const lastId = productBasket[productBasket.length - 1].id;
-      const newId = (Number(lastId) + 1).toString();
+      //const lastId = productBasket[productBasket.length - 1].id;
+      //const newId = (Number(lastId) + 1).toString();
 
       const response = await axios.post('http://localhost:3000/productBasket', {
-        id: newId,
+        //id: newId,
         quantity: 1,
         product: product
       });
