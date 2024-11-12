@@ -61,13 +61,26 @@ export default function BasketView() {
                 totalItems: productBasket.reduce((sum, item) => sum + item.quantity, 0), // Cantidad total de productos
                 fechaCompra: new Date().toISOString() 
             };
-
+            console.log(user)
             // Solicitud POST para procesar el checkout
             const response = await axios.post("http://localhost:3000/checkOut", purchaseData);
             
             if (response.status === 201) {
                 alert("Compra realizada con éxito!");
                 console.log("Datos de la compra:", response.data);
+                // Resta el stock de cada producto en el carrito
+                await Promise.all(productBasket.map(async (item) => {
+                    const newStock = item.product.stock - item.quantity;
+                    
+                    // Actualiza el stock del producto si es mayor o igual a 0
+                    if (newStock >= 0) {
+                        await axios.patch(`http://localhost:3000/products/${item.product.id}`, {
+                            stock: newStock
+                        });
+                    } else {
+                        console.warn(`Stock insuficiente para el producto ${item.product.id}`);
+                    }
+                }));
                 clearBasket();  // Vaciar el carrito después de la compra
             } else {
                 console.log("Error al realizar la compra:", response.statusText);

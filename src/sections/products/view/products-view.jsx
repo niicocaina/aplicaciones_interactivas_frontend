@@ -20,7 +20,7 @@ import { Navigate } from 'react-router-dom';
 export default function ProductsView() {
   const [openFilter, setOpenFilter] = useState(false);
   const [products, setProducts] = useState([]);
-  const { user } = useContext(AuthContext);
+  const { user, logout } = useContext(AuthContext);
 
   // Función para cargar productos desde la api
   const loadProducts = async () => {
@@ -40,6 +40,7 @@ export default function ProductsView() {
   const handleCloseFilter = () => {
     setOpenFilter(false);
   };
+  if(user){
   if(user.role =="ADMIN"){
   return (
     <Container>
@@ -79,6 +80,11 @@ export default function ProductsView() {
 }else{
   return(
     <Navigate to="/404"/>
+  )
+}
+}else{
+  return(
+    <Navigate to="/login"/>
   )
 }
 }

@@ -11,11 +11,11 @@ export const ProductsPage = lazy(() => import('src/pages/products'));
 export const CataloguePage = lazy(() => import('src/pages/catalogue'));
 export const BasketPage = lazy(() => import('src/pages/basket'));
 export const Page404 = lazy(() => import('src/pages/page-not-found'));
+export const CrearCuenta = lazy(() => import('src/pages/crearCuenta'));
 
 
 // ----------------------------------------------------------------------
 
-const user = {"role":"admin"}
 export default function Router() {
   const routes = useRoutes([
     {
@@ -27,17 +27,21 @@ export default function Router() {
         </DashboardLayout>
       ),
       children: [
-        { element: <IndexPage />, index: true },
+        { element: <CataloguePage />, index: true },
         { path: 'user', element: <UserPage /> },
         { path: 'products', element: <ProductsPage /> },
         { path: 'blog', element: <BlogPage /> },
         { path: 'catalogue/:categoryId?', element: <CataloguePage /> },
-        { path: 'basket', element: <BasketPage />}
+        { path: 'basket', element: <BasketPage />},
       ],
     },
     {
       path: 'login',
       element: <LoginPage />,
+    },
+    {
+      path: 'crear-cuenta',
+      element: <CrearCuenta />,
     },
     {
       path: '404',

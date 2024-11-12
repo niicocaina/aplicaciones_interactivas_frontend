@@ -1,17 +1,16 @@
 import { Helmet } from 'react-helmet-async';
-import { CatalogueView } from 'src/sections/catalogue/view';
-
+import CrearCuenta from 'src/sections/login/crear-cuenta';
 
 // ----------------------------------------------------------------------
 
-export default function AppPage() {
+export default function crearCuentaPage() {
   return (
     <>
       <Helmet>
-        <title> Catalogue | Minimal UI </title>
+        <title> crear Cuenta | Minimal UI </title>
       </Helmet>
 
-      <CatalogueView />
+      <CrearCuenta/>
     </>
   );
 }
