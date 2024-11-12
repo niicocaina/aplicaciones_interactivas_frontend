@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 
 import Stack from '@mui/material/Stack';
 import Container from '@mui/material/Container';
@@ -12,11 +12,15 @@ import CreateProduct from '../product-create-modal';
 import ProductCartWidget from '../product-cart-widget';
 import { getProducts } from '../product-service';
 
+import AuthContext, { AuthProvider } from 'src/context/authContext';
+import { Navigate } from 'react-router-dom';
+
 // ----------------------------------------------------------------------
 
 export default function ProductsView() {
   const [openFilter, setOpenFilter] = useState(false);
   const [products, setProducts] = useState([]);
+  const { user } = useContext(AuthContext);
 
   // Función para cargar productos desde la api
   const loadProducts = async () => {
@@ -36,7 +40,7 @@ export default function ProductsView() {
   const handleCloseFilter = () => {
     setOpenFilter(false);
   };
-
+  if(user.role =="ADMIN"){
   return (
     <Container>
       <Typography variant="h4" sx={{ mb: 5 }}>
@@ -72,4 +76,9 @@ export default function ProductsView() {
       <ProductCartWidget />
     </Container>
   );
+}else{
+  return(
+    <Navigate to="/404"/>
+  )
+}
 }

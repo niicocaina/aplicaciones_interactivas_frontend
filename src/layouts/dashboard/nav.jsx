@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext} from 'react';
 import PropTypes from 'prop-types';
 
 import Box from '@mui/material/Box';
@@ -25,7 +25,7 @@ import navConfig from './config-navigation';
 
 import axios from 'axios';
 import SvgColor from 'src/components/svg-color';
-
+import AuthContext from 'src/context/authContext';
 // ----------------------------------------------------------------------
 
 const icon = (name) => (
@@ -35,7 +35,7 @@ const icon = (name) => (
 export default function Nav({ openNav, onCloseNav }) {
   const pathname = usePathname();
 
-  const [user, setUser] = useState({"role":"admin"});
+  const { user } = useContext(AuthContext);
   const [categories, setCategories] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -116,7 +116,7 @@ export default function Nav({ openNav, onCloseNav }) {
 
       {renderAccount}
 
-      {user.role === "admin" ? renderMenu : renderCategories}
+      {user ? user.role === "ADMIN" ? renderMenu : renderCategories : renderCategories}
 
       <Box sx={{ flexGrow: 1 }} />
 

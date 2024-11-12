@@ -18,7 +18,7 @@ export function AuthProvider({ children }) {
         setError('Usuario o contraseña incorrectos');
         return;
       }
-      setUser(userData);
+      setUser(userData[0]);
       if (userData[0].role === 'ADMIN') {
         navigate('/products');
         return;
