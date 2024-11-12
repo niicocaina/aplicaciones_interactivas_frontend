@@ -62,7 +62,7 @@ export default function ProductDetailsModal({product, similarProducts}) {
     const [open, setOpen] = useState(false);
     const maxImages = [product.img1,product.img5,product.img3,product.img4,product.img2].filter(img => img != null);
     const sizes = ["40","41","42"];
-    
+
     const handleClickOpen = () => {
         setOpen(true);
         console.log(product);
@@ -189,11 +189,12 @@ export default function ProductDetailsModal({product, similarProducts}) {
                 </Grid>
               ))}
             </Grid>
-
+            {
+              product.stock !== 0 ?
             <Button variant="contained" color="primary" sx={{ mt: 3, width: '100%' }} onClick={() => handleAddToCart(product, productBasket, fetchBasket)}>
 
               Agregar al Carrito
-            </Button>
+            </Button> : <Typography variant="body1" color="text.secondary" mt={2}> STOCK AGOTADO </Typography>}
             <Typography variant="body2" color="text.secondary" mt={2}>
               Devoluciones Gratis para Socios
             </Typography>
