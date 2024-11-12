@@ -19,7 +19,6 @@ import useFavoriteProducts from 'src/hooks/useFavoriteProducts';
 
 export const handleAddToCart = async (product, productBasket, onUpdate) => {
   try {
-    console.log("productBasket"+ productBasket)
     if (!productBasket || productBasket.length === 0) {
       // Crear el carrito con el primer producto
       const response = await axios.post('http://localhost:3000/productBasket', {
@@ -59,7 +58,7 @@ const baseUrl = "http://localhost:3000/productBasket";
 export default function ProductDetailsModal({product, similarProducts}) {
 
     const {recentProducts, addRecentProduct} = useRecentProducts();
-    const {favoriteProducts, addFavoriteProduct} = useFavoriteProducts();
+    const {favoriteProducts, addFavoriteProduct, removeFavoriteProduct} = useFavoriteProducts();
     const [open, setOpen] = useState(false);
     const maxImages = [product.img1,product.img5,product.img3,product.img4,product.img2].filter(img => img != null);
     const sizes = ["40","41","42"];

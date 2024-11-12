@@ -9,10 +9,9 @@ function useRecentProducts(maxRecent = 5) {
 
 
   const addRecentProduct = useCallback((product) => {
-    console.log("recent products al entrar",recentProducts)
+
     setRecentProducts((prevRecent) => {
       const isAlreadyViewed = prevRecent.some(item => item.productId === product.productId);
-      console.log("el producto ya estaba? ", isAlreadyViewed);
       let updatedRecent = isAlreadyViewed
         ? prevRecent.filter(item => item.productId !== product.productId)
         : prevRecent;
@@ -26,7 +25,7 @@ function useRecentProducts(maxRecent = 5) {
         axios.get("http://localhost:3000/recentlyViewed").then(res => {
             const isAlreadyInDb = res.data.some(item => item.productId === product.productId);
             if(!isAlreadyInDb){
-            axios.post("http://localhost:3000/recentlyViewed",product).then(response => console.log(response)).catch("error al actualizar el archivo")
+            axios.post("http://localhost:3000/recentlyViewed",product).catch("error al actualizar el archivo")
             }
         })
     }

@@ -318,6 +318,25 @@
       "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5c2b175d4cfa48b4aa9d3a577498d3c8_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM4.jpg",
       "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b80e82f5d4774fb385a05fd05bc29ea4_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM5.jpg",
       "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/5f36748a5890430cb55d73657dc69448_d98c/Adizero_Finesse_Running_Shoes_Black_IF1151_video.mp4"
+    },
+    {
+      "id": "7e66",
+      "productId": 12,
+      "name": "Zapatilla Samba OG",
+      "description": "Zapatilla casual con diseño minimalista",
+      "price": 84900,
+      "promotionalPrice": 0,
+      "stock": 18,
+      "featured": false,
+      "category": {
+        "id": 2,
+        "name": "Casual"
+      },
+      "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/78d7cfcb3077424fa15c371399a5f110_9366/SAMBA_OG_W_Black_IE5836_01_standard.jpg",
+      "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/e62cb163d6c04881a4c919f27d66ebde_9366/SAMBA_OG_W_Black_IE5836_02_standard_hover_hover_hover.jpg",
+      "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/c570e0b0c5e94b31ac6c2c9201270ec8_9366/SAMBA_OG_W_Black_IE5836_03_standard.jpg",
+      "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d5d5124436804937a60e24db53e82c60_9366/SAMBA_OG_W_Black_IE5836_04_standard.jpg",
+      "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/ac75c508106c478eaf64259e68cc2096_d98c/SAMBA_OG_W_Black_IE5836_video.mp4"
     }
   ],
   "favorite": [

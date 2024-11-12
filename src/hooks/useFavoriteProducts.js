@@ -5,9 +5,10 @@ function useFavoriteProducts(maxFavorite = 5) {
   const [favoriteProducts, setFavoriteProducts] = useState([]);
   
   useEffect(() => {
-    axios.get("http://localhost:3000/favorite").then(response => setFavoriteProducts(response.data)).catch(err => console.log(err))
-  },[])
-
+    axios.get("http://localhost:3000/favorite")
+      .then(response => setFavoriteProducts(response.data))
+      .catch(err => console.log(err));
+  }, []);
 
   const addFavoriteProduct = useCallback((product) => {
     setFavoriteProducts((prevFavorite) => {
@@ -22,20 +23,33 @@ function useFavoriteProducts(maxFavorite = 5) {
       if (updatedFavorite.length > maxFavorite) {
         updatedFavorite = updatedFavorite.slice(0, maxFavorite);
       }
-      if(!isAlreadyFav){
+
+      if (!isAlreadyFav) {
         axios.get("http://localhost:3000/favorite").then(res => {
           const isAlreadyInDb = res.data.some(item => item.productId === product.productId);
-          if(!isAlreadyInDb){       
-            axios.post("http://localhost:3000/favorite",product).then(response => console.log(response)).catch("error al actualizar el archivo")
+          if (!isAlreadyInDb) {       
+            axios.post("http://localhost:3000/favorite", product)
+              .catch(() => console.log("Error al actualizar el archivo"));
           }
-        }
-        )
+        });
       }
+
       return updatedFavorite;
     });
   }, [maxFavorite]);
 
-  return { favoriteProducts, addFavoriteProduct };
+  const removeFavoriteProduct = useCallback((productId) => {
+    setFavoriteProducts((prevFavorite) => {
+      const updatedFavorite = prevFavorite.filter(item => item.productId !== productId);
+
+      axios.delete(`http://localhost:3000/favorite/${productId}`)
+        .catch(() => console.log("Error al eliminar el archivo"));
+
+      return updatedFavorite;
+    });
+  }, []);
+
+  return { favoriteProducts, addFavoriteProduct, removeFavoriteProduct };
 }
 
 export default useFavoriteProducts;
