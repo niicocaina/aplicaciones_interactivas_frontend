@@ -11,7 +11,7 @@ import DialogContentText from '@mui/material/DialogContentText';
 
 import Iconify from 'src/components/iconify';
 
-import { deleteProduct } from './product-service';
+import { deleteProduct, deleteProducto } from './product-service';
 
 export default function AlertDialog({ id, onChange }) {
   const [open, setOpen] = useState(false);
@@ -49,7 +49,7 @@ export default function AlertDialog({ id, onChange }) {
           <Button onClick={handleClose}>Cancelar</Button>
           <Button
             onClick={() => {
-              deleteProduct(id).then(() => onChange());
+              deleteProducto(id).then(() => onChange());
               handleClose();
             }}
             autoFocus

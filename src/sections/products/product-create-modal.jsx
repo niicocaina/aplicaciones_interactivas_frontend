@@ -13,7 +13,7 @@ import Iconify from 'src/components/iconify';
 import PropTypes from 'prop-types';
 import ImageUploader from './image-uploader';
 import CategoryMenu from './category-menu';
-import { createProduct } from './product-service';
+import { createProduct, createProducto } from './product-service';
 
 export default function AlertDialog({ onProductChange }) {
   const [open, setOpen] = useState(false);
@@ -114,7 +114,7 @@ export default function AlertDialog({ onProductChange }) {
           <Button onClick={handleClose}>Cancelar</Button>
           <Button
             onClick={() => {
-              createProduct({
+              createProducto({
                 name: nombre,
                 description: descripcion,
                 price: precio,

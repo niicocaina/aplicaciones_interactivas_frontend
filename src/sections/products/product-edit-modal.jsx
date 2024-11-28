@@ -11,7 +11,7 @@ import DialogContent from '@mui/material/DialogContent';
 
 import Iconify from 'src/components/iconify';
 import CategoryMenu from './category-menu';
-import { getProduct, updateProduct } from './product-service';
+import { getProduct, updateProduct, getProducto, updateProducto } from './product-service';
 
 export default function AlertDialog({ id, onChange }) {
   const [open, setOpen] = useState(false);
@@ -23,7 +23,15 @@ export default function AlertDialog({ id, onChange }) {
   const [categoria, setCategoria] = useState('');
 
   const handleClickOpen = () => {
-    getProduct(id).then((product) => {
+    /*getProduct(id).then((product) => {
+      setNombre(product.name);
+      setDescripcion(product.description);
+      setPrecio(product.price);
+      setPrecioDescuento(product.promotionalPrice > 0 ? product.promotionalPrice : '');
+      setStock(product.stock);
+      setCategoria(product.category);
+    });*/
+    getProducto(id).then((product) => {
       setNombre(product.name);
       setDescripcion(product.description);
       setPrecio(product.price);
@@ -120,7 +128,7 @@ export default function AlertDialog({ id, onChange }) {
           <Button onClick={handleClose}>Cancelar</Button>
           <Button
             onClick={() => {
-              updateProduct(id, {
+              updateProducto(id, {
                 name: nombre,
                 description: descripcion,
                 price: precio,
