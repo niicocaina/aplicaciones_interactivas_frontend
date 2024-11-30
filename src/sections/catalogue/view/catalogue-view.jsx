@@ -22,7 +22,9 @@ import useRecentProducts from 'src/hooks/useRecentProducts';
 import FavoritesModal from '../favorites-modal';
 import useFavoriteProducts from 'src/hooks/useFavoriteProducts';
 import config from 'src/config.json';
+import { useNotification } from 'src/context/notificationContext';
 // ----------------------------------------------------------------------
+
 
 export default function CatalogueView() {
   const [openFilter, setOpenFilter] = useState(false);
@@ -32,15 +34,15 @@ export default function CatalogueView() {
   const {recentProducts, addRecentProduct} = useRecentProducts();
   const {favoriteProducts, addFavoriteProduct} = useFavoriteProducts();
   const [isFavoritesModalOpen, setFavoritesModalOpen] = useState(false);
-
+  const showNotification = useNotification();
   useEffect(() => {
    
     setProducts([]);
     setLoading(true);
     if (categoryId) {
-      axios.get(config.apiBaseUrl + config.endpoints.products).then(response => Object.values(response.data).flat()).then(response => { setProducts(response.filter(item => String(item.category.id) == String(categoryId)))}).then(setLoading(false)).catch(err => console.log("Error al obtener productos",err))
+      axios.get(config.apiBaseUrl + config.endpoints.products).then(response => Object.values(response.data).flat()).then(response => { setProducts(response.filter(item => String(item.category.id) == String(categoryId)))}).then(setLoading(false)).catch(err => showNotification("Error al cargar los productos","error"))
     } else {
-      axios.get(config.apiBaseUrl + config.endpoints.products).then(response => Object.values(response.data).flat()).then(response => { setProducts(response)}).then(setLoading(false)).catch(err => console.log(err))
+      axios.get(config.apiBaseUrl + config.endpoints.products).then(response => Object.values(response.data).flat()).then(response => { setProducts(response)}).then(setLoading(false)).catch(err => showNotification("Error al cargar los productos","error"))
     }
   }, [categoryId]);
 
@@ -53,7 +55,7 @@ export default function CatalogueView() {
   };
 
   const handleOpenModal = () => setFavoritesModalOpen(true);
-  const handleCloseModal = () => { console.log("Modal close function executed"); setFavoritesModalOpen(false); console.log(isFavoritesModalOpen)};
+  const handleCloseModal = () => { setFavoritesModalOpen(false);};
   
   return (
     <Container>
