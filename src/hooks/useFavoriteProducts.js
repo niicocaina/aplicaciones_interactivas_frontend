@@ -5,7 +5,7 @@ function useFavoriteProducts(maxFavorite = 5) {
   const [favoriteProducts, setFavoriteProducts] = useState([]);
   
   useEffect(() => {
-    axios.get("http://localhost:3000/favorite")
+    axios.get("http://localhost:8080/api/v1/catalog/featured")
       .then(response => setFavoriteProducts(response.data))
       .catch(err => console.log(err));
   }, []);
