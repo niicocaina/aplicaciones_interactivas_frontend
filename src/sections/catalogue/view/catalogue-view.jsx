@@ -21,6 +21,7 @@ import ProductCartWidget from '../../products/product-cart-widget'
 import useRecentProducts from 'src/hooks/useRecentProducts';
 import FavoritesModal from '../favorites-modal';
 import useFavoriteProducts from 'src/hooks/useFavoriteProducts';
+import config from 'src/config.json';
 // ----------------------------------------------------------------------
 
 export default function CatalogueView() {
@@ -33,17 +34,13 @@ export default function CatalogueView() {
   const [isFavoritesModalOpen, setFavoritesModalOpen] = useState(false);
 
   useEffect(() => {
-    let config = {
-      headers: {
-      }
-    }
+   
     setProducts([]);
     setLoading(true);
     if (categoryId) {
-      axios.get("http://localhost:8080/api/v1/catalog/products",config).then(response => Object.values(response.data).flat()).then(response => { setProducts(response.filter(item => String(item.category.id) == String(categoryId)))}).then(setLoading(false)).catch(err => console.log("Error al obtener productos",err))
-      console.log("pase por aca");
+      axios.get(config.apiBaseUrl + config.endpoints.products).then(response => Object.values(response.data).flat()).then(response => { setProducts(response.filter(item => String(item.category.id) == String(categoryId)))}).then(setLoading(false)).catch(err => console.log("Error al obtener productos",err))
     } else {
-      axios.get("http://localhost:8080/api/v1/catalog/products",config).then(response => Object.values(response.data).flat()).then(response => { setProducts(response)}).then(setLoading(false)).catch(err => console.log(err))
+      axios.get(config.apiBaseUrl + config.endpoints.products).then(response => Object.values(response.data).flat()).then(response => { setProducts(response)}).then(setLoading(false)).catch(err => console.log(err))
     }
   }, [categoryId]);
 

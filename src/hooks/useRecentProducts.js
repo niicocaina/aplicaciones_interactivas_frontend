@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, useContext } from 'react';
 import axios from 'axios';
 import AuthContext from 'src/context/authContext';
-
+import config from 'src/config.json';
 
 function useRecentProducts(maxRecent = 5) {
   const [recentProducts, setRecentProducts] = useState([]);
@@ -10,7 +10,7 @@ function useRecentProducts(maxRecent = 5) {
   
   useEffect(() => {
     if(user){
-    axios.get("http://localhost:8080/api/v1/catalog/recent").then(response => setRecentProducts(response.data)).catch(err => console.log(err))
+    axios.get(config.apiBaseUrl + config.endpoints.recent).then(response => setRecentProducts(response.data)).catch(err => console.log(err))
     }
   },[user])
 
@@ -29,7 +29,7 @@ function useRecentProducts(maxRecent = 5) {
         updatedRecent = updatedRecent.slice(0, maxRecent);
       }
       if(!isAlreadyViewed){
-        axios.get("http://localhost:8080/api/v1/catalog/recent").then(res =>{
+        axios.get(config.apiBaseUrl + config.endpoints.recent).then(res =>{
           console.log(res.data)
         })
     }
