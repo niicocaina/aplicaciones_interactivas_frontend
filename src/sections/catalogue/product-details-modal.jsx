@@ -17,6 +17,9 @@ import { handleIncreaseQuantity } from '../basket/product-Item-card';
 import useRecentProducts from 'src/hooks/useRecentProducts';
 import useFavoriteProducts from 'src/hooks/useFavoriteProducts';
 
+//const baseUrl = "http://localhost:3000/productBasket";
+const baseUrl = "http://localhost:8080/basket";
+
 export const handleAddToCart = async (product, productBasket, onUpdate) => {
   try {
     if (!productBasket || productBasket.length === 0) {
@@ -26,7 +29,7 @@ export const handleAddToCart = async (product, productBasket, onUpdate) => {
         quantity: 1,
         product: product
       });*/
-      const response = await axios.post('http://localhost:8080/api/v1/basket/add', {
+      const response = await axios.post('http://localhost:8080/basket/add', {
         product,
         productBasket
       });
@@ -47,7 +50,7 @@ export const handleAddToCart = async (product, productBasket, onUpdate) => {
         quantity: 1,
         product: product
       });*/
-      const response = await axios.post('http://localhost:8080/api/v1/basket/add', {
+      const response = await axios.post('http://localhost:8080/basket/add', {
         product,
         productBasket
       });
@@ -61,8 +64,6 @@ export const handleAddToCart = async (product, productBasket, onUpdate) => {
   }
 };
 
-//const baseUrl = "http://localhost:3000/productBasket";
-const baseUrl = "http://localhost:8080/api/v1/basket";
 
 export default function ProductDetailsModal({product, similarProducts}) {
 

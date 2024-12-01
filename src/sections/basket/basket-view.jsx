@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 
 import axios from 'axios';
-import { List, ListItem, Container, Typography, Box, Button, Grid, CircularProgress} from "@mui/material";
+import {Container, Typography, Box, Button, Grid, CircularProgress} from "@mui/material";
 
 import ProductItemCard from './product-Item-card';
 import AuthContext from 'src/context/authContext';

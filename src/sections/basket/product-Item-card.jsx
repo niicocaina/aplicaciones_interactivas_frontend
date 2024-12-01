@@ -3,77 +3,50 @@ import axios from 'axios';
 import PropTypes from 'prop-types';
 import {Box, Avatar, Typography, IconButton} from '@mui/material';
 import { Add as AddIcon, Remove as RemoveIcon, Delete as DeleteIcon } from '@mui/icons-material';
+import { error } from 'src/theme/palette';
 
-const baseUrl = "http://localhost:3000/productBasket";
-const baseUrl2 = "http://localhost:3000/products";
+const endpointBasket = "http://localhost:8080/basket";
 
-export const handleIncreaseQuantity = async (id, currentQuantity, onUpdate) => {
+export const handleIncreaseQuantity = async(id, onUpdate) => {
     try {
-        const getBasket = await axios.get(`${baseUrl}/${id}`);
-        const BasketData = getBasket.data;
-        const productIdFromBasket = BasketData.product.productId;
-        const getProductos = await axios.get(`${baseUrl2}`);
-        const productosData = getProductos.data
-        const product = productosData.filter(item => item.productId === productIdFromBasket)
-        const stock = product[0].stock;
-        
-        if(stock > currentQuantity){
-            const response = await axios.put(`${baseUrl}/${id}`, {
-                ...BasketData, // Mantenemos el resto de las propiedades
-                quantity: currentQuantity + 1 // Solo cambiamos la cantidad
-            });
-            if (response.status === 200) {
-                console.log("Cantidad aumentada");
-                onUpdate;
-            }   
+        const response = await axios.put(`${endpointBasket}/increase`, id);
+        if (response.status === 204) { // 204 No Content
+            console.log("Cantidad aumentada");
+            onUpdate(); 
         }
-        else {
-            console.log("No se pueden agregar mas productos")
-            alert("No contamos con mas stock")
-        }
-        // Luego hacemos el PUT con todos los datos, actualizando solo la cantidad
-    } catch (error) {
-        console.error("Error para aumentar el producto", error);
     }
-};
+    catch {
+        console.error("Error al aumentar la cantidad del producto", error);
+        alert("Error al aumentar la cantidad");
+    }
+}
 
-const handleDecreaseQuantity = async (id, currentQuantity, onUpdate) => {
-    // Primero obtenemos el producto completo
-    const getResponse = await axios.get(`${baseUrl}/${id}`);
-    const productData = getResponse.data;
+const handleDecreaseQuantity = async(id, onUpdate) => {
     try {
-        if(currentQuantity > 1) {
-            // Luego hacemos el PUT con todos los datos, actualizando solo la cantidad
-            const response = await axios.put(`${baseUrl}/${id}`, {
-                ...productData, // Mantenemos el resto de las propiedades
-                quantity: currentQuantity - 1 // Solo cambiamos la cantidad
-            });
-            if (response.status === 200) {
-                console.log("Cantidad disminuida");
-                onUpdate;
-            }
+        const response = await axios.put(`${endpointBasket}/decrease`, id);
+        if (response.status == 200) {
+            console.log("cantidad disminuida")
+            onUpdate();
         }
-        else {
-            handleRemoveProduct(id);
-        }
-    } catch (error) {
-        console.error("Error para disminuir el producto", error);
     }
-};
+    catch {
+        console.error("Error al disminuir la cantidad del producto", error);
+        alert("Error al disminuir la cantidad del producto");
+    }
+}
 
 const handleRemoveProduct = async (id, onUpdate) => {
     try {
-        const response = await axios.delete(`${baseUrl}/${id}`);
+        const response = await axios.delete(`${endpointBasket}/remove`, id);
         if (response.status === 200) {
             console.log("Producto eliminado");
             onUpdate;
         }
     } catch (error) {
-        console.log("el id pasado es: ", id)
         console.error("Error al eliminar el producto", error);
+        alert("Error intentando eliminar el producto")
     }
 };
-
 
 export default function ProductItemCard(productBasket, onUpdate) {
     const {quantity, id, product: { price, name, img1 } } = productBasket.productBasket;
