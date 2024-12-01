@@ -21,10 +21,14 @@ export const handleAddToCart = async (product, productBasket, onUpdate) => {
   try {
     if (!productBasket || productBasket.length === 0) {
       // Crear el carrito con el primer producto
-      const response = await axios.post('http://localhost:3000/productBasket', {
+      /*const response = await axios.post('http://localhost:3000/productBasket', {
         //id: "1",
         quantity: 1,
         product: product
+      });*/
+      const response = await axios.post('http://localhost:8080/api/v1/basket/add', {
+        product,
+        productBasket
       });
       console.log('Carrito creado con el primer producto:', response.data);
       onUpdate; // Actualizar el estado del carrito
@@ -38,10 +42,14 @@ export const handleAddToCart = async (product, productBasket, onUpdate) => {
       //const lastId = productBasket[productBasket.length - 1].id;
       //const newId = (Number(lastId) + 1).toString();
 
-      const response = await axios.post('http://localhost:3000/productBasket', {
+      /*const response = await axios.post('http://localhost:3000/productBasket', {
         //id: newId,
         quantity: 1,
         product: product
+      });*/
+      const response = await axios.post('http://localhost:8080/api/v1/basket/add', {
+        product,
+        productBasket
       });
       console.log('Producto agregado al carrito:', response.data);
       
@@ -53,7 +61,8 @@ export const handleAddToCart = async (product, productBasket, onUpdate) => {
   }
 };
 
-const baseUrl = "http://localhost:3000/productBasket";
+//const baseUrl = "http://localhost:3000/productBasket";
+const baseUrl = "http://localhost:8080/api/v1/basket";
 
 export default function ProductDetailsModal({product, similarProducts}) {
 

@@ -40,7 +40,7 @@
       "description": "Zapatilla transpirable para running",
       "price": 79900,
       "promotionalPrice": 74900,
-      "stock": 22,
+      "stock": 0,
       "featured": true,
       "category": {
         "id": 1,
@@ -97,7 +97,7 @@
       "description": "Zapatilla con suela gruesa y diseño casual",
       "price": 89900,
       "promotionalPrice": 84900,
-      "stock": 24,
+      "stock": 0,
       "featured": false,
       "category": {
         "id": 2,
@@ -453,31 +453,7 @@
       "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/2d0dcacd097044b8ad286d658f479381_d98c/Adizero_Prime_SP_3_Strung_Shoes_Black_IG4330_video.mp4"
     }
   ],
-  "productBasket": [
-    {
-      "id": "83dd",
-      "quantity": 1,
-      "product": {
-        "id": "1",
-        "productId": 3,
-        "name": "Zapatilla Prime Strung",
-        "description": "Zapatilla ligera para largas distancias",
-        "price": 77900,
-        "promotionalPrice": 72900,
-        "stock": 24,
-        "featured": false,
-        "category": {
-          "id": 1,
-          "name": "Running"
-        },
-        "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d9611498155143b1a588646250bf2205_9366/Adizero_Prime_SP_3_Strung_Shoes_Black_IG4330_HM1.jpg",
-        "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/1a61a090015b4595b1bf4f512367473c_9366/Adizero_Prime_SP_3_Strung_Shoes_Black_IG4330_HM3_hover.jpg",
-        "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/bf520824d8534a26af240597c8641443_9366/Adizero_Prime_SP_3_Strung_Shoes_Black_IG4330_HM4.jpg",
-        "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/8c450fe2b5d545fb8ee13bdaefb139eb_9366/Adizero_Prime_SP_3_Strung_Shoes_Black_IG4330_HM5.jpg",
-        "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/2d0dcacd097044b8ad286d658f479381_d98c/Adizero_Prime_SP_3_Strung_Shoes_Black_IG4330_video.mp4"
-      }
-    }
-  ],
+  "productBasket": [],
   "favorite": [
     {
       "id": "2",
@@ -499,5 +475,209 @@
       "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/5f36748a5890430cb55d73657dc69448_d98c/Adizero_Finesse_Running_Shoes_Black_IF1151_video.mp4"
     }
   ],
-  "checkOut": []
+  "checkOut": [
+    {
+      "id": "6b58",
+      "userId": "1",
+      "items": [
+        {
+          "id": "5",
+          "productId": 14,
+          "name": "Gazelle Indoor",
+          "description": "Zapatilla con suela gruesa y diseño casual",
+          "price": 89900,
+          "promotionalPrice": 84900,
+          "stock": 24,
+          "featured": false,
+          "category": {
+            "id": 2,
+            "name": "Casual"
+          },
+          "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/a28fd1b628484c96ac8f54273f7f457e_9366/Gazelle_Indoor_Shoes_Beige_IH5482_01_standard.jpg",
+          "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/8b2d509469ad401db9b160fb2bd87290_9366/Gazelle_Indoor_Shoes_Beige_IH5482_02_standard_hover.jpg",
+          "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/ed199ff76f8440afa4021cfb47e3666d_9366/Gazelle_Indoor_Shoes_Beige_IH5482_03_standard.jpg",
+          "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9e5eacd280524111a7be006bf3e433ad_9366/Gazelle_Indoor_Shoes_Beige_IH5482_04_standard.jpg",
+          "img5": null,
+          "quantity": 11
+        }
+      ],
+      "totalAmount": 988900,
+      "totalItems": 11,
+      "fechaCompra": "2024-11-13T00:12:03.893Z"
+    },
+    {
+      "id": "4349",
+      "userId": "1",
+      "items": [
+        {
+          "id": "5",
+          "productId": 14,
+          "name": "Gazelle Indoor",
+          "description": "Zapatilla con suela gruesa y diseño casual",
+          "price": 89900,
+          "promotionalPrice": 84900,
+          "stock": 24,
+          "featured": false,
+          "category": {
+            "id": 2,
+            "name": "Casual"
+          },
+          "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/a28fd1b628484c96ac8f54273f7f457e_9366/Gazelle_Indoor_Shoes_Beige_IH5482_01_standard.jpg",
+          "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/8b2d509469ad401db9b160fb2bd87290_9366/Gazelle_Indoor_Shoes_Beige_IH5482_02_standard_hover.jpg",
+          "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/ed199ff76f8440afa4021cfb47e3666d_9366/Gazelle_Indoor_Shoes_Beige_IH5482_03_standard.jpg",
+          "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9e5eacd280524111a7be006bf3e433ad_9366/Gazelle_Indoor_Shoes_Beige_IH5482_04_standard.jpg",
+          "img5": null,
+          "quantity": 11
+        }
+      ],
+      "totalAmount": 988900,
+      "totalItems": 11,
+      "fechaCompra": "2024-11-13T00:12:12.263Z"
+    },
+    {
+      "id": "0b57",
+      "userId": "1",
+      "items": [
+        {
+          "id": "2",
+          "productId": 5,
+          "name": "Zapatilla Finesse",
+          "description": "Zapatilla transpirable para running",
+          "price": 79900,
+          "promotionalPrice": 74900,
+          "stock": 22,
+          "featured": true,
+          "category": {
+            "id": 1,
+            "name": "Running"
+          },
+          "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3c1cdb0c61ce409b88268f831510197c_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM1.jpg",
+          "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d6bc5abb00aa44afa5c659c551385460_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM3_hover.jpg",
+          "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5c2b175d4cfa48b4aa9d3a577498d3c8_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM4.jpg",
+          "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b80e82f5d4774fb385a05fd05bc29ea4_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM5.jpg",
+          "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/5f36748a5890430cb55d73657dc69448_d98c/Adizero_Finesse_Running_Shoes_Black_IF1151_video.mp4",
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 79900,
+      "totalItems": 1,
+      "fechaCompra": "2024-11-13T00:16:35.148Z"
+    },
+    {
+      "id": "4a9f",
+      "userId": "1",
+      "items": [
+        {
+          "id": "2",
+          "productId": 5,
+          "name": "Zapatilla Finesse",
+          "description": "Zapatilla transpirable para running",
+          "price": 79900,
+          "promotionalPrice": 74900,
+          "stock": 22,
+          "featured": true,
+          "category": {
+            "id": 1,
+            "name": "Running"
+          },
+          "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3c1cdb0c61ce409b88268f831510197c_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM1.jpg",
+          "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d6bc5abb00aa44afa5c659c551385460_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM3_hover.jpg",
+          "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5c2b175d4cfa48b4aa9d3a577498d3c8_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM4.jpg",
+          "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b80e82f5d4774fb385a05fd05bc29ea4_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM5.jpg",
+          "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/5f36748a5890430cb55d73657dc69448_d98c/Adizero_Finesse_Running_Shoes_Black_IF1151_video.mp4",
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 79900,
+      "totalItems": 1,
+      "fechaCompra": "2024-11-13T00:19:34.024Z"
+    },
+    {
+      "id": "dd66",
+      "userId": "1",
+      "items": [
+        {
+          "id": "2",
+          "productId": 5,
+          "name": "Zapatilla Finesse",
+          "description": "Zapatilla transpirable para running",
+          "price": 79900,
+          "promotionalPrice": 74900,
+          "stock": 21,
+          "featured": true,
+          "category": {
+            "id": 1,
+            "name": "Running"
+          },
+          "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3c1cdb0c61ce409b88268f831510197c_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM1.jpg",
+          "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d6bc5abb00aa44afa5c659c551385460_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM3_hover.jpg",
+          "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5c2b175d4cfa48b4aa9d3a577498d3c8_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM4.jpg",
+          "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b80e82f5d4774fb385a05fd05bc29ea4_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM5.jpg",
+          "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/5f36748a5890430cb55d73657dc69448_d98c/Adizero_Finesse_Running_Shoes_Black_IF1151_video.mp4",
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 79900,
+      "totalItems": 1,
+      "fechaCompra": "2024-11-13T00:26:32.876Z"
+    },
+    {
+      "id": "0073",
+      "userId": "1",
+      "items": [
+        {
+          "id": "2",
+          "productId": 5,
+          "name": "Zapatilla Finesse",
+          "description": "Zapatilla transpirable para running",
+          "price": 79900,
+          "promotionalPrice": 74900,
+          "stock": 20,
+          "featured": true,
+          "category": {
+            "id": 1,
+            "name": "Running"
+          },
+          "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3c1cdb0c61ce409b88268f831510197c_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM1.jpg",
+          "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d6bc5abb00aa44afa5c659c551385460_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM3_hover.jpg",
+          "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5c2b175d4cfa48b4aa9d3a577498d3c8_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM4.jpg",
+          "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b80e82f5d4774fb385a05fd05bc29ea4_9366/Adizero_Finesse_Running_Shoes_Black_IF1151_HM5.jpg",
+          "img5": "https://assets.adidas.com/videos/ar_1,w_1440,c_fill,q_auto,f_auto/5f36748a5890430cb55d73657dc69448_d98c/Adizero_Finesse_Running_Shoes_Black_IF1151_video.mp4",
+          "quantity": 20
+        }
+      ],
+      "totalAmount": 1598000,
+      "totalItems": 20,
+      "fechaCompra": "2024-11-13T00:27:10.020Z"
+    },
+    {
+      "id": "329a",
+      "userId": "1",
+      "items": [
+        {
+          "id": "5",
+          "productId": 14,
+          "name": "Gazelle Indoor",
+          "description": "Zapatilla con suela gruesa y diseño casual",
+          "price": 89900,
+          "promotionalPrice": 84900,
+          "stock": 13,
+          "featured": false,
+          "category": {
+            "id": 2,
+            "name": "Casual"
+          },
+          "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/a28fd1b628484c96ac8f54273f7f457e_9366/Gazelle_Indoor_Shoes_Beige_IH5482_01_standard.jpg",
+          "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/8b2d509469ad401db9b160fb2bd87290_9366/Gazelle_Indoor_Shoes_Beige_IH5482_02_standard_hover.jpg",
+          "img3": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/ed199ff76f8440afa4021cfb47e3666d_9366/Gazelle_Indoor_Shoes_Beige_IH5482_03_standard.jpg",
+          "img4": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9e5eacd280524111a7be006bf3e433ad_9366/Gazelle_Indoor_Shoes_Beige_IH5482_04_standard.jpg",
+          "img5": null,
+          "quantity": 13
+        }
+      ],
+      "totalAmount": 1168700,
+      "totalItems": 13,
+      "fechaCompra": "2024-11-13T00:27:29.243Z"
+    }
+  ]
 }
