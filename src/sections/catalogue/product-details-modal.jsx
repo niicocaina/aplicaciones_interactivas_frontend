@@ -17,53 +17,20 @@ import { handleIncreaseQuantity } from '../basket/product-Item-card';
 import useRecentProducts from 'src/hooks/useRecentProducts';
 import useFavoriteProducts from 'src/hooks/useFavoriteProducts';
 
-//const baseUrl = "http://localhost:3000/productBasket";
 const baseUrl = "http://localhost:8080/basket";
 
 export const handleAddToCart = async (product, productBasket, onUpdate) => {
   try {
-    if (!productBasket || productBasket.length === 0) {
-      // Crear el carrito con el primer producto
-      /*const response = await axios.post('http://localhost:3000/productBasket', {
-        //id: "1",
-        quantity: 1,
-        product: product
-      });*/
-      const response = await axios.post('http://localhost:8080/basket/add', {
-        product,
-        productBasket
-      });
-      console.log('Carrito creado con el primer producto:', response.data);
-      onUpdate; // Actualizar el estado del carrito
-      return;
-    }
-    const existingItem = productBasket.find(item => item.product.productId === product.productId);
-    if(existingItem) {
-      await handleIncreaseQuantity(existingItem.id, existingItem.quantity, onUpdate);
-    }
-    else{
-      //const lastId = productBasket[productBasket.length - 1].id;
-      //const newId = (Number(lastId) + 1).toString();
-
-      /*const response = await axios.post('http://localhost:3000/productBasket', {
-        //id: newId,
-        quantity: 1,
-        product: product
-      });*/
-      const response = await axios.post('http://localhost:8080/basket/add', {
-        product,
-        productBasket
-      });
-      console.log('Producto agregado al carrito:', response.data);
-      
-      onUpdate;
+    const response = await axios.post(`${endpointBasket}/add`, product, productBasket)
+    if (response.status === 200) {
+      console.log("Se agrego el producto con exito")
+      onUpdate();
     }
   } catch (error) {
     console.error('Error al agregar el producto al carrito:', error);
     alert('Error al agregar el producto al carrito');
   }
 };
-
 
 export default function ProductDetailsModal({product, similarProducts}) {
 
