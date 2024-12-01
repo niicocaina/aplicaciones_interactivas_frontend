@@ -43,7 +43,7 @@ export default function Nav({ openNav, onCloseNav }) {
   }, []);
 
   useEffect(() => {
-    axios.get("http://localhost:3000/categories")
+    axios.get("http://localhost:8080/api/v1/categories")
       .then(response => 
         response.data.map(cat => ({
           title: cat.name,
@@ -56,6 +56,7 @@ export default function Nav({ openNav, onCloseNav }) {
       .catch(err => console.log(err));
   }, []);
   const renderAccount = (
+    
     <Box
       sx={{
         my: 3,
@@ -65,6 +66,7 @@ export default function Nav({ openNav, onCloseNav }) {
         display: 'flex',
         borderRadius: 1.5,
         alignItems: 'center',
+        visibility: user ? 'visible' : 'hidden', 
         bgcolor: (theme) => alpha(theme.palette.grey[500], 0.12),
       }}
     >
@@ -87,8 +89,24 @@ export default function Nav({ openNav, onCloseNav }) {
     </Stack>
   );
   const renderCategories = (
+    
     <Stack component="nav" spacing={0.5} sx={{ px: 2 }}>
+    <Box
+      sx={{
+        my: 1,
+        mx: 1,
+        py: 1,
+        px: 0,
+        display: 'flex',
+        borderRadius: 1.5,
+        alignItems: 'center',
+        bgcolor: (theme) => alpha(theme.palette.grey[500], 0.02),
+      }}
+    >
     <NavItem key={"Catalogo"} item={{"path":"/catalogue/","title":"Zapatillas"}} />
+    </Box>
+    
+    
       {loading === false ? categories.map((item) => (
         <NavItem key={item.name} item={item} />
       )) : "Loading..."}

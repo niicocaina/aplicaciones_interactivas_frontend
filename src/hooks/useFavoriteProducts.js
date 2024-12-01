@@ -1,17 +1,24 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useContext } from 'react';
 import axios from 'axios';
+import config from 'src/config.json';
+import AuthContext from 'src/context/authContext';
 
 function useFavoriteProducts(maxFavorite = 5) {
   const [favoriteProducts, setFavoriteProducts] = useState([]);
+  const { user } = useContext(AuthContext);  
   
   useEffect(() => {
-    axios.get("http://localhost:3000/favorite")
+    if(user){
+    axios.get(config.apiBaseUrl + config.endpoints.favorite)
       .then(response => setFavoriteProducts(response.data))
       .catch(err => console.log(err));
-  }, []);
+    }
+  }, [user]);
 
   const addFavoriteProduct = useCallback((product) => {
     setFavoriteProducts((prevFavorite) => {
+
+      if(user){
       const isAlreadyFav = prevFavorite.some(item => item.productId === product.productId);
 
       let updatedFavorite = isAlreadyFav
@@ -25,16 +32,17 @@ function useFavoriteProducts(maxFavorite = 5) {
       }
 
       if (!isAlreadyFav) {
-        axios.get("http://localhost:3000/favorite").then(res => {
+        axios.get(config.apiBaseUrl + config.endpoints.favorite).then(res => {
           const isAlreadyInDb = res.data.some(item => item.productId === product.productId);
           if (!isAlreadyInDb) {       
-            axios.post("http://localhost:3000/favorite", product)
+            axios.post(config.apiBaseUrl + config.endpoints.favorite, product)
               .catch(() => console.log("Error al actualizar el archivo"));
           }
         });
       }
-
       return updatedFavorite;
+    }
+    return null;
     });
   }, [maxFavorite]);
 
@@ -42,9 +50,7 @@ function useFavoriteProducts(maxFavorite = 5) {
     setFavoriteProducts((prevFavorite) => {
       const updatedFavorite = prevFavorite.filter(item => item.productId !== productId);
 
-      axios.get("http://localhost:3000/favorite").then(res => res.data).then((data) =>{
-
-      
+      axios.get(config.apiBaseUrl + config.endpoints.favorite).then(res => res.data).then((data) => {
       const product_to_delete = data.filter(item => item.productId === productId)
       const id_to_delete = product_to_delete[0]["id"]
       axios.delete(`http://localhost:3000/favorite/${id_to_delete}`)

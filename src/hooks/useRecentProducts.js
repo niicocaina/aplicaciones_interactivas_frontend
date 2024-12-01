@@ -1,15 +1,22 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useContext } from 'react';
 import axios from 'axios';
+import AuthContext from 'src/context/authContext';
+import config from 'src/config.json';
+
 function useRecentProducts(maxRecent = 5) {
   const [recentProducts, setRecentProducts] = useState([]);
+  const { user } = useContext(AuthContext);  
 
+  
   useEffect(() => {
-    axios.get("http://localhost:3000/recentlyViewed").then(response => setRecentProducts(response.data)).catch(err => console.log(err))
-},[])
+    if(user){
+    axios.get(config.apiBaseUrl + config.endpoints.recent).then(response => setRecentProducts(response.data)).catch(err => console.log(err))
+    }
+  },[user])
 
 
   const addRecentProduct = useCallback((product) => {
-
+    if(user){
     setRecentProducts((prevRecent) => {
       const isAlreadyViewed = prevRecent.some(item => item.productId === product.productId);
       let updatedRecent = isAlreadyViewed
@@ -22,16 +29,16 @@ function useRecentProducts(maxRecent = 5) {
         updatedRecent = updatedRecent.slice(0, maxRecent);
       }
       if(!isAlreadyViewed){
-        axios.get("http://localhost:3000/recentlyViewed").then(res => {
-            const isAlreadyInDb = res.data.some(item => item.productId === product.productId);
-            if(!isAlreadyInDb){
-            axios.post("http://localhost:3000/recentlyViewed",product).catch("error al actualizar el archivo")
-            }
+        axios.get(config.apiBaseUrl + config.endpoints.recent).then(res =>{
+          console.log(res.data)
         })
     }
       return updatedRecent;
-    });
-  }, [maxRecent]);
+    });}
+
+    return null
+    
+  }, [maxRecent, user]);
 
   return { recentProducts, addRecentProduct };
 }
