@@ -11,10 +11,13 @@ import DialogContent from '@mui/material/DialogContent';
 
 import Iconify from 'src/components/iconify';
 import CategoryMenu from './category-menu';
-import { getProduct, updateProduct, getProducto, updateProducto } from './product-service';
+import { getProducto, updateProducto } from './product-service';
 import { useNotification } from 'src/context/notificationContext';
+import { useContext } from 'react';
+import AuthContext from 'src/context/authContext';
 
 export default function AlertDialog({ id, onChange }) {
+  const { token } = useContext(AuthContext); 
   const showNotification = useNotification();
   const [open, setOpen] = useState(false);
   const [nombre, setNombre] = useState('');
@@ -25,21 +28,17 @@ export default function AlertDialog({ id, onChange }) {
   const [categoria, setCategoria] = useState('');
 
   const handleClickOpen = () => {
-    /*getProduct(id).then((product) => {
+    getProducto(id, token).then((product) => {
       setNombre(product.name);
       setDescripcion(product.description);
       setPrecio(product.price);
       setPrecioDescuento(product.promotionalPrice > 0 ? product.promotionalPrice : '');
       setStock(product.stock);
       setCategoria(product.category);
-    });*/
-    getProducto(id).then((product) => {
-      setNombre(product.name);
-      setDescripcion(product.description);
-      setPrecio(product.price);
-      setPrecioDescuento(product.promotionalPrice > 0 ? product.promotionalPrice : '');
-      setStock(product.stock);
-      setCategoria(product.category);
+    })
+    .catch((error) => {
+      showNotification('Error al obtener producto', 'error');
+      console.log('Error al obtener producto:', error);
     });
     setOpen(true);
   };
@@ -137,7 +136,7 @@ export default function AlertDialog({ id, onChange }) {
                 promotionalPrice: precioDescuento,
                 stock,
                 category: categoria,
-              }).then(() => {
+              }, token).then(() => {
                 onChange();
                 handleClose();
                 showNotification('Producto actualizado correctamente', 'success');

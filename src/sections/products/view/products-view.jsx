@@ -10,9 +10,9 @@ import ProductSort from '../product-sort';
 import ProductFilters from '../product-filters';
 import CreateProduct from '../product-create-modal';
 import ProductCartWidget from '../product-cart-widget';
-import { getProducts, getProducto, getProductos } from '../product-service';
+import {getProductos } from '../product-service';
 
-import AuthContext, { AuthProvider } from 'src/context/authContext';
+import AuthContext from 'src/context/authContext';
 import { Navigate } from 'react-router-dom';
 import { useNotification } from 'src/context/notificationContext';
 
@@ -22,17 +22,13 @@ export default function ProductsView() {
   const showNotification = useNotification();
   const [openFilter, setOpenFilter] = useState(false);
   const [products, setProducts] = useState([]);
-  const { user, logout } = useContext(AuthContext);
-  const [bolas, setBolas] = useState(null);
+  const { user, token } = useContext(AuthContext);
 
   // Función para cargar productos desde la api
   const loadProducts = async () => {
-    const productos = await getProductos();
+    const productos = await getProductos(token);
     setProducts(productos);
     console.log('productos:', productos);
-    /*const producto = await getProducto();
-    console.log('producto:', producto);
-    setBolas(producto);*/
   };
 
   // Cargar productos solo al montar el componente
@@ -91,15 +87,6 @@ export default function ProductsView() {
           ) : (
             <Typography variant="h6"></Typography>
           )}
-
-          {/*bolas ? (
-              <Grid key={bolas.id} xs={12} sm={6} md={3}>
-                <ProductCard product={bolas} onProductChange={loadProducts} />
-              </Grid>
-            ) : (
-              <Typography variant="h6">Cargando producto...</Typography>
-            )*/}
-
 
           <ProductCartWidget />
         </Container>

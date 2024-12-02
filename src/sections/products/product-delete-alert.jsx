@@ -11,10 +11,13 @@ import DialogContentText from '@mui/material/DialogContentText';
 
 import Iconify from 'src/components/iconify';
 
-import { deleteProduct, deleteProducto } from './product-service';
+import { deleteProducto } from './product-service';
 import { useNotification } from 'src/context/notificationContext';
+import { useContext } from 'react';
+import AuthContext from 'src/context/authContext';
 
 export default function AlertDialog({ id, onChange }) {
+  const { token } = useContext(AuthContext);
   const showNotification = useNotification();
   const [open, setOpen] = useState(false);
 
@@ -52,7 +55,7 @@ export default function AlertDialog({ id, onChange }) {
           <Button
             onClick={() => {
               console.log('id:', id);
-              deleteProducto(id)
+              deleteProducto(id, token)
                 .then(() => {
                   onChange();
                   handleClose();

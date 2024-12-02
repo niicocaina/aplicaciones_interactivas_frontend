@@ -18,12 +18,15 @@ import { bgGradient } from 'src/theme/css';
 
 import Logo from 'src/components/logo';
 import Iconify from 'src/components/iconify';
-import {useNotification} from 'src/context/notificationContext';
+import { useNotification } from 'src/context/notificationContext';
+import { useContext } from 'react';
+import AuthContext from 'src/context/authContext';
 
 // ----------------------------------------------------------------------
 
 const CrearCuenta = () => {
     const showNotification = useNotification();
+    const { token } = useContext(AuthContext);
     const Navigate = useNavigate();
     const theme = useTheme();
     const [showPassword, setShowPassword] = useState(false);
@@ -60,13 +63,16 @@ const CrearCuenta = () => {
 
     const handleClick = async () => {
         try {
-            await axios.post('http://localhost:3000/user', {
+            await axios.post('http://localhost:8080/api/v1/auth/register', {
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                },
                 firstName: nombre,
                 lastName: apellido,
                 userName: usuario,
                 email,
                 password,
-                rol: 'USER',
+                role: 'USER',
                 birthDate: fechaNacimiento
             });
             showNotification('Cuenta creada exitosamente', 'success');
@@ -80,7 +86,7 @@ const CrearCuenta = () => {
     const renderForm = (
         <>
             <Stack spacing={3} sx={{ mb: 3, mt: 3 }}>
-                <TextField name="nombre" label="Nombre" onChange={handleNombreChange}/>
+                <TextField name="nombre" label="Nombre" onChange={handleNombreChange} />
                 <TextField name="apellido" label="Apellido" onChange={handleApellidoChange} />
                 <TextField name="usuario" label="Usuario" onChange={handleUsuarioChange} />
                 <TextField name="email" label="Email" onChange={handleEmailChange} />

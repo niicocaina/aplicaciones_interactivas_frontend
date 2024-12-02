@@ -13,13 +13,16 @@ import Iconify from 'src/components/iconify';
 import PropTypes from 'prop-types';
 import ImageUploader from './image-uploader';
 import CategoryMenu from './category-menu';
-import { createProduct, createProducto } from './product-service';
+import { createProducto } from './product-service';
 import { useNotification } from 'src/context/notificationContext';
+import { useContext } from 'react';
+import AuthContext from 'src/context/authContext';
 
 export default function AlertDialog({ onProductChange }) {
   const showNotification = useNotification();
   const [open, setOpen] = useState(false);
   const [images, setImages] = useState([]);
+  const { token } = useContext(AuthContext);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -129,7 +132,7 @@ export default function AlertDialog({ onProductChange }) {
                 img3: images[2] || null,
                 img4: images[3] || null,
                 img5: images[4] || null,
-              }).then(() => {
+              }, token).then(() => {
                 onProductChange();
                 handleClose();
                 showNotification('Producto creado correctamente', 'success');
