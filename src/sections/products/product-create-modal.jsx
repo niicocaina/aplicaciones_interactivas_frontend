@@ -14,8 +14,10 @@ import PropTypes from 'prop-types';
 import ImageUploader from './image-uploader';
 import CategoryMenu from './category-menu';
 import { createProduct, createProducto } from './product-service';
+import { useNotification } from 'src/context/notificationContext';
 
 export default function AlertDialog({ onProductChange }) {
+  const showNotification = useNotification();
   const [open, setOpen] = useState(false);
   const [images, setImages] = useState([]);
 
@@ -113,6 +115,7 @@ export default function AlertDialog({ onProductChange }) {
         <DialogActions>
           <Button onClick={handleClose}>Cancelar</Button>
           <Button
+            disabled = {!nombre || !descripcion || !precio || !stock || !categoria}
             onClick={() => {
               createProducto({
                 name: nombre,
@@ -126,8 +129,15 @@ export default function AlertDialog({ onProductChange }) {
                 img3: images[2] || null,
                 img4: images[3] || null,
                 img5: images[4] || null,
-              }).then(() => onProductChange());
-              handleClose();
+              }).then(() => {
+                onProductChange();
+                handleClose();
+                showNotification('Producto creado correctamente', 'success');
+              }).catch((error) => {
+                handleClose();
+                showNotification('Error al crear producto', 'error');
+                console.log('Error al crear el producto:', error);
+              });
             }}
             autoFocus
           >

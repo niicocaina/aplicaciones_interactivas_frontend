@@ -18,10 +18,12 @@ import { bgGradient } from 'src/theme/css';
 
 import Logo from 'src/components/logo';
 import Iconify from 'src/components/iconify';
+import {useNotification} from 'src/context/notificationContext';
 
 // ----------------------------------------------------------------------
 
 const CrearCuenta = () => {
+    const showNotification = useNotification();
     const Navigate = useNavigate();
     const theme = useTheme();
     const [showPassword, setShowPassword] = useState(false);
@@ -67,8 +69,10 @@ const CrearCuenta = () => {
                 rol: 'USER',
                 birthDate: fechaNacimiento
             });
+            showNotification('Cuenta creada exitosamente', 'success');
             Navigate('/login');
         } catch {
+            showNotification('Error al crear la cuenta', 'error');
             console.error('Error de inicio de sesión');
         }
     };

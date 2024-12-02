@@ -12,8 +12,10 @@ import DialogContent from '@mui/material/DialogContent';
 import Iconify from 'src/components/iconify';
 import CategoryMenu from './category-menu';
 import { getProduct, updateProduct, getProducto, updateProducto } from './product-service';
+import { useNotification } from 'src/context/notificationContext';
 
 export default function AlertDialog({ id, onChange }) {
+  const showNotification = useNotification();
   const [open, setOpen] = useState(false);
   const [nombre, setNombre] = useState('');
   const [descripcion, setDescripcion] = useState('');
@@ -135,8 +137,14 @@ export default function AlertDialog({ id, onChange }) {
                 promotionalPrice: precioDescuento,
                 stock,
                 category: categoria,
-              }).then(() => onChange());
-              handleClose();
+              }).then(() => {
+                onChange();
+                handleClose();
+                showNotification('Producto actualizado correctamente', 'success');
+              }).catch((error) => {
+                showNotification('Error al actualizar producto', 'error');
+                console.log('Error al actualizar producto:', error);
+              });
             }}
             autoFocus
           >

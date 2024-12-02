@@ -12,8 +12,10 @@ import DialogContentText from '@mui/material/DialogContentText';
 import Iconify from 'src/components/iconify';
 
 import { deleteProduct, deleteProducto } from './product-service';
+import { useNotification } from 'src/context/notificationContext';
 
 export default function AlertDialog({ id, onChange }) {
+  const showNotification = useNotification();
   const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
@@ -49,8 +51,18 @@ export default function AlertDialog({ id, onChange }) {
           <Button onClick={handleClose}>Cancelar</Button>
           <Button
             onClick={() => {
-              deleteProducto(id).then(() => onChange());
-              handleClose();
+              console.log('id:', id);
+              deleteProducto(id)
+                .then(() => {
+                  onChange();
+                  handleClose();
+                  showNotification('Producto eliminado', 'success');
+                  console.log('id eliminado:', id);
+                })
+                .catch((error) => {
+                  showNotification('Error al eliminar producto', 'error');
+                  console.log('Error al eliminar producto:', error);
+                });
             }}
             autoFocus
           >

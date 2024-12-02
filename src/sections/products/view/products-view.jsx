@@ -14,10 +14,12 @@ import { getProducts, getProducto, getProductos } from '../product-service';
 
 import AuthContext, { AuthProvider } from 'src/context/authContext';
 import { Navigate } from 'react-router-dom';
+import { useNotification } from 'src/context/notificationContext';
 
 // ----------------------------------------------------------------------
 
 export default function ProductsView() {
+  const showNotification = useNotification();
   const [openFilter, setOpenFilter] = useState(false);
   const [products, setProducts] = useState([]);
   const { user, logout } = useContext(AuthContext);
@@ -26,7 +28,8 @@ export default function ProductsView() {
   // Función para cargar productos desde la api
   const loadProducts = async () => {
     const productos = await getProductos();
-    setProducts(productos); 
+    setProducts(productos);
+    console.log('productos:', productos);
     /*const producto = await getProducto();
     console.log('producto:', producto);
     setBolas(producto);*/
@@ -36,6 +39,12 @@ export default function ProductsView() {
   useEffect(() => {
     loadProducts();
   }, []);
+
+  useEffect(() => {
+    if (products === null) {
+      showNotification('Error al cargar los productos', 'error');
+    }
+  }, [products]);
 
   const handleOpenFilter = () => {
     setOpenFilter(true);
@@ -70,20 +79,27 @@ export default function ProductsView() {
             </Stack>
           </Stack>
 
-          <Grid container spacing={3}>
-            { products.map((product) => (
-              <Grid key={product.id} xs={12} sm={6} md={3}>
-                <ProductCard product={product} onProductChange={loadProducts} />
-              </Grid>
-            )) }
-            {/*bolas ? (
+
+          {products ? (
+            <Grid container spacing={3}>
+              {products.map((product) => (
+                <Grid key={product.id} xs={12} sm={6} md={3}>
+                  <ProductCard product={product} onProductChange={loadProducts} />
+                </Grid>
+              ))}
+            </Grid>
+          ) : (
+            <Typography variant="h6"></Typography>
+          )}
+
+          {/*bolas ? (
               <Grid key={bolas.id} xs={12} sm={6} md={3}>
                 <ProductCard product={bolas} onProductChange={loadProducts} />
               </Grid>
             ) : (
               <Typography variant="h6">Cargando producto...</Typography>
             )*/}
-          </Grid>
+
 
           <ProductCartWidget />
         </Container>

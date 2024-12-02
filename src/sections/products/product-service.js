@@ -21,7 +21,7 @@ export const getProducto = async (id) => {
   try {
     const response = await axios.get(`http://localhost:8080/api/v1/products/${id}`, {
       headers: {
-        'Authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsdWNhc0BleGFtcGxlLmNvbSIsImlhdCI6MTczMjgyMTAxMSwiZXhwIjoxNzMyOTA3NDExfQ.8nVkQqKuqw5Yg124Q-jRw5dv07cHPsDa_-R_EU0SdAEjfzM7t-WL654MYO2hG6prGqEHMs_2FXieH2VJPVjXvQ',
+        'Authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuaWNvQGV4YW1wbGUuY29tIiwiaWF0IjoxNzMyOTk0Mjk4LCJleHAiOjE3MzMwODA2OTh9.8FqyHu5_fWXQ4JKzN3YQqbEionWID_p9Vqu-aXhnNuNypKP3V2dEpr1BQ7QSEZnk6w-eY6u7ZsOyIrRbk4IN2w',
         'Content-Type': 'application/json', // Si aplica
         'Accept': 'application/json',
       }
@@ -37,7 +37,7 @@ export const getProductos = async () => {
   try {
     const response = await axios.get('http://localhost:8080/api/v1/products', {
       headers: {
-        'Authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsdWNhc0BleGFtcGxlLmNvbSIsImlhdCI6MTczMjgyMTAxMSwiZXhwIjoxNzMyOTA3NDExfQ.8nVkQqKuqw5Yg124Q-jRw5dv07cHPsDa_-R_EU0SdAEjfzM7t-WL654MYO2hG6prGqEHMs_2FXieH2VJPVjXvQ',
+        'Authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuaWNvQGV4YW1wbGUuY29tIiwiaWF0IjoxNzMyOTk0Mjk4LCJleHAiOjE3MzMwODA2OTh9.8FqyHu5_fWXQ4JKzN3YQqbEionWID_p9Vqu-aXhnNuNypKP3V2dEpr1BQ7QSEZnk6w-eY6u7ZsOyIrRbk4IN2w',
         'Content-Type': 'application/json', // Si aplica
         'Accept': 'application/json',
       }
@@ -71,15 +71,15 @@ export const createProducto = async (product) => {
   try {
     const response = await axios.post(`http://localhost:8080/api/v1/products`,product, {
       headers: {
-        'Authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsdWNhc0BleGFtcGxlLmNvbSIsImlhdCI6MTczMjgyMTAxMSwiZXhwIjoxNzMyOTA3NDExfQ.8nVkQqKuqw5Yg124Q-jRw5dv07cHPsDa_-R_EU0SdAEjfzM7t-WL654MYO2hG6prGqEHMs_2FXieH2VJPVjXvQ',
+        'Authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuaWNvQGV4YW1wbGUuY29tIiwiaWF0IjoxNzMyOTk0Mjk4LCJleHAiOjE3MzMwODA2OTh9.8FqyHu5_fWXQ4JKzN3YQqbEionWID_p9Vqu-aXhnNuNypKP3V2dEpr1BQ7QSEZnk6w-eY6u7ZsOyIrRbk4IN2w',
         'Content-Type': 'application/json', // Si aplica
         'Accept': 'application/json',
       }
     });
     return response.data;
   } catch (error) {
-    console.log('Error al obtener productos:', error.response?.data || error.message);
-    return null;
+    console.log('Error al crear producto:', error.response?.data || error.message);
+    throw error;
   }
 };
 
@@ -95,15 +95,15 @@ export const updateProducto = async (id, product) => {
   try {
     const response = await axios.patch(`http://localhost:8080/api/v1/products/${id}`,product, {
       headers: {
-        'Authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsdWNhc0BleGFtcGxlLmNvbSIsImlhdCI6MTczMjgyMTAxMSwiZXhwIjoxNzMyOTA3NDExfQ.8nVkQqKuqw5Yg124Q-jRw5dv07cHPsDa_-R_EU0SdAEjfzM7t-WL654MYO2hG6prGqEHMs_2FXieH2VJPVjXvQ',
+        'Authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuaWNvQGV4YW1wbGUuY29tIiwiaWF0IjoxNzMyOTk0Mjk4LCJleHAiOjE3MzMwODA2OTh9.8FqyHu5_fWXQ4JKzN3YQqbEionWID_p9Vqu-aXhnNuNypKP3V2dEpr1BQ7QSEZnk6w-eY6u7ZsOyIrRbk4IN2w',
         'Content-Type': 'application/json', // Si aplica
         'Accept': 'application/json',
       }
     });
     return response.data;
   } catch (error) {
-    console.log('Error al obtener productos:', error.response?.data || error.message);
-    return null;
+    console.log('Error al actualizar producto:', error.response?.data || error.message);
+    throw error;
   }
 };
 
@@ -119,14 +119,14 @@ export const deleteProducto = async (id) => {
   try {
     const response = await axios.delete(`http://localhost:8080/api/v1/products/${id}`, {
       headers: {
-        'Authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsdWNhc0BleGFtcGxlLmNvbSIsImlhdCI6MTczMjgyMTAxMSwiZXhwIjoxNzMyOTA3NDExfQ.8nVkQqKuqw5Yg124Q-jRw5dv07cHPsDa_-R_EU0SdAEjfzM7t-WL654MYO2hG6prGqEHMs_2FXieH2VJPVjXvQ',
+        'Authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuaWNvQGV4YW1wbGUuY29tIiwiaWF0IjoxNzMyOTk0Mjk4LCJleHAiOjE3MzMwODA2OTh9.8FqyHu5_fWXQ4JKzN3YQqbEionWID_p9Vqu-aXhnNuNypKP3V2dEpr1BQ7QSEZnk6w-eY6u7ZsOyIrRbk4IN2w',
         'Content-Type': 'application/json', // Si aplica
         'Accept': 'application/json',
       }
     });
     return response.data;
   } catch (error) {
-    console.log('Error al obtener productos:', error.response?.data || error.message);
-    return null;
+    console.log('Error al eliminar producto:', error.response?.data || error.message);
+    throw error;
   }
 };
