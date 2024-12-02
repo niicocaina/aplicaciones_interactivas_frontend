@@ -24,23 +24,17 @@ const icon = (name) => (
 );
 export default function Nav({ openNav, onCloseNav }) {
   const pathname = usePathname();
-  const { user } = useContext(AuthContext);  
+  const { user, token } = useContext(AuthContext);  
   const [categories, setCategories] = useState(null);
   const [loading, setLoading] = useState(true);
   const upLg = useResponsive('up', 'lg');
+
+  
   useEffect(() => {
     if (openNav) {
       onCloseNav();
     }
   }, [pathname]);
-  useEffect(() => {
-    axios.get("http://localhost:3000/user")
-      .then(response => {
-        const userData = response.data[0];  
-        setUser(userData);  
-      })
-      .catch(err => console.log(err));
-  }, []);
 
   useEffect(() => {
     axios.get("http://localhost:8080/api/v1/categories")

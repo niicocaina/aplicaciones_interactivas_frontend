@@ -1,6 +1,12 @@
 import axios from 'axios';
 import { toNumber } from 'lodash';
 
+const conf = {
+  headers: { Authorization: `Bearer ${token}` }, // obtener el token del auth context
+  ContentType: 'application/json', 
+  Accept: 'application/json'
+};
+
 export const getProducts = async () => {
   try {
     const response = await axios.get('http://localhost:3000/products');

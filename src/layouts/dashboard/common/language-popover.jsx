@@ -41,18 +41,6 @@ export default function AccountPopover() {
     handleClose(); 
   };
 
-
-  useEffect(() => {
-    axios.get('http://localhost:3000/user')
-      .then((response) => {
-        const userData = response.data[0];  
-        setUser(userData);  
-      })
-      .catch((error) => {
-        console.error('Error al obtener los datos del perfil:', error);
-      });
-  }, []);  
-
   if (!user) {
     return <Link to ="/login">Login</Link>;
   }

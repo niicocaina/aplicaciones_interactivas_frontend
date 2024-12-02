@@ -6,21 +6,21 @@ import axios from 'axios';
 const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
-  const [user, setUser] = useState(null); // Mantener el estado user
-  const [token, setToken] = useState(null); // Agregar estado para el token
+  const [user, setUser] = useState(); // Mantener el estado user
+  const [token, setToken] = useState(); // Agregar estado para el token
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   const login = async (mail, password) => {
     try {
       const response = await serviceLogin(mail, password);
-
+      
       // Guardar el token en el estado
       setToken(response.token);
 
       // Guardar la información del usuario en el estado
       setUser(response.user); // Usar la información del usuario retornada por serviceLogin
-
+      console.log(response.user);
       // Redirigir según el rol (usando la información del usuario del estado)
       if (response.user.role === 'ADMIN') { // Acceder al rol del usuario
         navigate('/products');
