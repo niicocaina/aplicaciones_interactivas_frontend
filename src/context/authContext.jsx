@@ -27,6 +27,7 @@ export function AuthProvider({ children }) {
       } else {
         navigate('/catalogue');
       }
+      setError(null);
     } catch (err) {
       setError('Ha ocurrido un error'); 
     }

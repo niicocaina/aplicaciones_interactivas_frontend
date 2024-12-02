@@ -26,7 +26,6 @@ export default function Header({ onOpenNav }) {
 
       <Box sx={{ flexGrow: 1 }} />
       <Stack direction="row" alignItems="center" spacing={1}>
-        <NotificationsPopover />
         <LanguagePopover />
         {}
       </Stack>
