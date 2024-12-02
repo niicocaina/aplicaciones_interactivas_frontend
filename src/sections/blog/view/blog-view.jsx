@@ -15,12 +15,10 @@ const BlogView = () => {
         let data = await response.json();
         console.log("esto es data, ", data);
 
-        // Accede correctamente a los productos dentro de los "items"
         const simulatedPurchases = data.map((purchase) => ({
           ...purchase,
           items: purchase.items.map(item => ({
             ...item,
-            // Asegúrate de que cada producto esté completo con la información que necesitas
             product: {
               name: item.name,
               description: item.description,
@@ -71,9 +69,16 @@ const BlogView = () => {
           <p><strong>Nombre:</strong> {user?.firstName}</p>
           <p><strong>Apellido:</strong> {user?.lastName}</p>
           <p><strong>Email:</strong> {user?.email}</p>
-          <p><strong>Fecha de nacimiento:</strong> {user?.birthDate}</p>
-          
-          {/* Mostrar "Rol: Admin" solo si el rol es 'ADMIN' */}
+          <p>
+          <strong>Fecha de nacimiento:</strong>{" "}
+          {user?.birthDate && 
+            new Date(user.birthDate).toLocaleDateString('es-AR', {
+              year: 'numeric',
+              month: '2-digit',
+              day: '2-digit',
+            }).replace(/\//g, '-')} 
+        </p>          
+          {/*  */}
           {user?.role === 'ADMIN' && (
             <p><strong>Rol:</strong> Admin</p>
           )}

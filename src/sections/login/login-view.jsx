@@ -1,5 +1,4 @@
 import { useState, useContext } from 'react';
-// import { useAuth } from 'src/hooks/useAuth';
 import { serviceLogin } from 'src/services/authService';
 import AuthContext, { AuthProvider } from 'src/context/authContext';
 
@@ -22,6 +21,7 @@ import { bgGradient } from 'src/theme/css';
 
 import Logo from 'src/components/logo';
 import Iconify from 'src/components/iconify';
+import Alert from '@mui/material/Alert'; 
 
 // ----------------------------------------------------------------------
 
@@ -31,6 +31,8 @@ const LoginView = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
+  const { error } = useContext(AuthContext); 
+
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -42,7 +44,7 @@ const LoginView = () => {
 
   const handleClick = async () => {
     try {
-      await login(email, password); // Llama a login del contexto
+      await login(email, password); 
     } catch {
       console.error('Error de inicio de sesión');
     }
@@ -124,6 +126,11 @@ const LoginView = () => {
             </Link>
           </Typography>
 
+          {error && (
+            <Alert severity="error" sx={{ mb: 3 }}>
+              {error}
+            </Alert>
+          )}
           {renderForm}
         </Card>
       </Stack>
