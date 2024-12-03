@@ -13,12 +13,25 @@ import MediaList from './media-list';
 import useRecentProducts from 'src/hooks/useRecentProducts';
 import useFavoriteProducts from 'src/hooks/useFavoriteProducts';
 import AuthContext from 'src/context/authContext';
+import {useNotification} from 'src/context/notificationContext';
+import { useNavigate } from 'react-router-dom';
+
 
 const baseUrl = "http://localhost:8080/basket";
 
-export const handleAddToCart = async (product, token, onUpdate) => {
+export const handleAddToCart = async (product, token, onUpdate, navigate, showNotification) => {
   product.id = product.productId;
   try {
+    console.log("Tocket ", token)
+    if (token == null) {
+      
+      const msg = "Se debe iniciar sesion para poder comezar a comprar"
+      const severity = "warning"
+      showNotification(msg,severity)
+
+      navigate('/login');
+      return;
+    }
     const response = await axios.post(`${baseUrl}/add`, product, {
       headers: {
         Authorization: `Bearer ${token}`
@@ -41,7 +54,11 @@ export default function ProductDetailsModal({product, similarProducts}) {
     const [open, setOpen] = useState(false);
     const maxImages = [product.img1,product.img5,product.img3,product.img4,product.img2].filter(img => img != null);
     const sizes = ["40","41","42"];
+
     const {token} = useContext(AuthContext)
+    const showNotification = useNotification();
+    const navigate = useNavigate();
+
     const handleClickOpen = () => {
         setOpen(true);
         addRecentProduct(product);
@@ -183,7 +200,7 @@ export default function ProductDetailsModal({product, similarProducts}) {
             </Grid>
             {
               product.stock !== 0 ?
-            <Button variant="contained" color="primary" sx={{ mt: 3, width: '100%' }} onClick={() => handleAddToCart(product, token, fetchBasket)}>
+            <Button variant="contained" color="primary" sx={{ mt: 3, width: '100%' }} onClick={() => handleAddToCart(product, token, fetchBasket, navigate, showNotification)}>
 
               Agregar al Carrito
             </Button> : <Typography variant="body1" color="text.secondary" mt={2}> STOCK AGOTADO </Typography>}
