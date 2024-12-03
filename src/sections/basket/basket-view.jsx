@@ -6,17 +6,20 @@ import {Container, Typography, Box, Button, Grid, CircularProgress} from "@mui/m
 import ProductItemCard from './product-Item-card';
 import AuthContext from 'src/context/authContext';
 
-const baseUrl = "http://localhost:3000/productBasket";
-const baseCheckOutUrl ="http://localhost:3000/checkOut"
+const baseUrl = "http://localhost:8080/basket";
 
 export default function BasketView() {
     const [productBasket, setProductBasket] = useState([]);
     const [loading, setLoading] = useState("true");
+    const { token } = useContext(AuthContext);
 
     const fetchBasket = async () => {
         try {
-            const response = await axios.get(baseUrl);
-            setProductBasket(response.data);
+            const response = await axios.get(baseUrl, {
+                headers: {
+                  Authorization: `Bearer ${token}`
+                }});   
+            setProductBasket(response.data.products);
             setLoading(false); // Cambia loading a false solo después de cargar los datos.
         } catch (error) {
             console.error("Error al cargar el carrito", error);
@@ -32,58 +35,33 @@ export default function BasketView() {
     // Función para vaciar el carrito
     const clearBasket = async () => {
         try {
-            // Borra cada producto del carrito
-            await Promise.all(productBasket.map(item => axios.delete(`${baseUrl}/${item.id}`)));
-            setProductBasket([]); // Actualiza el estado local para reflejar que el carrito está vacío
+            const response = await axios.delete(`${baseUrl}/removeAll`, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+            if (response.status === 204) {
+                console.log("Producto eliminado");
+                fetchBasket();
+            }
         } catch (error) {
             console.error("Error al vaciar el carrito", error);
         }
     };
 
-    const { user } = useContext(AuthContext);
 
     const handleCheckOut = async () => {
         try {
-            if (user === null) {
-                alert("Inicie sesión para poder comprar");
-                console.log("Usuario no logueado");
-                return;
-            }
-
-            // Datos de la compra a enviar al backend
-            const purchaseData = {
-                userId: user.id,  // ID del usuario que realiza la compra
-                items: productBasket.map(item => ({
-                    ...item.product,  // Incluye todos los detalles del producto (como nombre, descripción, etc.)
-                    quantity: item.quantity // Agrega la cantidad comprada como un campo adicional
-                })),
-                totalAmount: productBasket.reduce((sum, item) => sum + (item.product.price * item.quantity), 0),
-                totalItems: productBasket.reduce((sum, item) => sum + item.quantity, 0), // Cantidad total de productos
-                fechaCompra: new Date().toISOString() 
-            };
-            console.log(user)
-            // Solicitud POST para procesar el checkout
-            const response = await axios.post("http://localhost:3000/checkOut", purchaseData);
-            
-            if (response.status === 201) {
+            console.log("Token", token)
+            const response = await axios.post(`${baseUrl}/checkout`, null, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+            console.log(response.status)
+            if (response.status === 204) {
                 alert("Compra realizada con éxito!");
-                console.log("Datos de la compra:", response.data);
-                // Resta el stock de cada producto en el carrito
-                await Promise.all(productBasket.map(async (item) => {
-                    const newStock = item.product.stock - item.quantity;
-                    
-                    // Actualiza el stock del producto si es mayor o igual a 0
-                    if (newStock >= 0) {
-                        await axios.patch(`http://localhost:3000/products/${item.product.id}`, {
-                            stock: newStock
-                        });
-                    } else {
-                        console.warn(`Stock insuficiente para el producto ${item.product.id}`);
-                    }
-                }));
-                clearBasket();  // Vaciar el carrito después de la compra
-            } else {
-                console.log("Error al realizar la compra:", response.statusText);
+                fetchBasket();
             }
         } catch (error) {
             console.error("Error", error)
@@ -103,9 +81,9 @@ export default function BasketView() {
                 <>
                     {/* Lista de productos */}
                     <Grid container spacing={3} sx={{ marginTop: 2 }}>
-                        {productBasket.map(item => (
-                            <Grid item xs={12} key={item.id}>
-                                <ProductItemCard productBasket={item} onUpdate={fetchBasket()} />
+                        {productBasket.map((item, index) => (
+                            <Grid item xs={12} key={index}>
+                                <ProductItemCard productBasket={item} onUpdate={fetchBasket} />
                             </Grid>
                         ))}
                     </Grid>
@@ -113,7 +91,7 @@ export default function BasketView() {
                     {/* Total y botón de limpiar */}
                     <Box sx={{ marginTop: 4, padding: 2, borderRadius: 2, boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.1)', backgroundColor: '#f9f9f9', textAlign: 'center' }}>
                         <Typography variant="h6" fontWeight="bold" color="primary">
-                            Total: $ {productBasket.reduce((sum, item) => sum + (item.product.price*item.quantity), 0)}
+                            Total: $ {productBasket.reduce((sum, item) => sum + (item.price*item.quantity), 0)}
                         </Typography>
                         <Button
                             variant="contained"
