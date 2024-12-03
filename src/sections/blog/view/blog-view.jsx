@@ -109,6 +109,7 @@ const BlogView = () => {
               <ul>
           {purchases.map((purchase) => (
             <li key={purchase.checkOutId} style={{ marginBottom: '20px', borderBottom: '1px solid #f1f1f1', paddingBottom: '15px' }}>
+               <p><strong>ID de compra: #</strong> {purchase.checkOutId}</p>
               <p><strong>Total:</strong> {purchase.total}</p>
               <p>
                 <strong>Fecha:</strong>{" "}
@@ -143,6 +144,8 @@ const BlogView = () => {
                     </div>
                   </li>
                 ))}
+                <br></br>
+                <br></br>
               </ul>
             </li>
           ))}
