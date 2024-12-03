@@ -3,11 +3,14 @@ import { useNavigate } from 'react-router-dom';
 import AuthContext from 'src/context/authContext';
 import config from 'src/config.json'; 
 import axios from 'axios';
+import { useNotification } from 'src/context/notificationContext';
+
 
 
 
 const BlogView = () => {
   const { user, token } = useContext(AuthContext);  
+  const showNotification = useNotification();
   const [purchases, setPurchases] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
@@ -15,6 +18,7 @@ const BlogView = () => {
   
   useEffect(() => {
     const fetchPurchases = async () => {
+      
       try {
         const response = await axios.get('http://localhost:8080/api/v1/checkouts', {
           headers: {
@@ -22,6 +26,7 @@ const BlogView = () => {
           }
   
         });
+        
 
         if (response.ok) {
           throw new Error('Error al obtener el historial de compras');
@@ -42,6 +47,8 @@ const BlogView = () => {
       setIsLoading(false); 
       } catch (error) {
         console.error('Error al obtener el historial de compras:', error);
+        showNotification('Error al obtener el historial de compras:', 'error');
+        setError('Error al obtener el historial de compras.'); 
         setIsLoading(false); 
       }
     };
@@ -59,7 +66,7 @@ const BlogView = () => {
   }, [user, navigate]);  
 
   if (isLoading) {
-    return <div>Cargando...</div>;  
+    return <div> </div>;  
   }
 
   return (
