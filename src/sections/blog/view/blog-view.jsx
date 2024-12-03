@@ -103,10 +103,16 @@ const BlogView = () => {
               <p>No has realizado ninguna compra.</p>
             ) : (
               <ul>
-          {purchases.map((purchase) => (
+          {purchases.map((purchase) => {
+            const purchaseTotal = purchase.products.reduce((acc, product) => {
+              const price = product.promotionalPrice || product.price;
+              return acc + (price * product.quantity);
+            }, 0);
+
+            return ( 
             <li key={purchase.checkOutId} style={{ marginBottom: '20px', borderBottom: '1px solid #f1f1f1', paddingBottom: '15px' }}>
                <p><strong>Número de compra: </strong> #{purchase.checkOutId}</p>
-              <p><strong>Total:</strong> ${purchase.total}</p>
+              <p><strong>Total:</strong> ${purchaseTotal}</p>
               <p>
                 <strong>Fecha:</strong>{" "}
                 {purchase.transactionDate && 
@@ -116,6 +122,7 @@ const BlogView = () => {
                     day: '2-digit',
                   }).replace(/\//g, '-')} 
               </p>
+              
               <ul> {/* Agregar una lista para los productos */}
                 {purchase.products.map((product) => (
                   <li key={product.productId} style={{ display: 'flex', alignItems: 'center' }}> {/*  */}
@@ -143,11 +150,12 @@ const BlogView = () => {
                 <br></br>
                 <br></br>
               </ul>
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
+              </li>
+        );
+      })} 
+    </ul> 
+  )} 
+</div> 
   </div>
 )}
     </div>
