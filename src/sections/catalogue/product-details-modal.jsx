@@ -1,29 +1,45 @@
 import axios from 'axios';
 import * as React from 'react';
+import {useContext} from 'react';
 
 import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
 import Grid from '@mui/material/Grid';
-import {Typography, Box, Chip , ImageListItem, ImageList, Modal} from '@mui/material';
+import {Typography, Box, Chip , ImageList, Modal} from '@mui/material';
 import Iconify from 'src/components/iconify';
 import MediaList from './media-list';
-import { handleIncreaseQuantity } from '../basket/product-Item-card';
 import useRecentProducts from 'src/hooks/useRecentProducts';
 import useFavoriteProducts from 'src/hooks/useFavoriteProducts';
+import AuthContext from 'src/context/authContext';
+import {useNotification} from 'src/context/notificationContext';
+import { useNavigate } from 'react-router-dom';
+
 
 const baseUrl = "http://localhost:8080/basket";
 
-export const handleAddToCart = async (product, productBasket, onUpdate) => {
+export const handleAddToCart = async (product, token, onUpdate, navigate, showNotification) => {
+  product.id = product.productId;
   try {
-    const response = await axios.post(`${endpointBasket}/add`, product, productBasket)
+    console.log("Tocket ", token)
+    if (token == null) {
+      
+      const msg = "Se debe iniciar sesion para poder comezar a comprar"
+      const severity = "warning"
+      showNotification(msg,severity)
+
+      navigate('/login');
+      return;
+    }
+    const response = await axios.post(`${baseUrl}/add`, product, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    });
     if (response.status === 200) {
       console.log("Se agrego el producto con exito")
+      showNotification("Se agrego el producto al carrito","success")
       onUpdate();
     }
   } catch (error) {
@@ -39,6 +55,10 @@ export default function ProductDetailsModal({product, similarProducts}) {
     const [open, setOpen] = useState(false);
     const maxImages = [product.img1,product.img5,product.img3,product.img4,product.img2].filter(img => img != null);
     const sizes = ["40","41","42"];
+
+    const {token} = useContext(AuthContext)
+    const showNotification = useNotification();
+    const navigate = useNavigate();
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -88,7 +108,10 @@ export default function ProductDetailsModal({product, similarProducts}) {
 
     const fetchBasket = async () => {
         try {
-            const response = await axios.get(baseUrl);
+            const response = await axios.get(baseUrl, {
+              headers: {
+                'Authorization': `Bearer ${token}`
+              }});
             setProductBasket(response.data);
             setLoading(false); 
         } catch (error) {
@@ -178,7 +201,7 @@ export default function ProductDetailsModal({product, similarProducts}) {
             </Grid>
             {
               product.stock !== 0 ?
-            <Button variant="contained" color="primary" sx={{ mt: 3, width: '100%' }} onClick={() => handleAddToCart(product, productBasket, fetchBasket)}>
+            <Button variant="contained" color="primary" sx={{ mt: 3, width: '100%' }} onClick={() => handleAddToCart(product, token, fetchBasket, navigate, showNotification)}>
 
               Agregar al Carrito
             </Button> : <Typography variant="body1" color="text.secondary" mt={2}> STOCK AGOTADO </Typography>}
