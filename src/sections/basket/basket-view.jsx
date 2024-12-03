@@ -6,12 +6,15 @@ import {Container, Typography, Box, Button, Grid, CircularProgress} from "@mui/m
 import ProductItemCard from './product-Item-card';
 import AuthContext from 'src/context/authContext';
 
+import {useNotification} from 'src/context/notificationContext';
+
 const baseUrl = "http://localhost:8080/basket";
 
 export default function BasketView() {
     const [productBasket, setProductBasket] = useState([]);
     const [loading, setLoading] = useState("true");
     const { token } = useContext(AuthContext);
+    const showNotification = useNotification();
 
     const fetchBasket = async () => {
         try {
@@ -49,22 +52,30 @@ export default function BasketView() {
         }
     };
 
-
     const handleCheckOut = async () => {
         try {
-            console.log("Token", token)
+            console.log("Token", token);
             const response = await axios.post(`${baseUrl}/checkout`, null, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
             });
-            console.log(response.status)
+            
             if (response.status === 204) {
                 alert("Compra realizada con éxito!");
                 fetchBasket();
             }
         } catch (error) {
-            console.error("Error", error)
+            // Verificar si el error tiene una respuesta de Axios
+            if (error.response) {
+                if (error.response.status === 500) {
+                    showNotification("El carrito se encuentra vacío.", "error");
+                }
+            } else {
+                // Error sin respuesta (problemas de red, etc.)
+                console.error("Error de red o inesperado", error);
+                showNotification("Error de red o inesperado", "error");
+            }
         }
     };
 
