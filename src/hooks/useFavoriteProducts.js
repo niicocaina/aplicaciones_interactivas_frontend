@@ -16,7 +16,7 @@ function useFavoriteProducts(maxFavorite = 5) {
     if(user){
     axios.get(config.apiBaseUrl + config.endpoints.favorite,conf)
       .then(response => setFavoriteProducts(response.data))
-      .catch();
+      .catch(()=> showNotification("Error al obtener productos favoritos","error"));
     }
   }, [user]);
 
@@ -37,7 +37,7 @@ function useFavoriteProducts(maxFavorite = 5) {
       }
 
       if (!isAlreadyFav) {
-        axios.post(config.apiBaseUrl + config.endpoints.product + '/' + product.productId + "/favorite",{},conf).then(res => {showNotification("Agregado a favoritos","success")});
+        axios.post(config.apiBaseUrl + config.endpoints.product + '/' + product.productId + "/favorite",{},conf).then(res => {showNotification("Agregado a favoritos","success")}).catch( () =>showNotification("Error al agregar a favoritos","error"));
       }
       return updatedFavorite;
     }
@@ -50,7 +50,7 @@ function useFavoriteProducts(maxFavorite = 5) {
       const updatedFavorite = prevFavorite.filter(item => item.productId !== productId);
       return updatedFavorite;
     });
-    axios.delete(config.apiBaseUrl + config.endpoints.product + '/' + productId + "/favorite",conf).then(res => {showNotification("Removido de favoritos","success")}).catch(showNotification("Error al remover de favoritos","error"));
+    axios.delete(config.apiBaseUrl + config.endpoints.product + '/' + productId + "/favorite",conf).then(res => {showNotification("Removido de favoritos","success")}).catch(() => showNotification("Error al remover de favoritos","error"));
       
   }, []);
 

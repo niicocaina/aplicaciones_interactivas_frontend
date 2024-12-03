@@ -2,10 +2,12 @@ import { useState, useEffect, useCallback, useContext } from 'react';
 import axios from 'axios';
 import AuthContext from 'src/context/authContext';
 import config from 'src/config.json';
+import { useNotification} from 'src/context/notificationContext';
 
 function useRecentProducts(maxRecent = 5) {
   const [recentProducts, setRecentProducts] = useState([]);
-  const { user, token } = useContext(AuthContext);  
+  const { user, token } = useContext(AuthContext);
+  const showNotification = useNotification();
   
   const conf = {
     headers: {
@@ -14,7 +16,7 @@ function useRecentProducts(maxRecent = 5) {
   
   useEffect(() => {
     if(user){
-    axios.get(config.apiBaseUrl + config.endpoints.recent,conf).then(response => setRecentProducts(response.data)).catch(err => console.log(err))
+    axios.get(config.apiBaseUrl + config.endpoints.recent,conf).then(response => setRecentProducts(response.data)).catch(err => showNotification("Error al obtener productos recientes","error"))
     }
   },[user])
 
