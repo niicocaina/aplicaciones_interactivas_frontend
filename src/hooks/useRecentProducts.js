@@ -5,17 +5,22 @@ import config from 'src/config.json';
 
 function useRecentProducts(maxRecent = 5) {
   const [recentProducts, setRecentProducts] = useState([]);
-  const { user } = useContext(AuthContext);  
-
+  const { user, token } = useContext(AuthContext);  
+  
+  const conf = {
+    headers: {
+      'Authorization': `Bearer ${token}`,
+      }}
   
   useEffect(() => {
     if(user){
-    axios.get(config.apiBaseUrl + config.endpoints.recent).then(response => setRecentProducts(response.data)).catch(err => console.log(err))
+    axios.get(config.apiBaseUrl + config.endpoints.recent,conf).then(response => setRecentProducts(response.data)).catch(err => console.log(err))
     }
   },[user])
 
 
   const addRecentProduct = useCallback((product) => {
+    console.log(product)
     if(user){
     setRecentProducts((prevRecent) => {
       const isAlreadyViewed = prevRecent.some(item => item.productId === product.productId);
@@ -29,9 +34,8 @@ function useRecentProducts(maxRecent = 5) {
         updatedRecent = updatedRecent.slice(0, maxRecent);
       }
       if(!isAlreadyViewed){
-        axios.get(config.apiBaseUrl + config.endpoints.recent).then(res =>{
-          console.log(res.data)
-        })
+        axios.get(config.apiBaseUrl + config.endpoints.product + '/' + product.productId, conf)
+        setRecentProducts(updatedRecent)
     }
       return updatedRecent;
     });}

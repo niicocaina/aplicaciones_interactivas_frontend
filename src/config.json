@@ -4,7 +4,8 @@
       "featured" : "catalog/featured",
       "favorite" : "catalog/favorites",
       "recent" : "catalog/recent",
-      "products" : "catalog/products"
+      "products" : "catalog/products",
+      "product" : "catalog/product"
     },
     "environment": "development",
     "featureFlag": true
