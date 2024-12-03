@@ -26,7 +26,8 @@ export default function BasketView() {
             setLoading(false); // Cambia loading a false solo después de cargar los datos.
         } catch (error) {
             console.error("Error al cargar el carrito", error);
-            setLoading(false); // Asegura que loading también cambie a false en caso de error.
+            setLoading(false);
+            showNotification("Error de red o inesperado", "error"); // Asegura que loading también cambie a false en caso de error.
         }
     };
 
@@ -54,7 +55,6 @@ export default function BasketView() {
 
     const handleCheckOut = async () => {
         try {
-            console.log("Token", token);
             const response = await axios.post(`${baseUrl}/checkout`, null, {
                 headers: {
                     Authorization: `Bearer ${token}`
@@ -62,7 +62,7 @@ export default function BasketView() {
             });
             
             if (response.status === 204) {
-                alert("Compra realizada con éxito!");
+                showNotification("Compra realizada con exito", "success");
                 fetchBasket();
             }
         } catch (error) {
