@@ -6,8 +6,6 @@ import axios from 'axios';
 import { useNotification } from 'src/context/notificationContext';
 
 
-
-
 const BlogView = () => {
   const { user, token } = useContext(AuthContext);  
   const showNotification = useNotification();
@@ -27,11 +25,9 @@ const BlogView = () => {
   
         });
         
-
         if (response.ok) {
           throw new Error('Error al obtener el historial de compras');
         }
-
 
         let data = await response.data;
 
@@ -48,7 +44,6 @@ const BlogView = () => {
       } catch (error) {
         console.error('Error al obtener el historial de compras:', error);
         showNotification('Error al obtener el historial de compras:', 'error');
-        setError('Error al obtener el historial de compras.'); 
         setIsLoading(false); 
       }
     };
@@ -65,6 +60,7 @@ const BlogView = () => {
     }
   }, [user, navigate]);  
 
+  
   if (isLoading) {
     return <div> </div>;  
   }
@@ -109,8 +105,8 @@ const BlogView = () => {
               <ul>
           {purchases.map((purchase) => (
             <li key={purchase.checkOutId} style={{ marginBottom: '20px', borderBottom: '1px solid #f1f1f1', paddingBottom: '15px' }}>
-               <p><strong>ID de compra: #</strong> {purchase.checkOutId}</p>
-              <p><strong>Total:</strong> {purchase.total}</p>
+               <p><strong>Número de compra: </strong> #{purchase.checkOutId}</p>
+              <p><strong>Total:</strong> ${purchase.total}</p>
               <p>
                 <strong>Fecha:</strong>{" "}
                 {purchase.transactionDate && 
