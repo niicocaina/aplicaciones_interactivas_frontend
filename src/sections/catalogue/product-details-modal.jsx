@@ -39,6 +39,7 @@ export const handleAddToCart = async (product, token, onUpdate, navigate, showNo
     });
     if (response.status === 200) {
       console.log("Se agrego el producto con exito")
+      showNotification("Se agrego el producto al carrito","success")
       onUpdate();
     }
   } catch (error) {
