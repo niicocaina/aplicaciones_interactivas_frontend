@@ -6,11 +6,18 @@ import { Add as AddIcon, Remove as RemoveIcon, Delete as DeleteIcon } from '@mui
 import { error } from 'src/theme/palette';
 import {useContext} from 'react';
 import AuthContext from 'src/context/authContext';
+import {useNotification} from 'src/context/notificationContext';
 
 
 const endpointBasket = "http://localhost:8080/basket";
 
-export const handleIncreaseQuantity = async(productBasket, token, onUpdate) => {
+export const handleIncreaseQuantity = async(productBasket, token, onUpdate, showNotification) => {
+
+    if (productBasket.quantity >= productBasket.productStock) {
+        showNotification("No hay mas stock", "error");
+        return;  // Evita continuar si ya se alcanzó el stock
+    }
+
     try {
         const response = await axios.put(`${endpointBasket}/increase`, productBasket, {
             headers: {
@@ -70,6 +77,7 @@ const handleRemoveProduct = async(productBasket, token, onUpdate) => {
 export default function ProductItemCard({ productBasket, onUpdate }) {
     const {quantity, price, name, img1 } = productBasket;
     const {token} = useContext(AuthContext)
+    const showNotification = useNotification();
     return (
         <Box display="flex" alignItems="center" padding={2} border={1} borderRadius={2} borderColor="grey.300">
             {/* Imagen del producto */}
@@ -92,7 +100,7 @@ export default function ProductItemCard({ productBasket, onUpdate }) {
                     <RemoveIcon />
                 </IconButton>
                 <Typography variant="body1" sx={{ marginX: 1 }}>{quantity}</Typography>
-                <IconButton size="small" onClick={() => handleIncreaseQuantity(productBasket, token, onUpdate)}>
+                <IconButton size="small" onClick={() => handleIncreaseQuantity(productBasket, token, onUpdate, showNotification)}>
                     <AddIcon />
                 </IconButton>
             </Box>

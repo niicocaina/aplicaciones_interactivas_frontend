@@ -23,7 +23,8 @@ export default function BasketView() {
                   Authorization: `Bearer ${token}`
                 }});   
             setProductBasket(response.data.products);
-            setLoading(false); // Cambia loading a false solo después de cargar los datos.
+            setLoading(false);
+             // Cambia loading a false solo después de cargar los datos.
         } catch (error) {
             console.error("Error al cargar el carrito", error);
             setLoading(false);
